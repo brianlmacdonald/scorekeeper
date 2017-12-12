@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-# scorekeeper
-=======
-# Hi, I'm 🔥🔥firebones🔥🔥
+# Yaniv
 
 I'm a happy little skeleton who is totally on [fire(base)](https://firebase.google.com)!
 
@@ -135,4 +132,3 @@ I use `import` and `export` in `.jsx` files, unless `require` makes for cleaner 
 I use two spaces, no semi-colons, and generally prefer a less strict version of
 [NPM's funny coding style](https://docs.npmjs.com/misc/coding-style). My lint config is
 in [eslintrc.js](eslintrc.js).
->>>>>>> bones/master

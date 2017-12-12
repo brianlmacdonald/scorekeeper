@@ -8,13 +8,13 @@ const app = require('.')
     , chalk = require('chalk'), {bold} = chalk
     , {red, green, blue, cyan, yellow} = bold
     , dev = module.exports = () => run({
-      server: task(app.package.scripts['start'], {color: blue}),
+      server: task(app.package.scripts.start, {color: blue}),
       build: task(app.package.scripts['build-watch'], {color: green}),
       lint: task(app.package.scripts['lint-watch'], {color: cyan}),
       test: task(app.package.scripts['test-watch'], {color: yellow})
     })
 
-const taskEnvironment = (path=require('path')) => {
+const taskEnvironment = (path = require('path')) => {
   const env = {}
   for (const key in process.env) {
     env[key] = process.env[key]
@@ -33,10 +33,10 @@ function run(tasks) {
 }
 
 function task(command, {
-  spawn=require('child_process').spawn,
-  path=require('path'),
+  spawn = require('child_process').spawn,
+  path = require('path'),
   color
-}={}) {
+} = {}) {
   return name => {
     const stdout = log({name, color}, process.stdout)
         , stderr = log({name, color, text: red}, process.stderr)
@@ -56,10 +56,10 @@ function task(command, {
 
 function log({
   name,
-  ts=timestamp,
-  color=none,
-  text=none,
-}, out=process.stdout) {
+  ts = timestamp,
+  color = none,
+  text = none,
+}, out = process.stdout) {
   return data => data.toString()
     // Strip out screen-clearing control sequences, which really
     // muck up the output.

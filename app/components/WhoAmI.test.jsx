@@ -14,7 +14,7 @@ describe('<WhoAmI/>', () => {
   describe('when nobody is logged in', () => {
     let root
     beforeEach('render the root', () =>
-      root = shallow(<WhoAmI/>)
+      root = shallow(<WhoAmI />)
     )
 
     it('says hello to Nobody', () => {
@@ -29,7 +29,7 @@ describe('<WhoAmI/>', () => {
     }
     let root
     beforeEach('render the root', () =>
-      root = shallow(<WhoAmI user={user}/>)
+      root = shallow(<WhoAmI user={user} />)
     )
 
     it('says hello to Anonymous', () => {
@@ -49,7 +49,7 @@ describe('<WhoAmI/>', () => {
     const fakeAuth = {signOut: spy()}
     let root
     beforeEach('render the root', () =>
-      root = shallow(<WhoAmI user={user} auth={fakeAuth}/>)
+      root = shallow(<WhoAmI user={user} auth={fakeAuth} />)
     )
 
     it('has a logout button', () => {

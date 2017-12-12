@@ -2,13 +2,13 @@ const firebase = require('firebase')
 
 // -- // -- // -- // Firebase Config // -- // -- // -- //
 const config = {
-  apiKey: 'AIzaSyBzz-Wq2dzMgM7E8cdSYnYoX5fbVUT-XQo',
-  authDomain: 'firebones-6bc2a.firebaseapp.com',
-  databaseURL: 'https://firebones-6bc2a.firebaseio.com',
-  projectId: 'firebones-6bc2a',
-  storageBucket: 'firebones-6bc2a.appspot.com',
-  messagingSenderId: '1030378391678'
-}
+  apiKey: 'AIzaSyAb5daqsTMmwkSNd3vhnm2rF9Jss7Qs8Mk',
+  authDomain: 'scorekeeper-4cdf0.firebaseapp.com',
+  databaseURL: 'https://scorekeeper-4cdf0.firebaseio.com',
+  projectId: 'scorekeeper-4cdf0',
+  storageBucket: 'scorekeeper-4cdf0.appspot.com',
+  messagingSenderId: '981631590102'
+};
 // -- // -- // -- // -- // -- // -- // -- // -- // -- //
 
 // Initialize the app, but make sure to do it only once.
