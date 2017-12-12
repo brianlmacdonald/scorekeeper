@@ -47,7 +47,7 @@ export default class extends React.Component {
         rows={10}
         cols={120}
         value={value}
-        onChange={this.write}/>
+        onChange={this.write} />
     )
   }
 }

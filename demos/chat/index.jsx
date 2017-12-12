@@ -10,12 +10,12 @@ import Chat from './Chat'
 // and our Scratchpad component. It takes in props.params.title, and
 // shows the Scratchpad along with that title.
 export default ({params: {room}}) =>
-  <div>
+  (<div>
     <h1>{room}</h1>
     {/* Here, we're passing in a Firebase reference to
         /scratchpads/$scratchpadTitle. This is where the scratchpad is
         stored in Firebase. Each scratchpad is just a string that the
         component will listen to, but it could be the root of a more complex
         data structure if we wanted. */}
-    <Chat auth={auth} fireRef={db.ref('chatrooms').child(room)}/>
-  </div>
+    <Chat auth={auth} fireRef={db.ref('chatrooms').child(room)} />
+  </div>)

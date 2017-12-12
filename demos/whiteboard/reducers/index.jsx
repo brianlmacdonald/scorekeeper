@@ -43,7 +43,7 @@ function svgPathData(points) {
 }
 
 // -- // -- // Reducer // -- // -- //
-export default (state=initial, action) => {
+export default (state = initial, action) => {
   let points
   switch (action.type) {
   case PEN_DOWN:
