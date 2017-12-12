@@ -1,16 +1,20 @@
 import React, {Component} from 'react'
 import {RadioButton, Paper, RadioButtonGroup, RaisedButton} from 'material-ui'
+import { connect } from 'react-redux'
+import { Link } from 'react-router'
+
+import {getRulesAction} from '../../../store'
 
 class Rules extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      jokersZero: 0,
-      divisibleByFifty: 0,
-      sequentialWins: 4
+      jokers: 0,
+      bonus: 0,
+      matchWins: 4
     }
   }
-  SequentialWins(Styles) {
+  wins(Styles) {
     return (
       <div>
         <Paper style={Styles.paperContainer} zDepth={2}>
@@ -19,7 +23,7 @@ class Rules extends Component {
           defaultSelected={4}
           style={Styles.containerRow}
           name="matchPoints"
-          onChange={(evt) => this.setState({ sequentialWins: evt.target.value })}>
+          onChange={(evt) => this.setState({  matchWins: Number(evt.target.value) })}>
           <RadioButton
           value={4} 
           label='4'/>
@@ -33,7 +37,7 @@ class Rules extends Component {
     )
   }
 
-  JokersValue(Styles) {
+  jokers(Styles) {
     return (
       <div>
         <Paper style={Styles.paperContainer} zDepth={2}>
@@ -42,7 +46,7 @@ class Rules extends Component {
             defaultSelected={0}
             style={Styles.containerRow}
             name="matchPoints"
-            onChange={(evt) => this.setState({ jokersZero: evt.target.value })}>
+            onChange={(evt) => this.setState({ jokers: Number(evt.target.value) })}>
             <RadioButton
               value={0}
               label='0' />
@@ -56,7 +60,7 @@ class Rules extends Component {
     )
   }
 
-  DivisibleByFiftyRule(Styles) {
+  bonus(Styles) {
     return (
       <div>
         <Paper style={Styles.paperContainer} zDepth={2}>
@@ -65,7 +69,7 @@ class Rules extends Component {
             defaultSelected={0}
             style={Styles.containerRow}
             name="matchPoints"
-            onChange={(evt) => this.setState({ divisibleby50: evt.target.value })}>
+            onChange={(evt) => this.setState({ bonus: Number(evt.target.value) })}>
             <RadioButton
               value={0}
               label='0' />
@@ -81,25 +85,26 @@ class Rules extends Component {
 
   render() {
     const Styles = this.props.route.style
+    const handleNewGameSubmit = this.props.handleNewGameSubmit
     return (
       <div style={Styles.container}>
         <div style={Styles.spacer} />
         <h1>rules</h1>
         <div style={Styles.spacer} />
-        {this.SequentialWins(Styles)}
-        {this.JokersValue(Styles)}
-        {this.DivisibleByFiftyRule(Styles)}
+        {this.wins(Styles)}
+        {this.jokers(Styles)}
+        {this.bonus(Styles)}
         <RaisedButton
           style={Styles.button}
+          containerElement={<Link to='/players' />}
           onClick={() => {
-
-            const options = {
-              jokersZero: this.state.jokersZero,
-              divisibleByFifty: this.state.divisibleByFifty,
-              sequentialWins: this.state.sequentialWins ? 4 : 6
+          
+            const rules = {
+              jokers: this.state.jokers,
+              bonus: this.state.bonus,
+              matchWins: this.state.matchWins
             }
-            handleNewGameSubmit(options)
-            this.props.navigation.navigate('Game')
+            handleNewGameSubmit(rules)
           }}
           label='submit'
         />
@@ -108,4 +113,16 @@ class Rules extends Component {
   }
 }
 
-export default Rules;
+const mapDispatch = (dispatch) => ({
+  handleNewGameSubmit(rules) {
+    dispatch(getRulesAction(rules))
+  }
+})
+
+const mapState = (state) => ({
+  rules: state.rules
+})
+
+const RulesContainer = connect(mapState, mapDispatch)(Rules)
+
+export default RulesContainer;

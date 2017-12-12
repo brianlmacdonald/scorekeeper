@@ -4,8 +4,9 @@ import {Router, Route, IndexRedirect, browserHistory} from 'react-router'
 import {render} from 'react-dom'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import Provider from 'react-redux'
+import {Provider} from 'react-redux'
 import store from './store/'
+require('css-loader!./styles.css')
 
 import WhoAmI from './components/WhoAmI'
 import NotFound from './components/NotFound'
@@ -45,7 +46,8 @@ auth.onAuthStateChanged(user => user || auth.signInAnonymously())
 // and whatever children the router gave us.
 
 const muiTheme = getMuiTheme({
-  palette: { primary1Color: '#FFA000' }
+  palette: { primary1Color: '#FFA000' },
+  fontFamily: 'Quicksand, sans-serif'
 })
 const App = ({children}) =>
   (<div>
@@ -70,17 +72,11 @@ const AppRoutes = () =>
           </Router>
           )
 
-const InjectMui = () => 
-  (
-    <MuiThemeProvider muiTheme={muiTheme}>
-      <AppRoutes />
-    </MuiThemeProvider>
-  )
-
 render(
     <Provider store={store}>
-      <InjectMui />
-    </Provider>
-    ,
+      <MuiThemeProvider muiTheme={muiTheme}>
+        <AppRoutes />
+      </MuiThemeProvider>
+    </Provider>,
   document.getElementById('main')
 )
