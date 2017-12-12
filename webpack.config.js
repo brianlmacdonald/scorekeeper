@@ -36,6 +36,9 @@ module.exports = {
         }
       }]
     }]
+    , loaders: [
+      {test: /\.css$/, loader: "style-loader!css-loader"}
+    ]
   },
   plugins: devMode
     ? [new LiveReloadPlugin({appendScriptTag: true})]
