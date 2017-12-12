@@ -2,13 +2,17 @@
 import React from 'react'
 import {Router, Route, IndexRedirect, browserHistory} from 'react-router'
 import {render} from 'react-dom'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import Provider from 'react-redux'
+import store from './store/'
 
 import WhoAmI from './components/WhoAmI'
 import NotFound from './components/NotFound'
 
-import firebase from 'APP/fire'
+import Game from './components/ScoreKeeper/'
 
-import Demos from 'APP/demos'
+import firebase from 'APP/fire'
 
 // Get the auth API from Firebase.
 const auth = firebase.auth()
@@ -39,6 +43,10 @@ auth.onAuthStateChanged(user => user || auth.signInAnonymously())
 
 // Our root App component just renders a little frame with a nav
 // and whatever children the router gave us.
+
+const muiTheme = getMuiTheme({
+  palette: { primary1Color: '#FFA000' }
+})
 const App = ({children}) =>
   (<div>
     <nav>
@@ -51,13 +59,28 @@ const App = ({children}) =>
     {children}
   </div>)
 
+const AppRoutes = () =>
+          (
+          <Router history={browserHistory}>
+            <Route path="/" component={App}>
+              {<IndexRedirect to="game" />}
+              {Game}
+            </Route>
+            <Route path="*" component={NotFound} />
+          </Router>
+          )
+
+const InjectMui = () => 
+  (
+    <MuiThemeProvider muiTheme={muiTheme}>
+      <AppRoutes />
+    </MuiThemeProvider>
+  )
+
 render(
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <IndexRedirect to="demos" />
-      {Demos /* Put all the demos and a description page at /demos */}
-    </Route>
-    <Route path="*" component={NotFound} />
-  </Router>,
+    <Provider store={store}>
+      <InjectMui />
+    </Provider>
+    ,
   document.getElementById('main')
 )
