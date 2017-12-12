@@ -114,11 +114,11 @@ export default class extends React.Component {
     //
     // If our fireRef changes, we'll throw this store state away and create a new one.
     // That's fine!
-    return <Provider store={store}>
+    return (<Provider store={store}>
       <div>
         <button onClick={this.clear}>clear</button>
-        <Canvas/>
+        <Canvas />
       </div>
-    </Provider>
+    </Provider>)
   }
 }

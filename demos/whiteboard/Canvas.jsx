@@ -19,19 +19,19 @@ export const Canvas = ({
 
   // These event handlers map x and y appropriately,
   // which turns out to be irritating.
-  onTouchStart=withLocalCoordinates(penDown),
-  onTouchMove=withLocalCoordinates(moveTo),
-  onTouchEnd=withLocalCoordinates(penUp),
+  onTouchStart = withLocalCoordinates(penDown),
+  onTouchMove = withLocalCoordinates(moveTo),
+  onTouchEnd = withLocalCoordinates(penUp),
 
   // Root SVG element style
-  style={
+  style = {
     width: '100%',
     height: '100%',
     minWidth: '1440px',
     minHeight: '1080px',
   }
 }) =>
-  <svg
+  (<svg
     style={style}
     onTouchStart={onTouchStart}
     onTouchMove={onTouchMove}
@@ -40,10 +40,10 @@ export const Canvas = ({
     onMouseMove={onTouchMove}
     onMouseUp={onTouchEnd}>
     {
-      strokes.map((stroke, idx) => <Stroke key={idx} stroke={stroke}/>)
+      strokes.map((stroke, idx) => <Stroke key={idx} stroke={stroke} />)
     }
-    {currentStroke && <Stroke stroke={currentStroke}/>}
-  </svg>
+    {currentStroke && <Stroke stroke={currentStroke} />}
+  </svg>)
 
 function closest(Type, event) {
   let e = event.target

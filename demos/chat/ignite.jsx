@@ -68,7 +68,7 @@ const ignite = Component => class extends React.Component {
         {...this.props}
         {...this.state}
         onChange={this.onChange}
-        asEntries={this.asEntries}/>
+        asEntries={this.asEntries} />
     )
   }
 }

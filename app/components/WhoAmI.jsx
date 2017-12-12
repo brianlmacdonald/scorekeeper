@@ -11,15 +11,15 @@ export const name = user => {
 }
 
 export const WhoAmI = ({user, auth}) =>
-  <div className="whoami">
+  (<div className="whoami">
     <span className="whoami-user-name">Hello, {name(user)}</span>
     { // If nobody is logged in, or the current user is anonymous,
-      (!user || user.isAnonymous)?
+      (!user || user.isAnonymous) ?
       // ...then show signin links...
-      <Login auth={auth}/>
+      <Login auth={auth} />
       /// ...otherwise, show a logout button.
-      : <button className='logout' onClick={() => auth.signOut()}>logout</button> }
-  </div>
+      : <button className="logout" onClick={() => auth.signOut()}>logout</button> }
+  </div>)
 
 export default class extends React.Component {
   componentDidMount() {
@@ -33,6 +33,6 @@ export default class extends React.Component {
 
   render() {
     const {user} = this.state || {}
-    return <WhoAmI user={user} auth={auth}/>
+    return <WhoAmI user={user} auth={auth} />
   }
 }

@@ -15,7 +15,7 @@ describe('<Login />', () => {
       signInWithPopup: spy(),
       signInWithRedirect: spy(),
     }
-    root = shallow(<Login auth={fakeAuth}/>)
+    root = shallow(<Login auth={fakeAuth} />)
   })
 
   it('logs in with google', () => {
