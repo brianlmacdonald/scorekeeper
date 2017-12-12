@@ -3,6 +3,7 @@ import { Route, IndexRedirect, IndexRoute, Link } from 'react-router'
 import Styles from './styles.js'
 
 import Rules from './Game/Rules'
+import PlayerScreen from './Game/PlayerScreen'
 import { AppBar, RaisedButton } from 'material-ui'
 
 const Index = ({ children }) => (
@@ -23,11 +24,12 @@ const Index = ({ children }) => (
       <RaisedButton
         primary={true}
         style={Styles.button}
-        label='rules' />
+        label='all time' />
     </div>
   </div>)
 
 export default <Route path="/game" component={({ children }) => children}>
   <IndexRoute component={Index} />
   <Route path="/new" component={Rules} style={Styles} />
+  <Route path='/players' component={PlayerScreen} />
 </Route>
