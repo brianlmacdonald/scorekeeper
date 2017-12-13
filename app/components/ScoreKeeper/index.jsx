@@ -8,23 +8,21 @@ import { AppBar, RaisedButton } from 'material-ui'
 
 const Index = ({ children }) => (
   <div>
-    <AppBar
-      title='yaniv scorekeeper' />
     <div style={Styles.spacer} />
     <div style={Styles.container}>
       <RaisedButton
         primary={true}
         style={Styles.button}
-        label='current game' />
-      <RaisedButton
-        primary={true}
-        style={Styles.button}
-        containerElement={<Link to='/new' />}
-        label='new game' />
+        label='create game' />
       <RaisedButton
         primary={true}
         style={Styles.button}
         label='all time' />
+      <RaisedButton
+        primary={true}
+        style={Styles.button}
+        containerElement={<Link to='/new' />}
+        label='scorekeeper' />
     </div>
   </div>)
 
