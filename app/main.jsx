@@ -6,6 +6,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import {Provider} from 'react-redux'
 import store from './store/'
+import {AppBar} from 'material-ui'
 require('css-loader!./styles.css')
 
 import WhoAmI from './components/WhoAmI'
@@ -51,12 +52,12 @@ const muiTheme = getMuiTheme({
 })
 const App = ({children}) =>
   (<div>
-    <nav>
+    <AppBar title='yaniv'>
       {/* WhoAmI takes a firebase auth API and renders either a
           greeting and a logout button, or sign in buttons, depending
           on if anyone's logged in */}
       <WhoAmI auth={auth} />
-    </nav>
+    </AppBar>
     {/* Render our children (whatever the router gives us) */}
     {children}
   </div>)
