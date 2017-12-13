@@ -53,11 +53,11 @@ describe('<WhoAmI/>', () => {
     )
 
     it('has a logout button', () => {
-      expect(root.find('button.logout')).to.have.length(1)
+      expect(root.find('RaisedButton.logout')).to.have.length(1)
     })
 
     it('calls props.auth.signOut when logout is tapped', () => {
-      root.find('button.logout').simulate('click')
+      root.find('RaisedButton.logout').simulate('click')
       expect(fakeAuth.signOut).to.have.been.called
     })
   })

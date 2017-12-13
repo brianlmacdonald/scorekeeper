@@ -1,5 +1,6 @@
 import React from 'react'
 
+import {FlatButton} from 'material-ui'
 import firebase from 'APP/fire'
 
 const google = new firebase.auth.GoogleAuthProvider()
@@ -29,6 +30,7 @@ export default ({ auth }) =>
   // signInWithPopup will try to open a login popup, and if it's blocked, it'll
   // redirect. If you prefer, you can signInWithRedirect, which always
   // redirects.
-  (<button
+  (<FlatButton
+    label='Google Login'
 className="google login"
-          onClick={() => auth.signInWithPopup(google)}>Login with Google</button>)
+          onClick={() => auth.signInWithPopup(google)} />)
