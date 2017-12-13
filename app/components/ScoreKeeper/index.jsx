@@ -4,7 +4,8 @@ import Styles from './styles.js'
 
 import Rules from './Game/Rules'
 import PlayerScreen from './Game/PlayerScreen'
-import { AppBar, RaisedButton } from 'material-ui'
+import ScoreScreen from './Game/ScoreScreen'
+import { RaisedButton } from 'material-ui'
 
 const Index = ({ children }) => (
   <div>
@@ -30,4 +31,5 @@ export default <Route path="/game" component={({ children }) => children}>
   <IndexRoute component={Index} />
   <Route path="/new" component={Rules} style={Styles} />
   <Route path='/players' component={PlayerScreen} />
+  <Route path='/scores' component={ScoreScreen} />
 </Route>
