@@ -52,7 +52,11 @@ const muiTheme = getMuiTheme({
 })
 const App = ({children}) =>
   (<div>
-    <AppBar title='yaniv'>
+    <AppBar
+    onTitleClick={() => {
+      window.location = '/game' 
+    }}
+    title='yaniv'>
       {/* WhoAmI takes a firebase auth API and renders either a
           greeting and a logout button, or sign in buttons, depending
           on if anyone's logged in */}
