@@ -2,27 +2,33 @@ import React from 'react';
 import { connect } from 'react-redux'
 import {RaisedButton} from 'material-ui'
 import {Link} from 'react-router'
+import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 
 
 
 const ScoreScreen = ({ players }) => {
     return (
       <div>
-        <div/>
-        <h1 >game</h1>
-        <div/>
-        {players.map(player => {
-          return (<div key={player.id}>
-            <div >
-              <h2 >{player.name}</h2>
-            </div>
-            <div/>
-            <div>
-              <h3>{player.score}</h3>
-              <h4>{player.wins}</h4>
-            </div>
-          </div>)
-        })}
+      <Table>
+        <TableHeader 
+          displaySelectAll={false}
+          adjustForCheckbox={false}>
+          <TableRow>
+            <TableHeaderColumn>Name</TableHeaderColumn>
+            <TableHeaderColumn>Score</TableHeaderColumn>
+            <TableHeaderColumn>Wins</TableHeaderColumn>
+          </TableRow>
+        </TableHeader>
+          <TableBody displayRowCheckbox={false}>
+          {players.map(player => {
+            return (<TableRow key={player.id}>
+              <TableRowColumn>{player.name}</TableRowColumn>
+              <TableRowColumn>{player.score}</TableRowColumn>
+              <TableRowColumn>{player.wins}</TableRowColumn>
+            </TableRow>)
+          })}
+        </TableBody>
+      </Table>
         <RaisedButton
           containerElement={<Link to='/addScores' />}
           label='yaniv!'

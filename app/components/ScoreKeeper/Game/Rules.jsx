@@ -51,8 +51,8 @@ class Rules extends Component {
               value={0}
               label='0' />
             <RadioButton
-              value={-15}
-              label='-15'
+              value={15}
+              label='15'
             />
           </RadioButtonGroup>
         </Paper>

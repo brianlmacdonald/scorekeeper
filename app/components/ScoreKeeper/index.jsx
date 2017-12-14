@@ -5,6 +5,7 @@ import Styles from './styles.js'
 import Rules from './Game/Rules'
 import PlayerScreen from './Game/PlayerScreen'
 import ScoreScreen from './Game/ScoreScreen'
+import AddScoreScreen from './Game/AddScoreScreen'
 import { RaisedButton } from 'material-ui'
 
 const Index = ({ children }) => (
@@ -32,4 +33,5 @@ export default <Route path="/game" component={({ children }) => children}>
   <Route path="/new" component={Rules} style={Styles} />
   <Route path='/players' component={PlayerScreen} />
   <Route path='/scores' component={ScoreScreen} />
+  <Route path='/addScores' component={AddScoreScreen} />
 </Route>
