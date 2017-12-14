@@ -1,4 +1,5 @@
 import {clone} from 'ramda'
+import store from '../../../store/'
 
 const player = {
   name: null,
@@ -18,4 +19,21 @@ export const makePlayers = (num) => {
     playerArray.push(newPlayer)
   }
   return playerArray
+}
+
+export const calculateScore = (localState) => {
+  console.log(localState)
+  const storeState = store.getState()
+  console.log(storeState.rules)
+  let score = localState.total
+  if (localState.assaf) score += 30
+  if (localState.yaniv) {
+    if (!localState.total) {
+      score += localState.jokers * -15
+    } else {
+      score = 0
+    }
+  }
+  if (!localState.yaniv && localState.jokers) score += localState.jokers * storeState.rules.jokers
+  return score
 }
