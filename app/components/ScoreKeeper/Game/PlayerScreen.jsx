@@ -44,13 +44,13 @@ class PlayerScreen extends Component {
   }
 
   ready() {
-    return(
+    return (
       <p>Got names, time to play</p>
     )
   }
 
   error() {
-    return(
+    return (
       <p>uh oh.</p>
     )
   }
@@ -71,29 +71,29 @@ class PlayerScreen extends Component {
   numberSelect(){
     return (<div>
       <SelectField
-        floatingLabelText='number of players'
+        floatingLabelText="number of players"
         value={this.state.numberOfPlayers}
         onChange={this.handleSelect}
         >
-        <MenuItem value={2} primaryText='two' />
-        <MenuItem value={3} primaryText='three' />
-        <MenuItem value={4} primaryText='four' />
-        <MenuItem value={5} primaryText='five' />
+        <MenuItem value={2} primaryText="two" />
+        <MenuItem value={3} primaryText="three" />
+        <MenuItem value={4} primaryText="four" />
+        <MenuItem value={5} primaryText="five" />
       </SelectField>
     </div>)
   }
 
   names(handleNameChange){
-    return (<div id='nameEntry'>
+    return (<div id="nameEntry">
       {this.props.players.length && this.props.players.map(player => {
-        return <TextField
+        return (<TextField
           key={player.id}
           hintText={`Player${player.id}'s name?`}
           onChange={(evt) => {
             player.name = evt.target.value
             handleNameChange(player)
           }}
-        />
+        />)
       })}
     </div>)
   }
@@ -120,8 +120,8 @@ class PlayerScreen extends Component {
             {finished ? (
               <div>
                 <RaisedButton
-                  label='continue'
-                  containerElement={<Link to='/scores' />}
+                  label="continue"
+                  containerElement={<Link to="/scores" />}
                 />
               </div>) : (
                 <div>
@@ -138,7 +138,7 @@ class PlayerScreen extends Component {
                       primary={true}
                       onClick={() => {
                         this.handleNext()
-                        if (!stepIndex) handleReady(this.state.numberOfPlayers) 
+                        if (!stepIndex) handleReady(this.state.numberOfPlayers)
                       }
                       }
                     />

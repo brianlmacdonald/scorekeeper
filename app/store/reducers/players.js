@@ -1,6 +1,6 @@
 import { clone } from 'ramda'
-const ADD_PLAYERS = "ADD_PLAYERS"
-const PLAYER_NAMES = "PLAYER_NAMES"
+const ADD_PLAYERS = 'ADD_PLAYERS'
+const PLAYER_NAMES = 'PLAYER_NAMES'
 const UPDATE_SCORE = 'UPDATE_SCORE'
 const RESET_CHECKED = 'RESET_CHECKED'
 
@@ -29,7 +29,7 @@ const initialState = []
 const players = (state = initialState, action) => {
   const newState = clone(state)
   switch (action.type) {
-    
+
     case ADD_PLAYERS:
       return action.payload
 
@@ -48,7 +48,7 @@ const players = (state = initialState, action) => {
       player.checked = false
       return player
     })
-    
+
     default:
       return state
   }

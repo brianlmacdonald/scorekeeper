@@ -15,23 +15,23 @@ const Index = ({ children }) => (
       <RaisedButton
         primary={true}
         style={Styles.button}
-        label='create game' />
+        label="create game" />
       <RaisedButton
         primary={true}
         style={Styles.button}
-        label='all time' />
+        label="all time" />
       <RaisedButton
         primary={true}
         style={Styles.button}
-        containerElement={<Link to='/new' />}
-        label='scorekeeper' />
+        containerElement={<Link to="/new" />}
+        label="scorekeeper" />
     </div>
   </div>)
 
 export default <Route path="/game" component={({ children }) => children}>
   <IndexRoute component={Index} />
   <Route path="/new" component={Rules} style={Styles} />
-  <Route path='/players' component={PlayerScreen} />
-  <Route path='/scores' component={ScoreScreen} />
-  <Route path='/addScores' component={AddScoreScreen} />
+  <Route path="/players" component={PlayerScreen} />
+  <Route path="/scores" component={ScoreScreen} />
+  <Route path="/addScores" component={AddScoreScreen} />
 </Route>

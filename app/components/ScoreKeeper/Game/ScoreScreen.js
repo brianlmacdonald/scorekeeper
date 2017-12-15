@@ -5,12 +5,11 @@ import {Link} from 'react-router'
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 
 
-
 const ScoreScreen = ({ players }) => {
     return (
       <div>
       <Table>
-        <TableHeader 
+        <TableHeader
           displaySelectAll={false}
           adjustForCheckbox={false}>
           <TableRow>
@@ -30,8 +29,8 @@ const ScoreScreen = ({ players }) => {
         </TableBody>
       </Table>
         <RaisedButton
-          containerElement={<Link to='/addScores' />}
-          label='yaniv!'
+          containerElement={<Link to="/addScores" />}
+          label="yaniv!"
         />
       </div>
     )
