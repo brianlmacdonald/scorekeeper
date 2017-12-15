@@ -1,6 +1,5 @@
 
 
- 
 const Styles = {
   button: {
     margin: '1em',

@@ -31,6 +31,6 @@ export default ({ auth }) =>
   // redirect. If you prefer, you can signInWithRedirect, which always
   // redirects.
   (<FlatButton
-    label='Google Login'
+    label="Google Login"
 className="google login"
           onClick={() => auth.signInWithPopup(google)} />)
