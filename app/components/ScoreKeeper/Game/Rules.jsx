@@ -25,11 +25,11 @@ class Rules extends Component {
           name="matchPoints"
           onChange={(evt) => this.setState({  matchWins: Number(evt.target.value) })}>
           <RadioButton
-          value={4} 
-          label='4'/>
+          value={4}
+          label="4" />
           <RadioButton
           value={6}
-          label='6'
+          label="6"
           />
         </RadioButtonGroup>
         </Paper>
@@ -49,10 +49,10 @@ class Rules extends Component {
             onChange={(evt) => this.setState({ jokers: Number(evt.target.value) })}>
             <RadioButton
               value={0}
-              label='0' />
+              label="0" />
             <RadioButton
               value={15}
-              label='15'
+              label="15"
             />
           </RadioButtonGroup>
         </Paper>
@@ -72,10 +72,10 @@ class Rules extends Component {
             onChange={(evt) => this.setState({ bonus: Number(evt.target.value) })}>
             <RadioButton
               value={0}
-              label='0' />
+              label="0" />
             <RadioButton
               value={-50}
-              label='-50'
+              label="-50"
             />
           </RadioButtonGroup>
         </Paper>
@@ -96,9 +96,9 @@ class Rules extends Component {
         {this.bonus(Styles)}
         <RaisedButton
           style={Styles.button}
-          containerElement={<Link to='/players' />}
+          containerElement={<Link to="/players" />}
           onClick={() => {
-          
+
             const rules = {
               jokers: this.state.jokers,
               bonus: this.state.bonus,
@@ -106,7 +106,7 @@ class Rules extends Component {
             }
             handleNewGameSubmit(rules)
           }}
-          label='submit'
+          label="submit"
         />
       </div>
     )

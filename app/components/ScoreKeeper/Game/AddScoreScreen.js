@@ -33,7 +33,7 @@ class AddScore extends Component {
   assaf(){
     return (
       <RaisedButton
-      label= 'asaf'
+      label= "asaf"
       disabled={this.state.yaniv}
       onClick={() => {this.setState({assaf: !this.state.assaf})}}
       />
@@ -43,7 +43,7 @@ class AddScore extends Component {
   yaniv() {
     return (
       <RaisedButton
-        label='yaniv'
+        label="yaniv"
         disabled={this.state.assaf}
         onClick={() => { this.setState({ yaniv: !this.state.yaniv }) }}
       />
@@ -90,7 +90,7 @@ class AddScore extends Component {
             {this.yaniv(currentPlayer)}
           </div>
           <RaisedButton
-          label='done'
+          label="done"
           onClick={() => {
             if (this.state.yaniv) currentPlayer.wins++
             else currentPlayer.wins = 0
@@ -101,13 +101,13 @@ class AddScore extends Component {
           />
       </div>)
     } else {
-      return <RaisedButton
-              label='back to scores'
+      return (<RaisedButton
+              label="back to scores"
               onClick={() => {
                 handleBackToScores()
               }}
-              containerElement={<Link to='/scores' />}
-              />
+              containerElement={<Link to="/scores" />}
+              />)
     }
   }
 }
