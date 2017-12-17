@@ -14,14 +14,14 @@ class Rules extends Component {
       matchWins: 4
     }
   }
-  wins(Styles) {
+  wins() {
     return (
       <div>
-        <Paper style={Styles.paperContainer} zDepth={2}>
+        <Paper className='paperContainer' zDepth={2}>
           <h4>Match points needed to win:</h4>
         <RadioButtonGroup
           defaultSelected={4}
-          style={Styles.containerRow}
+          className='containerRow'
           name="matchPoints"
           onChange={(evt) => this.setState({  matchWins: Number(evt.target.value) })}>
           <RadioButton
@@ -37,14 +37,14 @@ class Rules extends Component {
     )
   }
 
-  jokers(Styles) {
+  jokers() {
     return (
       <div>
-        <Paper style={Styles.paperContainer} zDepth={2}>
+        <Paper className='paperContainer' zDepth={2}>
           <h4>Losing Joker Value:</h4>
           <RadioButtonGroup
             defaultSelected={0}
-            style={Styles.containerRow}
+            className='containerRow'
             name="matchPoints"
             onChange={(evt) => this.setState({ jokers: Number(evt.target.value) })}>
             <RadioButton
@@ -60,14 +60,14 @@ class Rules extends Component {
     )
   }
 
-  bonus(Styles) {
+  bonus() {
     return (
       <div>
-        <Paper style={Styles.paperContainer} zDepth={2}>
+        <Paper className='paperContainer' zDepth={2}>
           <h4>Bonus on 100, 150, 200:</h4>
           <RadioButtonGroup
             defaultSelected={0}
-            style={Styles.containerRow}
+            className='containerRow'
             name="matchPoints"
             onChange={(evt) => this.setState({ bonus: Number(evt.target.value) })}>
             <RadioButton
@@ -84,18 +84,17 @@ class Rules extends Component {
   }
 
   render() {
-    const Styles = this.props.route.style
     const handleNewGameSubmit = this.props.handleNewGameSubmit
     return (
-      <div style={Styles.container}>
-        <div style={Styles.spacer} />
+      <div className='container'>
+        <div className='spacer' />
         <h1>rules</h1>
-        <div style={Styles.spacer} />
-        {this.wins(Styles)}
-        {this.jokers(Styles)}
-        {this.bonus(Styles)}
+        <div className='spacer' />
+        {this.wins()}
+        {this.jokers()}
+        {this.bonus()}
         <RaisedButton
-          style={Styles.button}
+          className='button'
           containerElement={<Link to="/players" />}
           onClick={() => {
 

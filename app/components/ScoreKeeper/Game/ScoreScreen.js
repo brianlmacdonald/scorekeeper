@@ -8,7 +8,7 @@ import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowCol
 const ScoreScreen = ({ players }) => {
     return (
       <div>
-      <Table>
+      <Table className='scoreTable'>
         <TableHeader
           displaySelectAll={false}
           adjustForCheckbox={false}>

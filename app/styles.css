@@ -1,8 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
 #nameEntry {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
+a {
+  text-decoration: none;
+}
 body {
-  background-color: black;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #eeeeee;
+}
+
+.spacer {
+  padding: 1em;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  background-color: #FFA000;
+}
+
+.leftMargin {
+  margin-left: 2em;
+}
+
+.whoiam > span {
+  margin-top: 1em;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+
+.rowSpacer {
+  flex-grow: 3;
+}
+
+.homeButton {
+  font-family: "Quicksand", sans-serif;
+  margin: 1em;
+  width: 10em;
+  height: 3em;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1em;
+  font-size: 1em;
+}
+
+.homeButton:hover {
+  background-color: #FFF6E7;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.paperContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  width: 15em;
+  height: 6em;
+  align-items: center;
+  background-color: #FAFAFA;
+}
+
+.containerRow {
+  display: flex;
+}
+
+.stepperDiv {
+    margin: 0 16px;
+}
+
+.paperName {
+  width: 10em;
+  height: 3em;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.paperH4 {
+  margin: 1em;
+}
+
+.scoreTable {
+  width: 30em;
+}
+
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-width: 667px)
+{
+
+  .screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .homeButton {
+    display: flex;
+    text-decoration: none;
+    font-size: 5em;
+    width: 60vw;
+    height: 10vh;
+    border-radius: .5em;
+  }
+
+  .navBar {
+    font-size: 3em;
+    height: 10vh;
+    width: 100vw;
+  }
+
 }
