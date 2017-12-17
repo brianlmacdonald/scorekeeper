@@ -35,10 +35,16 @@ module.exports = {
           presets: ['react', 'es2015', 'stage-2']
         }
       }]
+    },
+    {
+      test: /\.css$/,
+      use: [{
+        loader: 'style-loader'
+      }, {
+        loader: 'css-loader'
+      }]
+
     }]
-    , loaders: [
-      {test: /\.css$/, loader: 'style-loader!css-loader'}
-    ]
   },
   plugins: devMode
     ? [new LiveReloadPlugin({appendScriptTag: true})]

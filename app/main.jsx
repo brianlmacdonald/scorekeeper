@@ -7,7 +7,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import {Provider} from 'react-redux'
 import store from './store/'
 import {AppBar} from 'material-ui'
-require('css-loader!./styles.css')
+
+import style from './styles.css'
 
 import WhoAmI from './components/WhoAmI'
 import NotFound from './components/NotFound'
@@ -52,16 +53,15 @@ const muiTheme = getMuiTheme({
 })
 const App = ({children}) =>
   (<div>
-    <AppBar
-    onTitleClick={() => {
-      window.location = '/game'
-    }}
-    title="yaniv">
+    <nav
+    className='navBar'>
+    <a className='leftMargin' href='/game'><h1>yaniv</h1></a>
       {/* WhoAmI takes a firebase auth API and renders either a
           greeting and a logout button, or sign in buttons, depending
           on if anyone's logged in */}
+      <div className='rowSpacer'/>
       <WhoAmI auth={auth} />
-    </AppBar>
+    </nav>
     {/* Render our children (whatever the router gives us) */}
     {children}
   </div>)

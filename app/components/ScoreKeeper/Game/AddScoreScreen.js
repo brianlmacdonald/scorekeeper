@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import {RaisedButton} from 'material-ui'
+import {RaisedButton, Paper} from 'material-ui'
 import { updateScoreAction, resetCheckedAction } from '../../../store'
 import {calculateScore} from './gameFunctions'
 import { Link } from 'react-router'
@@ -63,8 +63,11 @@ class AddScore extends Component {
     console.log(this.props.players)
     if (currentPlayer) {
       return (
-        <div>
-          <h2>{currentPlayer.name}</h2>
+        <div className='container'>
+          <Paper className='paperName'>
+            <h4 className='paperH4'>{currentPlayer.name}</h4>
+            <h4 className='paperH4'>{this.state.total}</h4>
+          </Paper>
           <div>
             {this.cardKey({name: 'K', value: 10})}
             {this.cardKey({name: 'Q', value: 10})}
@@ -89,6 +92,13 @@ class AddScore extends Component {
             {this.cardKey({ name: `\uD83C\uDCCF`, value: 0 })}
             {this.yaniv(currentPlayer)}
           </div>
+          <div className='containerRow'>
+          <RaisedButton
+          label='reset'
+          onClick={()=>{
+            this.reset()
+          }}
+          />
           <RaisedButton
           label="done"
           onClick={() => {
@@ -99,6 +109,7 @@ class AddScore extends Component {
             this.reset()
           }}
           />
+          </div>
       </div>)
     } else {
       return (<RaisedButton
