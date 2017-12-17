@@ -4,7 +4,6 @@ import { Step, Stepper, StepLabel } from 'material-ui/Stepper';
 import { connect } from 'react-redux'
 import { addPlayersAction, playerNamesAction } from '../../../store'
 import { Link } from 'react-router'
-require('css-loader!../../../styles.css')
 
 import {makePlayers} from './gameFunctions'
 
@@ -13,13 +12,11 @@ class PlayerScreen extends Component {
     super()
     this.state = {
       numberOfPlayers: 2,
-      finished: false,
       stepIndex: 0
     }
     this.handleSelect = this.handleSelect.bind(this)
     this.numberSelect = this.numberSelect.bind(this)
     this.names = this.names.bind(this)
-    this.ready = this.ready.bind(this)
     this.error = this.error.bind(this)
   }
 
@@ -27,7 +24,6 @@ class PlayerScreen extends Component {
     const { stepIndex } = this.state;
     this.setState({
       stepIndex: stepIndex + 1,
-      finished: stepIndex >= 2,
     });
   };
 
@@ -43,12 +39,6 @@ class PlayerScreen extends Component {
 
   }
 
-  ready() {
-    return (
-      <p>Got names, time to play</p>
-    )
-  }
-
   error() {
     return (
       <p>uh oh.</p>
@@ -61,8 +51,6 @@ class PlayerScreen extends Component {
         return this.numberSelect;
       case 1:
         return this.names;
-      case 2:
-        return this.ready;
       default:
         return this.error;
     }
@@ -100,9 +88,7 @@ class PlayerScreen extends Component {
 
   render(){
     const {handleReady, handleNameChange} = this.props
-    const {finished, stepIndex} = this.state
-    const contentStyle = { margin: '0 16px' };
-
+    const { stepIndex} = this.state
     return (
       <div style={{ width: '100%', maxWidth: 700, margin: 'auto' }}>
           <Stepper activeStep={stepIndex}>
@@ -112,18 +98,8 @@ class PlayerScreen extends Component {
             <Step>
               <StepLabel>Name Players</StepLabel>
             </Step>
-            <Step>
-              <StepLabel>Go to Score Screen</StepLabel>
-            </Step>
           </Stepper>
-          <div style={contentStyle}>
-            {finished ? (
-              <div>
-                <RaisedButton
-                  label="continue"
-                  containerElement={<Link to="/scores" />}
-                />
-              </div>) : (
+          <div className='stepperdiv'>
                 <div>
                   <div>{this.getStepContent(stepIndex)(handleNameChange)}</div>
                   <div style={{ marginTop: 12 }}>
@@ -134,17 +110,20 @@ class PlayerScreen extends Component {
                       style={{ marginRight: 12 }}
                     />
                     <RaisedButton
-                      label={stepIndex === 2 ? 'Finish' : 'Next'}
+                      label={stepIndex === 1 ? 'Finish' : 'Next'}
                       primary={true}
                       onClick={() => {
-                        this.handleNext()
-                        if (!stepIndex) handleReady(this.state.numberOfPlayers)
+                        if (!stepIndex) {
+                          handleReady(this.state.numberOfPlayers)
+                          this.handleNext()
+                        } else {
+                          this.props.router.push('/scores')
+                        }
                       }
                       }
                     />
                   </div>
                 </div>
-              )}
           </div>
         </div>
     )
