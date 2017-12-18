@@ -13,6 +13,22 @@ body {
   background-color: #eeeeee;
 }
 
+td {
+  text-align: center;
+}
+
+th {
+  background-color: #FFA000;
+}
+
+tr:nth-child(even) td {
+  background-color: rgb(250, 250, 250);
+}
+
+tr:nth-child(odd) td {
+  background-color: rgb(245, 245, 245);
+}
+
 .spacer {
   padding: 1em;
 }
@@ -71,6 +87,11 @@ body {
   flex-direction: column;
 }
 
+.playerSelect {
+  font-size: 3em;
+  background-color: #FAFAFA;
+}
+
 .paperContainer {
   display: flex;
   flex-direction: column;
@@ -101,6 +122,13 @@ body {
   justify-content: center;
 }
 
+.scoreTable {
+  margin-top: 2em;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
+}
+
 .paperH4 {
   margin: 1em;
 }
@@ -114,7 +142,7 @@ and (min-device-width: 375px)
 and (max-device-width: 667px)
 {
   body {
-    align-content: center;
+    align-items: center;
     justify-content: center;
   }
 
@@ -126,8 +154,12 @@ and (max-device-width: 667px)
   }
 
   .container {
-    align-content: center;
+    align-items: center;
     justify-content: center;
+  }
+
+  .scoreTable {
+    width: 100vw;
   }
 
   .containerAddScore {
@@ -189,8 +221,22 @@ and (max-device-width: 667px)
     flex-direction: row;
   }
 
-  .scoreTable {
-    height: 100vh;
+  .stepper {
+    display: none;
+  }
+
+  .playerSelect {
+    font-size: 5em;
+  }
+
+  .numberOfPlayers {
+    font-size: 3em;
+  }
+
+  .playerNameField {
+    font-size: 5em;
+    width: 80vw;
+    height: 10vh;
   }
 
   .cardButton {
@@ -200,14 +246,6 @@ and (max-device-width: 667px)
     border-color: #FFA000;
     border-radius: .5em;
     margin: .5em;
-  }
-  
-  .scoreBody {
-    font-size: 5em;
-  }
-
-  .scoreHeader {
-    font-size: 5em;
   }
 
 }

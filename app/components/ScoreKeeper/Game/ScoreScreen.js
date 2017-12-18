@@ -28,34 +28,26 @@ const ScoreScreen = ({ players, handleReset }) => {
 
     } else {
       return (
-        <div>
-        <Table className='scoreTable'>
-          <TableHeader
-            className='scoreHeader'
-            displaySelectAll={false}
-            adjustForCheckbox={false}>
-            <TableRow>
-              <TableHeaderColumn>Name</TableHeaderColumn>
-              <TableHeaderColumn>Score</TableHeaderColumn>
-              <TableHeaderColumn>Wins</TableHeaderColumn>
-            </TableRow>
-          </TableHeader>
-            <TableBody
-            className="scoreBoyd"
-            displayRowCheckbox={false}>
+        <div className='container'>
+        <table className='scoreTable'>
+          <tbody>
+            <tr>
+              <th>Name</th>
+              <th>Score</th>
+              <th>Wins</th>
+            </tr>
             {players.map(player => {
-              return (<TableRow key={player.id}>
-                <TableRowColumn>{player.name}</TableRowColumn>
-                <TableRowColumn>{player.score}</TableRowColumn>
-                <TableRowColumn>{player.wins}</TableRowColumn>
-              </TableRow>)
+              return (<tr className='playerRow' key={player.id}>
+                <td>{player.name}</td>
+                <td>{player.score}</td>
+                <td>{player.wins}</td>
+              </tr>)
             })}
-          </TableBody>
-        </Table>
-          <RaisedButton
-            containerElement={<Link to="/addScores" />}
-            label="yaniv!"
-          />
+            </tbody>
+        </table>
+          <Link to='/addScores'><button
+          className='homeButton'
+          >yaniv!</button></Link>
         </div>
       )
     }
