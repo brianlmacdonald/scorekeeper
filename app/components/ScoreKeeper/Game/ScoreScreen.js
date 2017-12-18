@@ -6,6 +6,7 @@ import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowCol
 
 
 const ScoreScreen = ({ players }) => {
+  console.log(players)
     return (
       <div>
       <Table className='scoreTable'>
