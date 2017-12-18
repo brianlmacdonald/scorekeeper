@@ -88,16 +88,14 @@ class Rules extends Component {
     return (
       <div className='container'>
         <div className='spacer' />
-        <h1>rules</h1>
+        <h1 className='leftMargin'>rules</h1>
         <div className='spacer' />
         {this.wins()}
         {this.jokers()}
         {this.bonus()}
-        <RaisedButton
-          className='button'
-          containerElement={<Link to="/players" />}
+        <Link to='/players'><button
+          className='homeButton'
           onClick={() => {
-
             const rules = {
               jokers: this.state.jokers,
               bonus: this.state.bonus,
@@ -105,8 +103,7 @@ class Rules extends Component {
             }
             handleNewGameSubmit(rules)
           }}
-          label="submit"
-        />
+        >submit</button></Link>
       </div>
     )
   }
