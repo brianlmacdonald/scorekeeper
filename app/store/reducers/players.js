@@ -3,6 +3,7 @@ const ADD_PLAYERS = 'ADD_PLAYERS'
 const PLAYER_NAMES = 'PLAYER_NAMES'
 const UPDATE_SCORE = 'UPDATE_SCORE'
 const RESET_CHECKED = 'RESET_CHECKED'
+const LOAD_CONTINUE = 'LOAD_CONTINUE'
 
 export const addPlayersAction = (payload) => ({
   type: ADD_PLAYERS,
@@ -28,7 +29,11 @@ const initialState = []
 
 const players = (state = initialState, action) => {
   const newState = clone(state)
+  console.log(action.payload)
   switch (action.type) {
+
+    case LOAD_CONTINUE:
+    return action.payload.players
 
     case ADD_PLAYERS:
       return action.payload

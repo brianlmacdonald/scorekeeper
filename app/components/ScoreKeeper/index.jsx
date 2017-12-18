@@ -1,13 +1,14 @@
 import React from 'react'
 import { Route, IndexRedirect, IndexRoute, Link } from 'react-router'
+import {loadContinueAction} from '../../store/index.js'
+import {connect} from 'react-redux'
 
 import Rules from './Game/Rules'
 import PlayerScreen from './Game/PlayerScreen'
 import ScoreScreen from './Game/ScoreScreen'
 import AddScoreScreen from './Game/AddScoreScreen'
-import { FlatButton } from 'material-ui'
 
-const Index = ({ children }) => (
+const Index = ({ children, handleContinue }) => (
   <div className='screen'>
     <div className='spacer' />
     <div className='container'>
@@ -15,19 +16,33 @@ const Index = ({ children }) => (
         className='homeButton'>
         create game
       </button>
-      <button
+      <Link to='/scores'><button
+        onClick={(evt) => {
+          handleContinue()
+        }}
         className='homeButton'>
-        all time
-      </button>
-      <a href='/new'><button
+        continue game
+      </button></Link>
+     <Link to='/new'><button
+        onClick={(evt)=>{
+          window.location('/new')
+        }}
         className='homeButton'>
         scorekeeper
-        </button></a>
+        </button></Link>
     </div>
   </div>)
 
+const mapDispatch = (dispatch) => ({
+  handleContinue(){
+    dispatch(loadContinueAction(JSON.parse(localStorage.getItem('game'))))
+  }
+})
+
+const IndexContainer = connect(null, mapDispatch)(Index)
+
 export default <Route path="/game" component={({ children }) => children}>
-  <IndexRoute component={Index} />
+  <IndexRoute component={IndexContainer} />
   <Route path="/new" component={Rules} />
   <Route path="/players" component={PlayerScreen} />
   <Route path="/scores" component={ScoreScreen} />
