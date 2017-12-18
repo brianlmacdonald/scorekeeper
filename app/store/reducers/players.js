@@ -4,6 +4,11 @@ const PLAYER_NAMES = 'PLAYER_NAMES'
 const UPDATE_SCORE = 'UPDATE_SCORE'
 const RESET_CHECKED = 'RESET_CHECKED'
 const LOAD_CONTINUE = 'LOAD_CONTINUE'
+const RESET_SCORES =  'RESET_SCORES'
+
+export const resetScoresAction = () => ({
+  type: RESET_SCORES
+})
 
 export const addPlayersAction = (payload) => ({
   type: ADD_PLAYERS,
@@ -46,6 +51,15 @@ const players = (state = initialState, action) => {
     case UPDATE_SCORE:
     return newState.map(player => {
       return player.id === action.payload.id ? action.payload : player
+    })
+
+    case RESET_SCORES:
+    return newState.map(player => {
+      player.wins = 0
+      player.score = 0
+      player.checked = false
+      player.active = true
+      return player
     })
 
     case RESET_CHECKED:
