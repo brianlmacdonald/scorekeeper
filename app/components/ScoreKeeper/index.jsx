@@ -19,11 +19,11 @@ const Index = ({ children, handleContinue }) => (
       <Link to='/scores'><button
         onClick={handleContinue}
         className='homeButton'>
-        continue scorekeeper
+        continue
       </button></Link>
      <Link to='/new'><button
         className='homeButton'>
-        new scorekeeper
+        new
         </button></Link>
     </div>
   </div>)

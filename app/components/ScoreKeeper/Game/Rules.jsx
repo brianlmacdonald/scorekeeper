@@ -21,13 +21,15 @@ class Rules extends Component {
           <h4>Match points needed to win:</h4>
         <RadioButtonGroup
           defaultSelected={4}
-          className='containerRow'
+          className='radioContainer'
           name="matchPoints"
           onChange={(evt) => this.setState({  matchWins: Number(evt.target.value) })}>
           <RadioButton
+          className="radioButton"
           value={4}
           label="4" />
           <RadioButton
+          className="radioButton"
           value={6}
           label="6"
           />
@@ -44,13 +46,15 @@ class Rules extends Component {
           <h4>Losing Joker Value:</h4>
           <RadioButtonGroup
             defaultSelected={0}
-            className='containerRow'
+            className='radioContainer'
             name="matchPoints"
             onChange={(evt) => this.setState({ jokers: Number(evt.target.value) })}>
             <RadioButton
+              className="radioButton"
               value={0}
               label="0" />
             <RadioButton
+              className="radioButton"
               value={15}
               label="15"
             />
@@ -67,13 +71,15 @@ class Rules extends Component {
           <h4>Bonus on 100, 150, 200:</h4>
           <RadioButtonGroup
             defaultSelected={0}
-            className='containerRow'
+            className='radioContainer'
             name="matchPoints"
             onChange={(evt) => this.setState({ bonus: Number(evt.target.value) })}>
             <RadioButton
+              className="radioButton"
               value={0}
               label="0" />
             <RadioButton
+              className="radioButton"
               value={-50}
               label="-50"
             />
@@ -88,7 +94,7 @@ class Rules extends Component {
     return (
       <div className='container'>
         <div className='spacer' />
-        <h1 className='leftMargin'>rules</h1>
+        <h1 className='rulesHeader'>rules</h1>
         <div className='spacer' />
         {this.wins()}
         {this.jokers()}

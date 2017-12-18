@@ -31,6 +31,7 @@ const ScoreScreen = ({ players, handleReset }) => {
         <div>
         <Table className='scoreTable'>
           <TableHeader
+            className='scoreHeader'
             displaySelectAll={false}
             adjustForCheckbox={false}>
             <TableRow>
@@ -39,7 +40,9 @@ const ScoreScreen = ({ players, handleReset }) => {
               <TableHeaderColumn>Wins</TableHeaderColumn>
             </TableRow>
           </TableHeader>
-            <TableBody displayRowCheckbox={false}>
+            <TableBody
+            className="scoreBoyd"
+            displayRowCheckbox={false}>
             {players.map(player => {
               return (<TableRow key={player.id}>
                 <TableRowColumn>{player.name}</TableRowColumn>
