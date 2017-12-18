@@ -20,7 +20,7 @@ export const WhoAmI = ({user, auth}) =>
       <Login auth={auth} />
       /// ...otherwise, show a logout button.
       : <RaisedButton
-        label='logout'
+        label="logout"
         className="logout"
         onClick={() => auth.signOut()} /> }
   </div>)

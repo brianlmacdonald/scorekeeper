@@ -4,7 +4,6 @@ import { Step, Stepper, StepLabel } from 'material-ui/Stepper';
 import { connect } from 'react-redux'
 import { addPlayersAction, playerNamesAction } from '../../../store'
 import { Link } from 'react-router'
-require('css-loader!../../../styles.css')
 
 import {makePlayers} from './gameFunctions'
 
@@ -13,13 +12,11 @@ class PlayerScreen extends Component {
     super()
     this.state = {
       numberOfPlayers: 2,
-      finished: false,
       stepIndex: 0
     }
     this.handleSelect = this.handleSelect.bind(this)
     this.numberSelect = this.numberSelect.bind(this)
     this.names = this.names.bind(this)
-    this.ready = this.ready.bind(this)
     this.error = this.error.bind(this)
   }
 
@@ -27,7 +24,6 @@ class PlayerScreen extends Component {
     const { stepIndex } = this.state;
     this.setState({
       stepIndex: stepIndex + 1,
-      finished: stepIndex >= 2,
     });
   };
 
@@ -38,19 +34,13 @@ class PlayerScreen extends Component {
     }
   };
 
-  handleSelect(evt, idx, val) {
-    this.setState({numberOfPlayers: val})
+  handleSelect(value) {
+    this.setState({numberOfPlayers: value})
 
-  }
-
-  ready() {
-    return(
-      <p>Got names, time to play</p>
-    )
   }
 
   error() {
-    return(
+    return (
       <p>uh oh.</p>
     )
   }
@@ -61,90 +51,85 @@ class PlayerScreen extends Component {
         return this.numberSelect;
       case 1:
         return this.names;
-      case 2:
-        return this.ready;
       default:
         return this.error;
     }
   }
 
   numberSelect(){
-    return (<div>
-      <SelectField
-        floatingLabelText='number of players'
-        value={this.state.numberOfPlayers}
-        onChange={this.handleSelect}
+    return (<div className='container'>
+      <h1 className='numberOfPlayers'>number of players:</h1>
+      <select
+        className='playerSelect'
+        name="number of players"
+        onChange={(evt) => {
+          const selected = evt.target.value
+          this.handleSelect(selected)
+        }}
         >
-        <MenuItem value={2} primaryText='two' />
-        <MenuItem value={3} primaryText='three' />
-        <MenuItem value={4} primaryText='four' />
-        <MenuItem value={5} primaryText='five' />
-      </SelectField>
+        <option value={2}>two</option>
+        <option value={3}>three</option>
+        <option value={4}>four</option>
+        <option value={5}>five</option>
+      </select>
     </div>)
   }
 
   names(handleNameChange){
-    return (<div id='nameEntry'>
+    return (<div id="nameEntry">
       {this.props.players.length && this.props.players.map(player => {
-        return <TextField
-          key={player.id}
-          hintText={`Player${player.id}'s name?`}
-          onChange={(evt) => {
+        return (<div
+            className='container'
+          key={player.id}>
+          <input
+            className="playerNameField"
+            placeholder={`Player${player.id}'s name?`}
+            onChange={(evt) => {
             player.name = evt.target.value
             handleNameChange(player)
-          }}
-        />
+          }}/></div>)
       })}
     </div>)
   }
 
   render(){
     const {handleReady, handleNameChange} = this.props
-    const {finished, stepIndex} = this.state
-    const contentStyle = { margin: '0 16px' };
-
+    const { stepIndex} = this.state
     return (
       <div style={{ width: '100%', maxWidth: 700, margin: 'auto' }}>
-          <Stepper activeStep={stepIndex}>
+          <Stepper className='stepper' activeStep={stepIndex}>
             <Step>
-              <StepLabel>Number Of Players</StepLabel>
+              <StepLabel className='stepperLabel'>Number Of Players</StepLabel>
             </Step>
             <Step>
-              <StepLabel>Name Players</StepLabel>
-            </Step>
-            <Step>
-              <StepLabel>Go to Score Screen</StepLabel>
+              <StepLabel className='stepperLabel'>Name Players</StepLabel>
             </Step>
           </Stepper>
-          <div style={contentStyle}>
-            {finished ? (
-              <div>
-                <RaisedButton
-                  label='continue'
-                  containerElement={<Link to='/scores' />}
-                />
-              </div>) : (
+          <div className='stepperdiv'>
                 <div>
                   <div>{this.getStepContent(stepIndex)(handleNameChange)}</div>
                   <div style={{ marginTop: 12 }}>
-                    <FlatButton
-                      label="Back"
+                    <button
+                      className="homeButton"
                       disabled={stepIndex === 0}
                       onClick={this.handlePrev}
                       style={{ marginRight: 12 }}
-                    />
-                    <RaisedButton
-                      label={stepIndex === 2 ? 'Finish' : 'Next'}
-                      primary={true}
-                      onClick={() => {
-                        this.handleNext()
-                        if (!stepIndex) handleReady(this.state.numberOfPlayers) 
+                    >back</button>
+                    <button
+                      className='homeButton'
+                      onClick={(evt) => {
+                        evt.preventDefault()
+                        if (!stepIndex) {
+                          handleReady(this.state.numberOfPlayers)
+                          this.handleNext()
+                        } else {
+                          this.props.router.push('/scores')
+                        }
                       }
                       }
-                    />
+                    >{stepIndex === 1 ? 'Finish' : 'Next'}</button>
                   </div>
                 </div>
-              )}
           </div>
         </div>
     )
