@@ -3,43 +3,66 @@ import { connect } from 'react-redux'
 import {RaisedButton} from 'material-ui'
 import {Link} from 'react-router'
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
+import { checkForWinner, checkForLosers } from './gameFunctions'
+import {resetScoresAction} from '../../../store'
 
 
+const ScoreScreen = ({ players, handleReset }) => {
+  console.log(players)
+    checkForLosers(players)
+    const winner = checkForWinner(players)
+    if (winner) {
+      return (
+        <div>
+          <h1>{`${winner.name} wins!`}</h1>
+          <button
+            onClick={(evt) => {
+              evt.preventDefault()
+              handleReset()
+            }}
+          >
+          play again?
+          </button>
+        </div>
+      )
 
-const ScoreScreen = ({ players }) => {
-    return (
-      <div>
-      <Table>
-        <TableHeader 
-          displaySelectAll={false}
-          adjustForCheckbox={false}>
-          <TableRow>
-            <TableHeaderColumn>Name</TableHeaderColumn>
-            <TableHeaderColumn>Score</TableHeaderColumn>
-            <TableHeaderColumn>Wins</TableHeaderColumn>
-          </TableRow>
-        </TableHeader>
-          <TableBody displayRowCheckbox={false}>
-          {players.map(player => {
-            return (<TableRow key={player.id}>
-              <TableRowColumn>{player.name}</TableRowColumn>
-              <TableRowColumn>{player.score}</TableRowColumn>
-              <TableRowColumn>{player.wins}</TableRowColumn>
-            </TableRow>)
-          })}
-        </TableBody>
-      </Table>
-        <RaisedButton
-          containerElement={<Link to='/addScores' />}
-          label='yaniv!'
-        />
-      </div>
-    )
+    } else {
+      return (
+        <div className='container'>
+        <table className='scoreTable'>
+          <tbody>
+            <tr>
+              <th>Name</th>
+              <th>Score</th>
+              <th>Wins</th>
+            </tr>
+            {players.map(player => {
+              return (<tr className='playerRow' key={player.id}>
+                <td>{player.name}</td>
+                <td>{player.score}</td>
+                <td>{player.wins}</td>
+              </tr>)
+            })}
+            </tbody>
+        </table>
+          <Link to='/addScores'><button
+          className='homeButton'
+          >yaniv!</button></Link>
+        </div>
+      )
+    }
 }
 
-const mapStateToProps = (state) => ({
-  players: state.players
+const mapState = (state) => ({
+  players: state.players,
+  rules: state.rules
 })
 
-const ScoreScreenContainer = connect(mapStateToProps)(ScoreScreen)
+const mapDispatch = (dispatch) => ({
+  handleReset(){
+    dispatch(resetScoresAction())
+  }
+})
+
+const ScoreScreenContainer = connect(mapState, mapDispatch)(ScoreScreen)
 export default ScoreScreenContainer;

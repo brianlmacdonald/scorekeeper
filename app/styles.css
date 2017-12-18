@@ -1,8 +1,251 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
 #nameEntry {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
+a {
+  text-decoration: none;
+}
 body {
-  background-color: black;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #eeeeee;
+}
+
+td {
+  text-align: center;
+}
+
+th {
+  background-color: #FFA000;
+}
+
+tr:nth-child(even) td {
+  background-color: rgb(250, 250, 250);
+}
+
+tr:nth-child(odd) td {
+  background-color: rgb(245, 245, 245);
+}
+
+.spacer {
+  padding: 1em;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  background-color: #FFA000;
+}
+
+.leftMargin {
+  margin-left: 2em;
+}
+
+.whoiam > span {
+  margin-top: 1em;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.radioContainer {
+   display: flex;
+}
+
+.rulesHeader {
+  margin-left: 3em;
+}
+
+.rowSpacer {
+  flex-grow: 3;
+}
+
+.homeButton {
+  font-family: "Quicksand", sans-serif;
+  margin: 1em;
+  width: 10em;
+  height: 3em;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1em;
+  font-size: 1em;
+}
+
+.homeButton:hover {
+  background-color: #FFF6E7;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerAddScore {
+  display: flex;
+  flex-direction: column;
+}
+
+.playerSelect {
+  font-size: 3em;
+  background-color: #FAFAFA;
+}
+
+.paperContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  width: 15em;
+  height: 6em;
+  align-items: center;
+  background-color: #FAFAFA;
+}
+
+.containerRow {
+  display: flex;
+}
+
+.stepperDiv {
+    margin: 0 16px;
+}
+
+.radioContainer {
+  display: flex;
+}
+
+.paperName {
+  width: 10em;
+  height: 3em;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.scoreTable {
+  margin-top: 2em;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
+}
+
+.paperH4 {
+  margin: 1em;
+}
+
+.scoreTable {
+  width: 30em;
+}
+
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-width: 667px)
+{
+  body {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .paperName {
+    margin-top: 2vh;
+    font-size: 3em;
+    width: 100vw;
+    height: 10vh;
+  }
+
+  .container {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .scoreTable {
+    width: 100vw;
+  }
+
+  .containerAddScore {
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .rulesHeader {
+    margin-left: 0;
+    align-items: center;
+    font-size: 3em;
+  }
+
+  .paperContainer {
+    width: 60vw;
+    height: 10vh;
+    font-size: 2em;
+  }
+
+  .radioContainer {
+    font-size: 2em;
+  }
+
+  .radioButton {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .homeButton {
+    display: flex;
+    text-decoration: none;
+    font-size: 5em;
+    width: 60vw;
+    height: 10vh;
+    border-radius: .5em;
+  }
+
+  .navBar {
+    font-size: 3em;
+    height: 10vh;
+    width: 100vw;
+  }
+
+  .addContainer {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .addScore {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .stepper {
+    display: none;
+  }
+
+  .playerSelect {
+    font-size: 5em;
+  }
+
+  .numberOfPlayers {
+    font-size: 3em;
+  }
+
+  .playerNameField {
+    font-size: 5em;
+    width: 80vw;
+    height: 10vh;
+  }
+
+  .cardButton {
+    height: 6vh;
+    width: 18vw;
+    font-size: 4em;
+    border-color: #FFA000;
+    border-radius: .5em;
+    margin: .5em;
+  }
+
 }
