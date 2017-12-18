@@ -22,9 +22,7 @@ export const makePlayers = (num) => {
 }
 
 export const calculateScore = (localState) => {
-  console.log(localState)
   const storeState = store.getState()
-  console.log(storeState.rules)
   let score = localState.total
   if (localState.assaf) score += 30
   if (localState.yaniv) {
@@ -37,3 +35,40 @@ export const calculateScore = (localState) => {
   if (!localState.yaniv && localState.jokers) score += localState.jokers * storeState.rules.jokers
   return score
 }
+
+const checkForBonus = (playerObj, bonus) => {
+  if (playerObj.score === 100 || playerObj.score === 150 || playerObj.score === 200) {
+    playerObj.score += bonus
+  }
+}
+
+export const checkForLosers = (playersArray) => {
+  const bonus = store.getState().rules.bonus
+  playersArray.forEach(maybeLoser => {
+    checkForBonus(maybeLoser, bonus)
+    if (maybeLoser.score > 200) {
+      maybeLoser.active = false
+    }
+  })
+}
+
+const matchWinner = (playersArray) => {
+  const storeState = store.getState()
+  const winner = playersArray.find(maybeWinner => maybeWinner.wins === storeState.rules.matchWins)
+  return winner ? winner : false
+}
+
+const attritionWinner = (playersArray) => {
+  const activePlayers = playersArray.filter(maybeWinner => maybeWinner.active === true)
+  return activePlayers
+}
+
+export const checkForWinner = (playersArray) => {
+  const winnerByWins = matchWinner(playersArray)
+  const winnerByAttrition = attritionWinner(playersArray)
+  if (winnerByWins) return winnerByWins
+  if (winnerByAttrition.length === 1) return winnerByAttrition[0]
+  return false
+}
+
+

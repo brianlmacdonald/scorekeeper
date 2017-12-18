@@ -1,12 +1,11 @@
 'use strict'
 import React from 'react'
-import {Router, Route, IndexRedirect, browserHistory} from 'react-router'
+import {Router, Route, IndexRedirect, browserHistory, Link} from 'react-router'
 import {render} from 'react-dom'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import {Provider} from 'react-redux'
 import store from './store/'
-import {AppBar} from 'material-ui'
 
 import style from './styles.css'
 
@@ -55,7 +54,7 @@ const App = ({children}) =>
   (<div>
     <nav
     className='navBar'>
-    <a className='leftMargin' href='/game'><h1>yaniv</h1></a>
+    <Link className='leftMargin' to='/game'><h1>yaniv</h1></Link>
       {/* WhoAmI takes a firebase auth API and renders either a
           greeting and a logout button, or sign in buttons, depending
           on if anyone's logged in */}

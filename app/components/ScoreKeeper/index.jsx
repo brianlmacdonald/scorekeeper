@@ -12,23 +12,18 @@ const Index = ({ children, handleContinue }) => (
   <div className='screen'>
     <div className='spacer' />
     <div className='container'>
-      <button
+      {/*<button
         className='homeButton'>
         create game
-      </button>
+      </button>*/}
       <Link to='/scores'><button
-        onClick={(evt) => {
-          handleContinue()
-        }}
+        onClick={handleContinue}
         className='homeButton'>
-        continue game
+        continue scorekeeper
       </button></Link>
      <Link to='/new'><button
-        onClick={(evt)=>{
-          window.location('/new')
-        }}
         className='homeButton'>
-        scorekeeper
+        new scorekeeper
         </button></Link>
     </div>
   </div>)
