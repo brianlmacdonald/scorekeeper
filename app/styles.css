@@ -34,6 +34,13 @@ body {
   justify-content: center;
 }
 
+.radioContainer {
+   display: flex;
+}
+
+.rulesHeader {
+  margin-left: 3em;
+}
 
 .rowSpacer {
   flex-grow: 3;
@@ -59,6 +66,11 @@ body {
   flex-direction: column;
 }
 
+.containerAddScore {
+  display: flex;
+  flex-direction: column;
+}
+
 .paperContainer {
   display: flex;
   flex-direction: column;
@@ -75,6 +87,10 @@ body {
 
 .stepperDiv {
     margin: 0 16px;
+}
+
+.radioContainer {
+  display: flex;
 }
 
 .paperName {
@@ -97,17 +113,54 @@ body {
 and (min-device-width: 375px) 
 and (max-device-width: 667px)
 {
+  body {
+    align-content: center;
+    justify-content: center;
+  }
+
+  .paperName {
+    margin-top: 2vh;
+    font-size: 3em;
+    width: 100vw;
+    height: 10vh;
+  }
+
+  .container {
+    align-content: center;
+    justify-content: center;
+  }
+
+  .containerAddScore {
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .rulesHeader {
+    margin-left: 0;
+    align-items: center;
+    font-size: 3em;
+  }
 
   .paperContainer {
     width: 60vw;
     height: 10vh;
+    font-size: 2em;
+  }
+
+  .radioContainer {
+    font-size: 2em;
+  }
+
+  .radioButton {
+    margin-left: 1em;
+    margin-right: 1em;
   }
 
   .screen {
     width: 100vw;
     height: 100vh;
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: center;
   }
 
@@ -124,6 +177,37 @@ and (max-device-width: 667px)
     font-size: 3em;
     height: 10vh;
     width: 100vw;
+  }
+
+  .addContainer {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .addScore {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .scoreTable {
+    height: 100vh;
+  }
+
+  .cardButton {
+    height: 6vh;
+    width: 18vw;
+    font-size: 4em;
+    border-color: #FFA000;
+    border-radius: .5em;
+    margin: .5em;
+  }
+  
+  .scoreBody {
+    font-size: 5em;
+  }
+
+  .scoreHeader {
+    font-size: 5em;
   }
 
 }
