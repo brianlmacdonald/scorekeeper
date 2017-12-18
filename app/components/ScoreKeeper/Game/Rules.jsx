@@ -14,22 +14,24 @@ class Rules extends Component {
       matchWins: 4
     }
   }
-  wins(Styles) {
+  wins() {
     return (
       <div>
-        <Paper style={Styles.paperContainer} zDepth={2}>
+        <Paper className='paperContainer' zDepth={2}>
           <h4>Match points needed to win:</h4>
         <RadioButtonGroup
           defaultSelected={4}
-          style={Styles.containerRow}
+          className='radioContainer'
           name="matchPoints"
           onChange={(evt) => this.setState({  matchWins: Number(evt.target.value) })}>
           <RadioButton
-          value={4} 
-          label='4'/>
+          className="radioButton"
+          value={4}
+          label="4" />
           <RadioButton
+          className="radioButton"
           value={6}
-          label='6'
+          label="6"
           />
         </RadioButtonGroup>
         </Paper>
@@ -37,22 +39,24 @@ class Rules extends Component {
     )
   }
 
-  jokers(Styles) {
+  jokers() {
     return (
       <div>
-        <Paper style={Styles.paperContainer} zDepth={2}>
+        <Paper className='paperContainer' zDepth={2}>
           <h4>Losing Joker Value:</h4>
           <RadioButtonGroup
             defaultSelected={0}
-            style={Styles.containerRow}
+            className='radioContainer'
             name="matchPoints"
             onChange={(evt) => this.setState({ jokers: Number(evt.target.value) })}>
             <RadioButton
+              className="radioButton"
               value={0}
-              label='0' />
+              label="0" />
             <RadioButton
+              className="radioButton"
               value={15}
-              label='15'
+              label="15"
             />
           </RadioButtonGroup>
         </Paper>
@@ -60,22 +64,24 @@ class Rules extends Component {
     )
   }
 
-  bonus(Styles) {
+  bonus() {
     return (
       <div>
-        <Paper style={Styles.paperContainer} zDepth={2}>
+        <Paper className='paperContainer' zDepth={2}>
           <h4>Bonus on 100, 150, 200:</h4>
           <RadioButtonGroup
             defaultSelected={0}
-            style={Styles.containerRow}
+            className='radioContainer'
             name="matchPoints"
             onChange={(evt) => this.setState({ bonus: Number(evt.target.value) })}>
             <RadioButton
+              className="radioButton"
               value={0}
-              label='0' />
+              label="0" />
             <RadioButton
+              className="radioButton"
               value={-50}
-              label='-50'
+              label="-50"
             />
           </RadioButtonGroup>
         </Paper>
@@ -84,21 +90,18 @@ class Rules extends Component {
   }
 
   render() {
-    const Styles = this.props.route.style
     const handleNewGameSubmit = this.props.handleNewGameSubmit
     return (
-      <div style={Styles.container}>
-        <div style={Styles.spacer} />
-        <h1>rules</h1>
-        <div style={Styles.spacer} />
-        {this.wins(Styles)}
-        {this.jokers(Styles)}
-        {this.bonus(Styles)}
-        <RaisedButton
-          style={Styles.button}
-          containerElement={<Link to='/players' />}
+      <div className='container'>
+        <div className='spacer' />
+        <h1 className='rulesHeader'>rules</h1>
+        <div className='spacer' />
+        {this.wins()}
+        {this.jokers()}
+        {this.bonus()}
+        <Link to='/players'><button
+          className='homeButton'
           onClick={() => {
-          
             const rules = {
               jokers: this.state.jokers,
               bonus: this.state.bonus,
@@ -106,8 +109,7 @@ class Rules extends Component {
             }
             handleNewGameSubmit(rules)
           }}
-          label='submit'
-        />
+        >submit</button></Link>
       </div>
     )
   }
