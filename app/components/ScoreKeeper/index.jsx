@@ -8,6 +8,8 @@ import PlayerScreen from './Game/PlayerScreen'
 import ScoreScreen from './Game/ScoreScreen'
 import AddScoreScreen from './Game/AddScoreScreen'
 import EditPlayerScreen from './Game/EditPlayerScreen'
+import firebase from 'APP/fire'
+const db = firebase.database()
 
 const Index = ({ children, handleContinue }) => (
   <div className='screen'>
@@ -31,7 +33,19 @@ const Index = ({ children, handleContinue }) => (
 
 const mapDispatch = (dispatch) => ({
   handleContinue(){
-    dispatch(loadContinueAction(JSON.parse(localStorage.getItem('game'))))
+
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        db.ref('users/' + user.uid)
+        .child('game')
+        .on('value', snapshot => {
+          dispatch(loadContinueAction(snapshot.val()))
+        })
+      } else {
+        dispatch(loadContinueAction(JSON.parse(localStorage.getItem('game'))))
+      }
+    });
+    
   }
 })
 

@@ -12,7 +12,6 @@ export * from './reducers'
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     store.subscribe(function () {
-      console.log(user)
       db.ref('users/' + user.uid).set({
         game: store.getState()
       })
