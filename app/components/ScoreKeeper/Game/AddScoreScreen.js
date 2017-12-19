@@ -38,7 +38,7 @@ class AddScore extends Component {
       onClick={(evt) => {
         evt.preventDefault()
         this.setState({assaf: !this.state.assaf})}}
-      >asaf</button>
+      >asaf'd</button>
     )
   }
 
@@ -117,13 +117,12 @@ class AddScore extends Component {
           </div>
       </div>)
     } else {
-      return (<RaisedButton
-              label="back to scores"
+      return (<Link to='/scores'><button
+              className='homeButton'
               onClick={() => {
                 handleBackToScores()
               }}
-              containerElement={<Link to="/scores" />}
-              />)
+              >back to score</button></Link>)
     }
   }
 }

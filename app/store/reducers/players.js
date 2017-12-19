@@ -34,7 +34,6 @@ const initialState = []
 
 const players = (state = initialState, action) => {
   const newState = clone(state)
-  console.log(action.payload)
   switch (action.type) {
 
     case LOAD_CONTINUE:
