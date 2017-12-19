@@ -1,7 +1,6 @@
 import React from 'react'
 import firebase from 'APP/fire'
 const auth = firebase.auth()
-import {RaisedButton} from 'material-ui'
 
 import Login from './Login'
 

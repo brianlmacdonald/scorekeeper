@@ -96,7 +96,6 @@ class Rules extends Component {
 
   render() {
     const handleNewGameSubmit = this.props.handleNewGameSubmit
-    console.log(this.state)
     return (
       <div className='container'>
         <div className='spacer' />
