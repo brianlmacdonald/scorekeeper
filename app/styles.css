@@ -77,12 +77,13 @@ tr:nth-child(odd) td {
   background-color: #FFF6E7;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
+.playerNameField {
+  font-size: 5em;
+  width: 75vw;
+  height: 8vh;
 }
 
-.containerAddScore {
+.container {
   display: flex;
   flex-direction: column;
 }
@@ -114,8 +115,17 @@ tr:nth-child(odd) td {
   display: flex;
 }
 
+.containerAddScore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .paperName {
-  width: 10em;
+  margin-top: 2vh;
+  font-size: 3em;
+  width: 100vw;
   height: 3em;
   display: flex;
   align-content: center;
@@ -131,6 +141,15 @@ tr:nth-child(odd) td {
 
 .paperH4 {
   margin: 1em;
+}
+
+.cardButton {
+  height: 6vh;
+  width: 18vw;
+  font-size: 2em;
+  border-color: #FFA000;
+  border-radius: .5em;
+  margin: .5em;
 }
 
 .scoreTable {
@@ -161,11 +180,6 @@ and (max-device-width: 667px)
   .scoreTable {
     width: 100vw;
   }
-
-  .containerAddScore {
-    align-items: center;
-    justify-content: center;
-  }
   
   .rulesHeader {
     margin-left: 0;
@@ -180,12 +194,12 @@ and (max-device-width: 667px)
   }
 
   .radioContainer {
-    font-size: 2em;
+    font-size: 1em;
   }
 
   .radioButton {
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: .25em;
+    margin-right: .25em;
   }
 
   .screen {
@@ -242,7 +256,7 @@ and (max-device-width: 667px)
   .cardButton {
     height: 6vh;
     width: 18vw;
-    font-size: 4em;
+    font-size: 2em;
     border-color: #FFA000;
     border-radius: .5em;
     margin: .5em;

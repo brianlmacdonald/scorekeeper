@@ -1,5 +1,7 @@
 {
   "projects": {
-    "Scorekeeper": "scorekeeper-4cdf0"
+    "Scorekeeper": "scorekeeper-4cdf0",
+    "initial": "scorekeeper-4cdf0",
+    "default": "scorekeeper-4cdf0"
   }
 }
