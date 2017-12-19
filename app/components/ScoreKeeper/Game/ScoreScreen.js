@@ -8,7 +8,6 @@ import {resetScoresAction} from '../../../store'
 
 
 const ScoreScreen = ({ players, handleReset }) => {
-  console.log(players)
     checkForLosers(players)
     const winner = checkForWinner(players)
     if (winner) {
