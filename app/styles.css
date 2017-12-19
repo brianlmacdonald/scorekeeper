@@ -29,6 +29,22 @@ tr:nth-child(odd) td {
   background-color: rgb(245, 245, 245);
 }
 
+.googleLogin {
+  background-color: #eeeeee;
+  height: 3em;
+  width: 8em;
+  margin-left: 2em;
+  margin-top: 1em;
+}
+
+.logout {
+  background-color: #eeeeee;
+  height: 3em;
+  width: 8em;
+  margin-left: 2em;
+  margin-top: 1em;
+}
+
 .spacer {
   padding: 1em;
 }
@@ -173,6 +189,14 @@ and (max-device-width: 667px)
     justify-content: center;
   }
 
+  .googleLogin {
+    font-size: .5em;
+  }
+
+  .logout {
+    font-size: .5em;
+  }
+
   .editInput {
     font-size: 4em;
     width: 50vw;
@@ -216,8 +240,8 @@ and (max-device-width: 667px)
   }
 
   .radioButton {
-    margin-left: .25em;
-    margin-right: .25em;
+    height: 3em;
+    width: 3em;
   }
 
   .screen {
