@@ -19,7 +19,7 @@ describe('<Login />', () => {
   })
 
   it('logs in with google', () => {
-    const button = root.find('FlatButton.google.login')
+    const button = root.find('button.googleLogin')
     expect(button).to.have.length(1)
     button.simulate('click')
     expect(fakeAuth.signInWithPopup).to.have.been.calledWithMatch({providerId: 'google.com'})

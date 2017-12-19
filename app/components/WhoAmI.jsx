@@ -19,10 +19,9 @@ export const WhoAmI = ({user, auth}) =>
       // ...then show signin links...
       <Login auth={auth} />
       /// ...otherwise, show a logout button.
-      : <RaisedButton
-        label="logout"
+      : <button
         className="logout"
-        onClick={() => auth.signOut()} /> }
+        onClick={() => auth.signOut()}>logout</button> }
   </div>)
 
 export default class extends React.Component {
