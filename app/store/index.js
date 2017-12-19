@@ -9,5 +9,6 @@ export * from './reducers'
 
 
 store.subscribe(function(){
+  console.log('grabbing something')
   localStorage.setItem('game', JSON.stringify(store.getState()))
 })

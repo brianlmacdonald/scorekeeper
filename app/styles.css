@@ -83,6 +83,14 @@ tr:nth-child(odd) td {
   height: 8vh;
 }
 
+.editInput {
+  font-size: 3em;
+}
+
+.editLabel {
+  font-size: 3em;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -163,6 +171,16 @@ and (max-device-width: 667px)
   body {
     align-items: center;
     justify-content: center;
+  }
+
+  .editInput {
+    font-size: 4em;
+    width: 50vw;
+    height: 10vh;
+  }
+
+  .editLabel {
+    font-size: 4em;
   }
 
   .paperName {
