@@ -23,9 +23,7 @@ class EditPlayer extends Component {
   }
 
   render(){
-    console.log(this)
     const {handleSave, players} = this.props
-    console.log(this.state)
     const player = players.find(person => {
       return person.id === Number(this.props.params.playerId)
     })
@@ -57,7 +55,6 @@ class EditPlayer extends Component {
                 onClick={() => {
                 player.score = this.state.score
                 player.wins = this.state.wins
-                console.log(player)
                 handleSave(player)
               }}>save</button>
             </Link>
