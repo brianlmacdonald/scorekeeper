@@ -7,6 +7,7 @@ import Rules from './Game/Rules'
 import PlayerScreen from './Game/PlayerScreen'
 import ScoreScreen from './Game/ScoreScreen'
 import AddScoreScreen from './Game/AddScoreScreen'
+import EditPlayerScreen from './Game/EditPlayerScreen'
 
 const Index = ({ children, handleContinue }) => (
   <div className='screen'>
@@ -42,4 +43,5 @@ export default <Route path="/game" component={({ children }) => children}>
   <Route path="/players" component={PlayerScreen} />
   <Route path="/scores" component={ScoreScreen} />
   <Route path="/addScores" component={AddScoreScreen} />
+  <Route path="/edit/:playerId" component={EditPlayerScreen} />
 </Route>

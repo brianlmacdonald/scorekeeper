@@ -15,6 +15,7 @@ const ScoreScreen = ({ players, handleReset }) => {
         <div>
           <h1>{`${winner.name} wins!`}</h1>
           <button
+            className='homeButton'
             onClick={(evt) => {
               evt.preventDefault()
               handleReset()
@@ -36,8 +37,8 @@ const ScoreScreen = ({ players, handleReset }) => {
               <th>Wins</th>
             </tr>
             {players.map(player => {
-              return (<tr className='playerRow' key={player.id}>
-                <td>{player.name}</td>
+                return (<tr className='playerRow' key={player.id}>
+                <td><Link to={`/edit/${player.id}`}>{player.name}</Link></td>
                 <td>{player.score}</td>
                 <td>{player.wins}</td>
               </tr>)
