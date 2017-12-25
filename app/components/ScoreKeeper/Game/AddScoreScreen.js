@@ -70,6 +70,8 @@ class AddScore extends Component {
           <Paper className='paperName'>
             <h4 className='paperH4'>{currentPlayer.name}</h4>
             <h4 className='paperH4'>{this.state.total}</h4>
+            <h4 className='paperH4'>{`\uD83C\uDCCF`.repeat(this.state.jokers)}</h4>
+            <h4 className='paperH4'>{this.state.yaniv ? 'winner' : 'loser'}</h4>
           </Paper>
           <div className='addContainer'>
             {this.cardKey({name: 'K', value: 10})}
@@ -122,7 +124,7 @@ class AddScore extends Component {
               onClick={() => {
                 handleBackToScores()
               }}
-              >back to score</button></Link>)
+              >scores</button></Link>)
     }
   }
 }

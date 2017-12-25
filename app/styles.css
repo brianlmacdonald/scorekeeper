@@ -53,6 +53,7 @@ tr:nth-child(odd) td {
   display: flex;
   flex-direction: row;
   background-color: #FFA000;
+  width: 80vw;
 }
 
 .leftMargin {
@@ -95,7 +96,7 @@ tr:nth-child(odd) td {
 
 .playerNameField {
   font-size: 5em;
-  width: 75vw;
+  width: 55vw;
   height: 8vh;
 }
 
@@ -144,12 +145,13 @@ tr:nth-child(odd) td {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 80vw;
 }
 
 .paperName {
   margin-top: 2vh;
   font-size: 3em;
-  width: 100vw;
+  width: 60vw;
   height: 3em;
   display: flex;
   align-content: center;
@@ -161,23 +163,21 @@ tr:nth-child(odd) td {
   align-items: center;
   justify-content: center;
   font-size: 3em;
+  width: 80vw;
 }
 
 .paperH4 {
   margin: 1em;
+  font-size: .75em;
 }
 
 .cardButton {
   height: 6vh;
-  width: 18vw;
+  width: 12vw;
   font-size: 2em;
   border-color: #FFA000;
   border-radius: .5em;
   margin: .5em;
-}
-
-.scoreTable {
-  width: 30em;
 }
 
 @media only screen 
@@ -187,6 +187,10 @@ and (max-device-width: 667px)
   body {
     align-items: center;
     justify-content: center;
+  }
+
+  .navBar {
+    width: 100vw;
   }
 
   .googleLogin {
@@ -210,7 +214,7 @@ and (max-device-width: 667px)
   .paperName {
     margin-top: 2vh;
     font-size: 3em;
-    width: 100vw;
+    width: 80vw;
     height: 10vh;
   }
 
@@ -291,7 +295,7 @@ and (max-device-width: 667px)
 
   .playerNameField {
     font-size: 5em;
-    width: 80vw;
+    width: 60vw;
     height: 10vh;
   }
 
@@ -301,7 +305,7 @@ and (max-device-width: 667px)
     font-size: 2em;
     border-color: #FFA000;
     border-radius: .5em;
-    margin: .5em;
+    margin: .25em;
   }
 
 }
