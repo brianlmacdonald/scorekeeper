@@ -15,11 +15,11 @@ class EditPlayer extends Component {
   }
 
   handleScore(value){
-    this.setState({score: value})
+    this.setState({score: Number(value)})
   }
 
   handleWins(value){
-    this.setState({wins: value})
+    this.setState({wins: Number(value)})
   }
 
   render(){
