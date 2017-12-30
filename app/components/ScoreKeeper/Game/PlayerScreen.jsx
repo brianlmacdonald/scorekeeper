@@ -83,7 +83,7 @@ class PlayerScreen extends Component {
           key={player.id}>
           <input
             className="playerNameField"
-            placeholder={`Player${player.id}'s name?`}
+            placeholder={`Player ${player.id}'s name?`}
             onChange={(evt) => {
             player.name = evt.target.value
             handleNameChange(player)
@@ -96,7 +96,8 @@ class PlayerScreen extends Component {
     const {handleReady, handleNameChange} = this.props
     const { stepIndex} = this.state
     return (
-      <div style={{ width: '100%', maxWidth: 700, margin: 'auto' }}>
+      <div className='stepperContainer'>
+          <div className='stepper'>
           <Stepper className='stepper' activeStep={stepIndex}>
             <Step>
               <StepLabel className='stepperLabel'>Number Of Players</StepLabel>
@@ -105,6 +106,7 @@ class PlayerScreen extends Component {
               <StepLabel className='stepperLabel'>Name Players</StepLabel>
             </Step>
           </Stepper>
+          </div>
           <div className='stepperdiv'>
                 <div>
                   <div>{this.getStepContent(stepIndex)(handleNameChange)}</div>
