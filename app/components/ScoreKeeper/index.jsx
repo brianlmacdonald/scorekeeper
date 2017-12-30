@@ -11,6 +11,20 @@ import EditPlayerScreen from './Game/EditPlayerScreen'
 import firebase from 'APP/fire'
 const db = firebase.database()
 
+let gameState = null
+
+firebase.auth().onAuthStateChanged(function (user) {
+  if (user) {
+    db.ref('users/' + user.uid)
+      .child('game')
+      .on('value', snapshot => {
+        gameState = snapshot.val()
+      })
+  } else {
+    gameState = JSON.parse(localStorage.getItem('game'))
+  }
+});
+
 const Index = ({ children, handleContinue }) => (
   <div className='screen'>
     <div className='spacer' />
@@ -19,7 +33,8 @@ const Index = ({ children, handleContinue }) => (
         className='homeButton'>
         create game
       </button>*/}
-      <Link to='/scores'><button
+      <Link
+      to={gameState ? '/scores' : '/new'}><button
         onClick={handleContinue}
         className='homeButton'>
         continue
@@ -33,19 +48,7 @@ const Index = ({ children, handleContinue }) => (
 
 const mapDispatch = (dispatch) => ({
   handleContinue(){
-
-    firebase.auth().onAuthStateChanged(function (user) {
-      if (user) {
-        db.ref('users/' + user.uid)
-        .child('game')
-        .on('value', snapshot => {
-          dispatch(loadContinueAction(snapshot.val()))
-        })
-      } else {
-        dispatch(loadContinueAction(JSON.parse(localStorage.getItem('game'))))
-      }
-    });
-    
+    dispatch(loadContinueAction(gameState))
   }
 })
 
