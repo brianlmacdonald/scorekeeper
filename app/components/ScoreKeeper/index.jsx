@@ -11,21 +11,9 @@ import EditPlayerScreen from './Game/EditPlayerScreen'
 import firebase from 'APP/fire'
 const db = firebase.database()
 
-let gameState = null
+let gameState;
 
-firebase.auth().onAuthStateChanged(function (user) {
-  if (user) {
-    db.ref('users/' + user.uid)
-      .child('game')
-      .on('value', snapshot => {
-        gameState = snapshot.val()
-      })
-  } else {
-    gameState = JSON.parse(localStorage.getItem('game'))
-  }
-});
-
-const Index = ({ children, handleContinue }) => (
+const Index = ({ children, handleContinue, checkGameState }) => (
   <div className='screen'>
     <div className='spacer' />
     <div className='container'>
@@ -34,7 +22,7 @@ const Index = ({ children, handleContinue }) => (
         create game
       </button>*/}
       <Link
-      to={gameState ? '/scores' : '/new'}><button
+      to={checkGameState}><button
         onClick={handleContinue}
         className='homeButton'>
         continue
@@ -48,7 +36,21 @@ const Index = ({ children, handleContinue }) => (
 
 const mapDispatch = (dispatch) => ({
   handleContinue(){
-    dispatch(loadContinueAction(gameState))
+    gameState ? dispatch(loadContinueAction(gameState)) : console.log('no game found')
+  },
+  checkGameState(){
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        db.ref('users/' + user.uid)
+          .child('game')
+          .on('value', snapshot => {
+            gameState = snapshot.val()
+          })
+      } else {
+        gameState = JSON.parse(localStorage.getItem('game'))
+      }
+    });
+    return gameState ? '/scores' : '/new'
   }
 })
 
