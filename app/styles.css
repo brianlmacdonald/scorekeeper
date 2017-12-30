@@ -95,8 +95,8 @@ tr:nth-child(odd) td {
 }
 
 .playerNameField {
-  font-size: 5em;
-  width: 55vw;
+  font-size: 2em;
+  width: 40vw;
   height: 8vh;
 }
 
@@ -114,7 +114,8 @@ tr:nth-child(odd) td {
 }
 
 .playerSelect {
-  font-size: 3em;
+  width: 50vw;
+  font-size: 2em;
   background-color: #FAFAFA;
 }
 
@@ -130,6 +131,11 @@ tr:nth-child(odd) td {
 
 .containerRow {
   display: flex;
+}
+
+.stepperContainer {
+  width: 55vw;
+  margin: auto;
 }
 
 .stepperDiv {
