@@ -9,20 +9,20 @@ import AddScoreScreen from './Game/AddScoreScreen'
 import EditPlayerScreen from './Game/EditPlayerScreen'
 
 const Index = ({ children, players }) => (
-  <div className='screen'>
-    <div className='spacer' />
-    <div className='container'>
+  <div className="screen">
+    <div className="spacer" />
+    <div className="container">
       {/*<button
         className='homeButton'>
         create game
       </button>*/}
       {players.length && <Link
-      to='/rules'><button
-        className='homeButton'>
+      to="/scores"><button
+        className="homeButton">
         continue
       </button></Link>}
-     <Link to='/new'><button
-        className='homeButton'>
+     <Link to="/new"><button
+        className="homeButton">
         new
         </button></Link>
     </div>

@@ -56,10 +56,10 @@ class PlayerScreen extends Component {
   }
 
   numberSelect(){
-    return (<div className='container'>
-      <h1 className='numberOfPlayers'>number of players:</h1>
+    return (<div className="container">
+      <h1 className="numberOfPlayers">number of players:</h1>
       <select
-        className='playerSelect'
+        className="playerSelect"
         name="number of players"
         onChange={(evt) => {
           const selected = evt.target.value
@@ -78,7 +78,7 @@ class PlayerScreen extends Component {
     return (<div id="nameEntry">
       {this.props.players.length && this.props.players.map(player => {
         return (<div
-            className='container'
+            className="container"
           key={player.id}>
           <input
             className="playerNameField"
@@ -86,7 +86,7 @@ class PlayerScreen extends Component {
             onChange={(evt) => {
             player.name = evt.target.value
             handleNameChange(player)
-          }}/></div>)
+          }} /></div>)
       })}
     </div>)
   }
@@ -95,18 +95,18 @@ class PlayerScreen extends Component {
     const {handleReady, handleNameChange} = this.props
     const { stepIndex} = this.state
     return (
-      <div className='stepperContainer'>
-          <div className='stepper'>
-          <Stepper className='stepper' activeStep={stepIndex}>
+      <div className="stepperContainer">
+          <div className="stepper">
+          <Stepper className="stepper" activeStep={stepIndex}>
             <Step>
-              <StepLabel className='stepperLabel'>Number Of Players</StepLabel>
+              <StepLabel className="stepperLabel">Number Of Players</StepLabel>
             </Step>
             <Step>
-              <StepLabel className='stepperLabel'>Name Players</StepLabel>
+              <StepLabel className="stepperLabel">Name Players</StepLabel>
             </Step>
           </Stepper>
           </div>
-          <div className='stepperdiv'>
+          <div className="stepperdiv">
                 <div>
                   <div>{this.getStepContent(stepIndex)(handleNameChange)}</div>
                   <div style={{ marginTop: 12 }}>
@@ -117,7 +117,7 @@ class PlayerScreen extends Component {
                       style={{ marginRight: 12 }}
                     >back</button>
                     <button
-                      className='homeButton'
+                      className="homeButton"
                       onClick={(evt) => {
                         evt.preventDefault()
                         if (!stepIndex) {
