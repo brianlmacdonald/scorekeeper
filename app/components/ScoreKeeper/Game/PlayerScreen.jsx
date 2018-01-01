@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { TextField, RaisedButton, SelectField, MenuItem, FlatButton} from 'material-ui'
 import { Step, Stepper, StepLabel } from 'material-ui/Stepper';
 import { connect } from 'react-redux'
 import { addPlayersAction, playerNamesAction } from '../../../store'
