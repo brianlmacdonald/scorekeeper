@@ -1,6 +1,5 @@
 import React from 'react'
 import { Route, IndexRedirect, IndexRoute, Link } from 'react-router'
-import {loadContinueAction} from '../../store/index.js'
 import {connect} from 'react-redux'
 
 import Rules from './Game/Rules'
@@ -8,53 +7,32 @@ import PlayerScreen from './Game/PlayerScreen'
 import ScoreScreen from './Game/ScoreScreen'
 import AddScoreScreen from './Game/AddScoreScreen'
 import EditPlayerScreen from './Game/EditPlayerScreen'
-import firebase from 'APP/fire'
-const db = firebase.database()
 
-let gameState;
-
-const Index = ({ children, handleContinue, checkGameState }) => (
-  <div className='screen'>
-    <div className='spacer' />
-    <div className='container'>
+const Index = ({ children, players }) => (
+  <div className="screen">
+    <div className="spacer" />
+    <div className="container">
       {/*<button
         className='homeButton'>
         create game
       </button>*/}
-      <Link
-      to={checkGameState}><button
-        onClick={handleContinue}
-        className='homeButton'>
+      {players.length && <Link
+      to="/scores"><button
+        className="homeButton">
         continue
-      </button></Link>
-     <Link to='/new'><button
-        className='homeButton'>
+      </button></Link>}
+     <Link to="/new"><button
+        className="homeButton">
         new
         </button></Link>
     </div>
   </div>)
 
-const mapDispatch = (dispatch) => ({
-  handleContinue(){
-    gameState ? dispatch(loadContinueAction(gameState)) : console.log('no game found')
-  },
-  checkGameState(){
-    firebase.auth().onAuthStateChanged(function (user) {
-      if (user) {
-        db.ref('users/' + user.uid)
-          .child('game')
-          .on('value', snapshot => {
-            gameState = snapshot.val()
-          })
-      } else {
-        gameState = JSON.parse(localStorage.getItem('game'))
-      }
-    });
-    return gameState ? '/scores' : '/new'
-  }
+const mapState = (state) => ({
+  players: state.players
 })
 
-const IndexContainer = connect(null, mapDispatch)(Index)
+const IndexContainer = connect(mapState)(Index)
 
 export default <Route path="/game" component={({ children }) => children}>
   <IndexRoute component={IndexContainer} />

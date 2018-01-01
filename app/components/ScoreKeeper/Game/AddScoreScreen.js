@@ -20,7 +20,8 @@ class AddScore extends Component {
 
   cardKey(card){
     return (
-      <button className='cardButton'
+      <button
+className="cardButton"
       onClick={(evt) => {
         evt.preventDefault()
         if (card.name === `\uD83C\uDCCF` && this.state.jokers < 2) this.setState({jokers: this.state.jokers + 1})
@@ -33,7 +34,7 @@ class AddScore extends Component {
   assaf(){
     return (
       <button
-      className='cardButton'
+      className="cardButton"
       disabled={this.state.yaniv}
       onClick={(evt) => {
         evt.preventDefault()
@@ -45,7 +46,7 @@ class AddScore extends Component {
   yaniv() {
     return (
       <button
-        className='cardButton'
+        className="cardButton"
         disabled={this.state.assaf}
         onClick={(evt) => {
           evt.preventDefault()
@@ -66,47 +67,47 @@ class AddScore extends Component {
     const currentPlayer = players.find(player => !player.checked)
     if (currentPlayer) {
       return (
-        <div className='containerAddScore'>
-          <Paper className='paperName'>
-            <h4 className='paperH4'>{currentPlayer.name}</h4>
-            <h4 className='paperH4'>{this.state.total}</h4>
-            <h4 className='paperH4'>{`\uD83C\uDCCF`.repeat(this.state.jokers)}</h4>
-            <h4 className='paperH4'>{this.state.yaniv ? 'winner' : 'loser'}</h4>
+        <div className="containerAddScore">
+          <Paper className="paperName">
+            <h4 className="paperH4">{currentPlayer.name}</h4>
+            <h4 className="paperH4">{this.state.total}</h4>
+            <h4 className="paperH4">{`\uD83C\uDCCF`.repeat(this.state.jokers)}</h4>
+            <h4 className="paperH4">{this.state.yaniv ? 'winner' : 'loser'}</h4>
           </Paper>
-          <div className='addContainer'>
+          <div className="addContainer">
             {this.cardKey({name: 'K', value: 10})}
             {this.cardKey({name: 'Q', value: 10})}
             {this.cardKey({name: 'J', value: 10})}
             {this.cardKey({name: '10', value: 10})}
           </div>
-          <div className='addContainer'>
+          <div className="addContainer">
             {this.cardKey({name: '9', value: 9})}
             {this.cardKey({name: '8', value: 8})}
             {this.cardKey({name: '7', value: 7})}
             {this.cardKey({name: '6', value: 6})}
           </div>
-          <div className='addContainer'>
+          <div className="addContainer">
             {this.cardKey({name: '5', value: 5})}
             {this.cardKey({name: '4', value: 4})}
             {this.cardKey({name: '3', value: 3})}
             {this.cardKey({name: '2', value: 2})}
           </div>
-          <div className='addContainer'>
+          <div className="addContainer">
             {this.assaf()}
             {this.cardKey({ name: 'A', value: 1 })}
             {this.cardKey({ name: `\uD83C\uDCCF`, value: 0 })}
             {this.yaniv(currentPlayer)}
           </div>
-          <div className='addContainer'>
+          <div className="addContainer">
           <button
-          className='cardButton'
-          onClick={(evt)=> {
+          className="cardButton"
+          onClick={(evt) => {
             evt.preventDefault()
             this.reset()
           }}
           >reset</button>
           <button
-          className='cardButton'
+          className="cardButton"
           onClick={(evt) => {
             evt.preventDefault()
             if (this.state.yaniv) currentPlayer.wins++
@@ -119,8 +120,8 @@ class AddScore extends Component {
           </div>
       </div>)
     } else {
-      return (<Link to='/scores'><button
-              className='homeButton'
+      return (<Link to="/scores"><button
+              className="homeButton"
               onClick={() => {
                 handleBackToScores()
               }}

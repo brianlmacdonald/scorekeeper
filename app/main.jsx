@@ -53,12 +53,12 @@ const muiTheme = getMuiTheme({
 const App = ({children}) =>
   (<div>
     <nav
-    className='navBar'>
-    <Link className='leftMargin' to='/game'><h1>yaniv</h1></Link>
+    className="navBar">
+    <Link className="leftMargin" to="/game"><h1>yaniv</h1></Link>
       {/* WhoAmI takes a firebase auth API and renders either a
           greeting and a logout button, or sign in buttons, depending
           on if anyone's logged in */}
-      <div className='rowSpacer'/>
+      <div className="rowSpacer" />
       <WhoAmI auth={auth} />
     </nav>
     {/* Render our children (whatever the router gives us) */}
@@ -84,5 +84,4 @@ render(
     </Provider>,
   document.getElementById('main')
 )
-
 
