@@ -29,6 +29,16 @@ tr:nth-child(odd) td {
   background-color: rgb(245, 245, 245);
 }
 
+.imageHolder {
+  margin-top: 1em;
+}
+
+.screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .googleLogin {
   background-color: #eeeeee;
   height: 3em;
@@ -53,7 +63,7 @@ tr:nth-child(odd) td {
   display: flex;
   flex-direction: row;
   background-color: #FFA000;
-  width: 80vw;
+  width: 98vw;
 }
 
 .leftMargin {
@@ -72,7 +82,7 @@ tr:nth-child(odd) td {
 }
 
 .rulesHeader {
-  margin-left: 3em;
+
 }
 
 .rowSpacer {
@@ -98,6 +108,7 @@ tr:nth-child(odd) td {
   font-size: 2em;
   width: 40vw;
   height: 8vh;
+  margin-top: 1em;
 }
 
 .editInput {
@@ -111,6 +122,8 @@ tr:nth-child(odd) td {
 .container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .playerSelect {
@@ -136,10 +149,7 @@ tr:nth-child(odd) td {
 .stepperContainer {
   width: 55vw;
   margin: auto;
-}
-
-.stepperDiv {
-    margin: 0 16px;
+  margin-top: 10vh;
 }
 
 .radioContainer {
@@ -165,6 +175,7 @@ tr:nth-child(odd) td {
 }
 
 .scoreTable {
+  margin: auto;
   margin-top: 2em;
   align-items: center;
   justify-content: center;
@@ -172,9 +183,34 @@ tr:nth-child(odd) td {
   width: 80vw;
 }
 
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .paperH4 {
   margin: 1em;
   font-size: .75em;
+}
+
+.stepperButtonContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepperButton {
+  font-family: 'Quicksand',
+  sans-serif;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+  width: 10em;
+  height: 3em;
+  border-radius: 1em;
+  font-size: 1em;
 }
 
 .cardButton {
@@ -193,6 +229,26 @@ and (max-device-width: 667px)
   body {
     align-items: center;
     justify-content: center;
+  }
+
+  .containerAddScore {
+    margin: auto;
+    margin-top: 4em;
+  }
+
+  .stepperButtonContainer {
+    margin-top: 1em;
+    flex-direction: column;
+  }
+
+  .stepperButton {
+    display: flex;
+    text-decoration: none;
+    font-size: 5em;
+    width: 60vw;
+    height: 10vh;
+    border-radius: .25em;
+    margin: .5em;
   }
 
   .navBar {
@@ -229,19 +285,41 @@ and (max-device-width: 667px)
     justify-content: center;
   }
 
+  .imageHolder {
+    margin: .5em;
+  }
+
+  .homeImage {
+    margin: .5em;
+    width: 98vw;
+    height: auto;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+  }
+
   .scoreTable {
     width: 100vw;
   }
   
   .rulesHeader {
-    margin-left: 0;
     align-items: center;
     font-size: 3em;
   }
 
+  .scoreTable {
+    margin-top: 3em;
+  }
+
+  .mobileCell {
+    height: 10vh;
+    font-size: 2em;
+  }
+
   .paperContainer {
     width: 60vw;
-    height: 10vh;
+    height: 12vh;
     font-size: 2em;
   }
 
@@ -257,9 +335,6 @@ and (max-device-width: 667px)
   .screen {
     width: 100vw;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .homeButton {
@@ -303,6 +378,8 @@ and (max-device-width: 667px)
     font-size: 5em;
     width: 60vw;
     height: 10vh;
+    margin-top: .5em;
+    border: 1px solid #FFA000;
   }
 
   .cardButton {

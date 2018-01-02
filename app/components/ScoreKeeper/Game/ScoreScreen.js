@@ -13,7 +13,7 @@ const ScoreScreen = ({ players, handleReset }) => {
     if (winner) {
       return (
         <div>
-          <h1>{`${winner.name} wins!`}</h1>
+          <h1 className='winnerH1'>{`${winner.name} wins!`}</h1>
           <button
             className="homeButton"
             onClick={(evt) => {
@@ -21,7 +21,7 @@ const ScoreScreen = ({ players, handleReset }) => {
               handleReset()
             }}
           >
-          play again?
+          reset?
           </button>
         </div>
       )
@@ -38,16 +38,18 @@ const ScoreScreen = ({ players, handleReset }) => {
             </tr>
             {players.map(player => {
                 return (<tr className="playerRow" key={player.id}>
-                <td><Link to={`/edit/${player.id}`}>{player.name}</Link></td>
-                <td>{player.score}</td>
-                <td>{player.wins}</td>
+                <td className='mobileCell'><Link to={`/edit/${player.id}`}>{player.name}</Link></td>
+                <td className='mobileCell'>{player.score}</td>
+                <td className='mobileCell'>{player.wins}</td>
               </tr>)
             })}
             </tbody>
         </table>
+        <div className='buttonContainer'>
           <Link to="/addScores"><button
           className="homeButton"
           >yaniv!</button></Link>
+        </div>
         </div>
       )
     }
