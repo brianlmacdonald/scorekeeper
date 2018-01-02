@@ -75,10 +75,10 @@ class PlayerScreen extends Component {
   }
 
   names(handleNameChange){
-    return (<div id="nameEntry">
+    return (<div className="container">
       {this.props.players.length && this.props.players.map(player => {
         return (<div
-            className="container"
+          className='container'
           key={player.id}>
           <input
             className="playerNameField"
@@ -102,22 +102,21 @@ class PlayerScreen extends Component {
               <StepLabel className="stepperLabel">Number Of Players</StepLabel>
             </Step>
             <Step>
-              <StepLabel className="stepperLabel">Name Players</StepLabel>
+              <StepLabel className="stepperLabel">Names</StepLabel>
             </Step>
           </Stepper>
           </div>
-          <div className="stepperdiv">
+          <div className="container">
                 <div>
                   <div>{this.getStepContent(stepIndex)(handleNameChange)}</div>
-                  <div style={{ marginTop: 12 }}>
+                  <div className='stepperButtonContainer'>
                     <button
-                      className="homeButton"
+                      className="stepperButton"
                       disabled={stepIndex === 0}
                       onClick={this.handlePrev}
-                      style={{ marginRight: 12 }}
                     >back</button>
                     <button
-                      className="homeButton"
+                      className="stepperButton"
                       onClick={(evt) => {
                         evt.preventDefault()
                         if (!stepIndex) {
@@ -128,7 +127,7 @@ class PlayerScreen extends Component {
                         }
                       }
                       }
-                    >{stepIndex === 1 ? 'Finish' : 'Next'}</button>
+                    >{stepIndex === 1 ? 'finish' : 'next'}</button>
                   </div>
                 </div>
           </div>
