@@ -120,12 +120,17 @@ className="cardButton"
           </div>
       </div>)
     } else {
-      return (<Link to="/scores"><button
-              className="homeButton"
-              onClick={() => {
-                handleBackToScores()
-              }}
-              >scores</button></Link>)
+      return (<div className='container'>
+                <Link to="/scores">
+                  <button
+                  className="homeButton"
+                  onClick={() => {
+                    handleBackToScores()
+                  }}
+                  >scores
+                  </button>
+                </Link>
+              </div>)
     }
   }
 }
