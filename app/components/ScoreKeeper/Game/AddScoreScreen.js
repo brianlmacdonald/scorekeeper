@@ -120,7 +120,7 @@ className="cardButton"
           </div>
       </div>)
     } else {
-      return (<div className='container'>
+      return (<div className="container">
                 <Link to="/scores">
                   <button
                   className="homeButton"

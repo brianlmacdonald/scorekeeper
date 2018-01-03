@@ -12,14 +12,14 @@ const Index = ({ children, players }) => (
   <div className="screen">
     <div className="spacer" />
     <div className="container">
-      <div className='imageHolder'>
-        <h1 className='homeScreenHeader'>yaniv!</h1>
+      <div className="imageHolder">
+        <h1 className="homeScreenHeader">yaniv!</h1>
       </div>
       {/*<button
         className='homeButton'>
         create game
       </button>*/}
-      <div className='buttonContainer'>
+      <div className="buttonContainer">
       {players.length && <Link
       to="/scores"><button
         className="homeButton">

@@ -16,7 +16,6 @@ class PlayerScreen extends Component {
     this.handleSelect = this.handleSelect.bind(this)
     this.numberSelect = this.numberSelect.bind(this)
     this.names = this.names.bind(this)
-    this.error = this.error.bind(this)
   }
 
   handleNext = () => {
@@ -38,12 +37,6 @@ class PlayerScreen extends Component {
 
   }
 
-  error() {
-    return (
-      <p>uh oh.</p>
-    )
-  }
-
   getStepContent(stepIndex) {
     switch (stepIndex) {
       case 0:
@@ -51,7 +44,7 @@ class PlayerScreen extends Component {
       case 1:
         return this.names;
       default:
-        return this.error;
+        return <div><h1>Error!</h1></div>
     }
   }
 
@@ -78,7 +71,7 @@ class PlayerScreen extends Component {
     return (<div className="container">
       {this.props.players.length && this.props.players.map(player => {
         return (<div
-          className='container'
+          className="container"
           key={player.id}>
           <input
             className="playerNameField"
@@ -109,7 +102,7 @@ class PlayerScreen extends Component {
           <div className="container">
                 <div>
                   <div>{this.getStepContent(stepIndex)(handleNameChange)}</div>
-                  <div className='stepperButtonContainer'>
+                  <div className="stepperButtonContainer">
                     <button
                       className="stepperButton"
                       disabled={stepIndex === 0}
