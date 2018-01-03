@@ -37,7 +37,7 @@ firebase.auth().onAuthStateChanged(function (user) {
           store.dispatch(loadContinueAction(snapshot.val()))
       })
   } else {
-    const localGame = localStorage.getItem('game')
+    const localGame = window.localStorage.getItem('game')
     localGame ? store.dispatch(loadContinueAction(JSON.parse(localGame))) : console.log('no local game')
   }
 });

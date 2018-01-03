@@ -33,6 +33,10 @@ tr:nth-child(odd) td {
   margin-top: 1em;
 }
 
+.homeScreenHeader {
+  font-size: 10em;
+}
+
 .screen {
   display: flex;
   align-items: center;

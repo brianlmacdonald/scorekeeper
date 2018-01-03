@@ -13,7 +13,7 @@ const Index = ({ children, players }) => (
     <div className="spacer" />
     <div className="container">
       <div className='imageHolder'>
-        <img className='homeImage' src='../../../assets/israel.jpg' />
+        <h1 className='homeScreenHeader'>yaniv!</h1>
       </div>
       {/*<button
         className='homeButton'>
