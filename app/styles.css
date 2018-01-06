@@ -5,6 +5,10 @@
   flex-direction: column;
 }
 
+p {
+  margin: 0;
+}
+
 a {
   text-decoration: none;
 }
@@ -31,6 +35,14 @@ tr:nth-child(odd) td {
 
 .imageHolder {
   margin-top: 1em;
+}
+
+.winnerHolder {
+  margin-top: 4em;
+  border-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .homeScreenHeader {

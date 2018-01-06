@@ -56,7 +56,7 @@ const players = (state = initialState, action) => {
     return newState.map(player => {
       player.wins = 0
       player.score = 0
-      player.checked = false
+      player.checked = true
       player.active = true
       return player
     })

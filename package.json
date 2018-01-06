@@ -27,11 +27,6 @@
     "type": "git",
     "url": "git+https://github.com/brianlmacdonald/scorekeeper"
   },
-  "keywords": [
-    "react",
-    "redux",
-    "game"
-  ],
   "author": "Brian Macdonald <brian.lmacdonald@gmail.com>",
   "license": "MIT",
   "bugs": {
