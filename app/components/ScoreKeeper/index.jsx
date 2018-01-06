@@ -8,30 +8,28 @@ import ScoreScreen from './Game/ScoreScreen'
 import AddScoreScreen from './Game/AddScoreScreen'
 import EditPlayerScreen from './Game/EditPlayerScreen'
 
-const Index = ({ children, players }) => (
-  <div className="screen">
-    <div className="spacer" />
-    <div className="container">
-      <div className="imageHolder">
-        <h1 className="homeScreenHeader">yaniv!</h1>
+const Index = ({ children, players }) => {
+  let ready = players.length !== 0
+  return (
+    <div className="screen">
+      <div className="spacer" />
+      <div className="container">
+        <div className="imageHolder">
+          <h1 className="homeScreenHeader">yaniv!</h1>
+        </div>
+        <div className="buttonContainer">
+        {ready && <Link
+        to="/scores"><button
+          className="homeButton">
+          continue
+        </button></Link>}
+      <Link to="/new"><button
+          className="homeButton">
+          new
+          </button></Link>
+        </div>
       </div>
-      {/*<button
-        className='homeButton'>
-        create game
-      </button>*/}
-      <div className="buttonContainer">
-      {players.length && <Link
-      to="/scores"><button
-        className="homeButton">
-        continue
-      </button></Link>}
-     <Link to="/new"><button
-        className="homeButton">
-        new
-        </button></Link>
-      </div>
-    </div>
-  </div>)
+    </div>)}
 
 const mapState = (state) => ({
   players: state.players
