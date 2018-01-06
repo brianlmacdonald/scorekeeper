@@ -6,7 +6,7 @@ const player = {
   wins: 0,
   score: 0,
   id: null,
-  checked: false,
+  checked: true,
   active: true
 }
 

@@ -4,6 +4,7 @@ import {RaisedButton, Paper} from 'material-ui'
 import { updateScoreAction, resetCheckedAction } from '../../../store'
 import {calculateScore} from './gameFunctions'
 import { Link } from 'react-router'
+import ScoreScreen from './ScoreScreen'
 
 class AddScore extends Component {
   constructor(props) {
@@ -51,7 +52,7 @@ className="cardButton"
         onClick={(evt) => {
           evt.preventDefault()
           this.setState({ yaniv: !this.state.yaniv }) }}
-      >yaniv</button>
+      >winner</button>
     )
   }
 
@@ -63,7 +64,7 @@ className="cardButton"
   }
 
   render() {
-    const {handleDone, handleBackToScores, players} = this.props
+    const {handleDone, handleBackToScores, players, router} = this.props
     const currentPlayer = players.find(player => !player.checked)
     if (currentPlayer) {
       return (
@@ -120,17 +121,7 @@ className="cardButton"
           </div>
       </div>)
     } else {
-      return (<div className="container">
-                <Link to="/scores">
-                  <button
-                  className="homeButton"
-                  onClick={() => {
-                    handleBackToScores()
-                  }}
-                  >scores
-                  </button>
-                </Link>
-              </div>)
+      return (<ScoreScreen />)
     }
   }
 }
@@ -145,7 +136,10 @@ const mapDispatchToProps = (dispatch) => ({
     player.checked = true
     dispatch(updateScoreAction(player))
   },
-  handleBackToScores(){
+  handleBackToScores(history){
+    history.push('/scores')
+  },
+  resetPlayers(){
     dispatch(resetCheckedAction())
   }
 })

@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux'
 import {Link} from 'react-router'
 import { checkForWinner, checkForLosers } from './gameFunctions'
-import {resetScoresAction} from '../../../store'
+import {resetScoresAction, resetCheckedAction} from '../../../store'
 
 
-const ScoreScreen = ({ players, handleReset }) => {
+const ScoreScreen = ({ players, handleReset, handleResetPlayers }) => {
     checkForLosers(players)
     const winner = checkForWinner(players)
     if (winner) {
@@ -44,9 +44,10 @@ const ScoreScreen = ({ players, handleReset }) => {
             </tbody>
         </table>
         <div className="buttonContainer">
-          <Link to="/addScores"><button
+         <button
           className="homeButton"
-          >yaniv!</button></Link>
+          onClick={handleResetPlayers}
+          >yaniv!</button>
         </div>
         </div>
       )
@@ -61,6 +62,9 @@ const mapState = (state) => ({
 const mapDispatch = (dispatch) => ({
   handleReset(){
     dispatch(resetScoresAction())
+  },
+  handleResetPlayers(){
+    dispatch(resetCheckedAction())
   }
 })
 

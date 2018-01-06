@@ -43,7 +43,6 @@ export default <Route path="/game" component={({ children }) => children}>
   <IndexRoute component={IndexContainer} />
   <Route path="/new" component={Rules} />
   <Route path="/players" component={PlayerScreen} />
-  <Route path="/scores" component={ScoreScreen} />
-  <Route path="/addScores" component={AddScoreScreen} />
+  <Route path="/scores" component={AddScoreScreen} />
   <Route path="/edit/:playerId" component={EditPlayerScreen} />
 </Route>
