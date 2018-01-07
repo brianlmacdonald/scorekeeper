@@ -119,11 +119,6 @@ class Game {
     //players with hands, shuffled deck, and a discard pile
   }
 
-  startNewGame() {
-    //how is this different than the above?
-  }
-
-
   deckEmpty() {
     let discard = this.discardPile.top.next
     this.discardPile.top.next = null
@@ -138,6 +133,12 @@ class Game {
     return Object.keys(this.deck).filter(id => {
       return this.deck[id].dealt === false
     })
+  }
+
+  resetCards() {
+    for (let i = 1; i <= 54; i++) {
+      this.deck[i].dealt = false;
+    }
   }
 
   shuffle(bool = true) {

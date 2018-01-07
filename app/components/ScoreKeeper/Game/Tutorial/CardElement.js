@@ -1,7 +1,10 @@
 import React from 'react'
 const cardElement = ({props}) => {
   return (
-    <div className="playingCard">
+    <div
+    onClick={() => {console.log('test')}}
+    className="playingCard"
+    >
       <div className="cardTop">
         <div>{props.name}</div>
       </div>
