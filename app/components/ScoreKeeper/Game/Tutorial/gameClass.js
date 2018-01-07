@@ -205,328 +205,328 @@ class Game {
     this.discardPile = {
       top: null
     }
-    
+
     this.deck = {
       1: {
-        name: "A",
+        name: 'A',
         number: 1,
         suit: `\u2660`,
         dealt: false,
         id: 1
       }, 2: {
-        name: "2",
+        name: '2',
         number: 2,
         suit: `\u2660`,
         dealt: false,
         id: 2
       }, 3: {
-        name: "3",
+        name: '3',
         number: 3,
         suit: `\u2660`,
         dealt: false,
         id: 3
       }, 4: {
-        name: "4",
+        name: '4',
         number: 4,
         suit: `\u2660`,
         dealt: false,
         id: 4
       }, 5: {
-        name: "5",
+        name: '5',
         number: 5,
         suit: `\u2660`,
         dealt: false,
         id: 5
       }, 6: {
-        name: "6",
+        name: '6',
         number: 6,
         suit: `\u2660`,
         dealt: false,
         id: 6
       }, 7: {
-        name: "7",
+        name: '7',
         number: 7,
         suit: `\u2660`,
         dealt: false,
         id: 7
       }, 8: {
-        name: "8",
+        name: '8',
         number: 8,
         suit: `\u2660`,
         dealt: false,
         id: 8
       }, 9: {
-        name: "9",
+        name: '9',
         number: 9,
         suit: `\u2660`,
         dealt: false,
         id: 9
       }, 10: {
-        name: "10",
+        name: '10',
         number: 10,
         suit: `\u2660`,
         dealt: false,
         id: 10
       }, 11: {
-        name: "J",
+        name: 'J',
         number: 10,
         suit: `\u2660`,
         dealt: false,
         id: 11
       }, 12: {
-        name: "Q",
+        name: 'Q',
         number: 10,
         suit: `\u2660`,
         dealt: false,
         id: 12
       }, 13: {
-        name: "K",
+        name: 'K',
         number: 10,
         suit: `\u2660`,
         dealt: false,
         id: 13
       }, 14: {
-        name: "A",
+        name: 'A',
         number: 1,
         suit: `\u2663`,
         dealt: false,
         id: 14
       }, 15: {
-        name: "2",
+        name: '2',
         number: 2,
         suit: `\u2663`,
         dealt: false,
         id: 15
       }, 16: {
-        name: "3",
+        name: '3',
         number: 3,
         suit: `\u2663`,
         dealt: false,
         id: 16
       }, 17: {
-        name: "4",
+        name: '4',
         number: 4,
         suit: `\u2663`,
         dealt: false,
         id: 17
       }, 18: {
-        name: "5",
+        name: '5',
         number: 5,
         suit: `\u2663`,
         dealt: false,
         id: 18
       }, 19: {
-        name: "6",
+        name: '6',
         number: 6,
         suit: `\u2663`,
         dealt: false,
         id: 19
       }, 20: {
-        name: "7",
+        name: '7',
         number: 7,
         suit: `\u2663`,
         dealt: false,
         id: 20
       }, 21: {
-        name: "8",
+        name: '8',
         number: 8,
         suit: `\u2663`,
         dealt: false,
         id: 21
       }, 22: {
-        name: "9",
+        name: '9',
         number: 9,
         suit: `\u2663`,
         dealt: false,
         id: 22
       }, 23: {
-        name: "10",
+        name: '10',
         number: 10,
         suit: `\u2663`,
         dealt: false,
         id: 23
       }, 24: {
-        name: "J",
+        name: 'J',
         number: 10,
         suit: `\u2663`,
         dealt: false,
         id: 24
       }, 25: {
-        name: "Q",
+        name: 'Q',
         number: 10,
         suit: `\u2663`,
         dealt: false,
         id: 25
       }, 26: {
-        name: "K",
+        name: 'K',
         number: 10,
         suit: `\u2663`,
         dealt: false,
         id: 26
       }, 27: {
-        name: "A",
+        name: 'A',
         number: 1,
         suit: `\u2764`,
         dealt: false,
         id: 27
       }, 28: {
-        name: "2",
+        name: '2',
         number: 2,
         suit: `\u2764`,
         dealt: false,
         id: 28
       }, 29: {
-        name: "3",
+        name: '3',
         number: 3,
         suit: `\u2764`,
         dealt: false,
         id: 29
       }, 30: {
-        name: "4",
+        name: '4',
         number: 4,
         suit: `\u2764`,
         dealt: false,
         id: 30
       }, 31: {
-        name: "5",
+        name: '5',
         number: 5,
         suit: `\u2764`,
         dealt: false,
         id: 31
       }, 32: {
-        name: "6",
+        name: '6',
         number: 6,
         suit: `\u2764`,
         dealt: false,
         id: 32
       }, 33: {
-        name: "7",
+        name: '7',
         number: 7,
         suit: `\u2764`,
         dealt: false,
         id: 33
       }, 34: {
-        name: "8",
+        name: '8',
         number: 8,
         suit: `\u2764`,
         dealt: false,
         id: 34
       }, 35: {
-        name: "9",
+        name: '9',
         number: 9,
         suit: `\u2764`,
         dealt: false,
         id: 35
       }, 36: {
-        name: "10",
+        name: '10',
         number: 10,
         suit: `\u2764`,
         dealt: false,
         id: 36
       }, 37: {
-        name: "J",
+        name: 'J',
         number: 10,
         suit: `\u2764`,
         dealt: false,
         id: 37
       }, 38: {
-        name: "Q",
+        name: 'Q',
         number: 10,
         suit: `\u2764`,
         dealt: false,
         id: 38
       }, 39: {
-        name: "K",
+        name: 'K',
         number: 10,
         suit: `\u2764`,
         dealt: false,
         id: 39
       }, 40: {
-        name: "A",
+        name: 'A',
         number: 1,
         suit: `\u2666`,
         dealt: false,
         id: 40
       }, 41: {
-        name: "2",
+        name: '2',
         number: 2,
         suit: `\u2666`,
         dealt: false,
         id: 41
       }, 42: {
-        name: "3",
+        name: '3',
         number: 3,
         suit: `\u2666`,
         dealt: false,
         id: 42
       }, 43: {
-        name: "4",
+        name: '4',
         number: 4,
         suit: `\u2666`,
         dealt: false,
         id: 43
       }, 44: {
-        name: "5",
+        name: '5',
         number: 5,
         suit: `\u2666`,
         dealt: false,
         id: 44
       }, 45: {
-        name: "6",
+        name: '6',
         number: 6,
         suit: `\u2666`,
         dealt: false,
         id: 45
       }, 46: {
-        name: "7",
+        name: '7',
         number: 7,
         suit: `\u2666`,
         dealt: false,
         id: 46
       }, 47: {
-        name: "8",
+        name: '8',
         number: 8,
         suit: `\u2666`,
         dealt: false,
         id: 47
       }, 48: {
-        name: "9",
+        name: '9',
         number: 9,
         suit: `\u2666`,
         dealt: false,
         id: 48
       }, 49: {
-        name: "10",
+        name: '10',
         number: 10,
         suit: `\u2666`,
         dealt: false,
         id: 49
       }, 50: {
-        name: "J",
+        name: 'J',
         number: 10,
         suit: `\u2666`,
         dealt: false,
         id: 50
       }, 51: {
-        name: "Q",
+        name: 'Q',
         number: 10,
         suit: `\u2666`,
         dealt: false,
         id: 51
       }, 52: {
-        name: "K",
+        name: 'K',
         number: 10,
         suit: `\u2666`,
         dealt: false,
         id: 52
       }, 53: {
-        name: "Joker",
+        name: 'Joker',
         number: 0,
         suit: `\uD83C\uDCCF`,
         dealt: false,
         id: 53
       }, 54: {
-        name: "Joker",
+        name: 'Joker',
         number: 0,
         suit: `\uD83C\uDCCF`,
         dealt: false,

@@ -1,16 +1,18 @@
 import React from 'react'
-const cardElement = (card) => {
+const cardElement = ({props}) => {
   return (
-    <div className='playingCard'>
-      <div className='cardTop'>
-      {card.name}
+    <div className="playingCard">
+      <div className="cardTop">
+        <div>{props.name}</div>
       </div>
-      <div className='cardMiddle'>
-      {card.suit}
+      <div className="cardMiddle">
+        <div className="cardSpacer" /><div>{props.suit}</div><div className="cardSpacer" />
       </div>
-      <div className='cardButton'>
-      {card.name}
+      <div className="cardBottom">
+        <div className="cardSpacer" /><div className="cardSpacer" /><div>{props.name}</div>
       </div>
     </div>
   )
 }
+
+export default cardElement

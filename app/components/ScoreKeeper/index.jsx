@@ -7,6 +7,7 @@ import PlayerScreen from './Game/PlayerScreen'
 import ScoreScreen from './Game/ScoreScreen'
 import AddScoreScreen from './Game/AddScoreScreen'
 import EditPlayerScreen from './Game/EditPlayerScreen'
+import TutorialScreen from './Game/Tutorial/TutorialScreen'
 
 const Index = ({ children, players }) => {
   let ready = players.length !== 0
@@ -18,15 +19,22 @@ const Index = ({ children, players }) => {
           <h1 className="homeScreenHeader">yaniv!</h1>
         </div>
         <div className="buttonContainer">
-        {ready && <Link
-        to="/scores"><button
-          className="homeButton">
-          continue
-        </button></Link>}
-      <Link to="/new"><button
-          className="homeButton">
-          new
-          </button></Link>
+          <Link to="/tutorial">
+            <button
+              className="homeButton">
+              learn</button>
+          </Link>
+              {ready && <Link
+              to="/scores"><button
+              className="homeButton">
+              continue
+            </button></Link>}
+          <Link to="/new">
+            <button
+              className="homeButton">
+              new
+            </button>
+          </Link>
         </div>
       </div>
     </div>)}
@@ -43,4 +51,5 @@ export default <Route path="/game" component={({ children }) => children}>
   <Route path="/players" component={PlayerScreen} />
   <Route path="/scores" component={AddScoreScreen} />
   <Route path="/edit/:playerId" component={EditPlayerScreen} />
+  <Route path="/tutorial" component={TutorialScreen} />
 </Route>

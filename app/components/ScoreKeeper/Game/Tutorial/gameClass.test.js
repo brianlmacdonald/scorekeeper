@@ -21,7 +21,6 @@ const fourOfAKind = [1, 14, 27, 40]
 const nonFourOfAKind = [1, 13, 27, 40]
 
 
-
 beforeEach(function () {
   game.players = []
   const newPlayer = game.createPlayerMaker()
