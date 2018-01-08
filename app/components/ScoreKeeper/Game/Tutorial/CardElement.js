@@ -1,5 +1,5 @@
 import React from 'react'
-const cardElement = ({props}) => {
+const CardElement = ({props}) => {
   return (
     <div
     onClick={() => {console.log('test')}}
@@ -18,4 +18,4 @@ const cardElement = ({props}) => {
   )
 }
 
-export default cardElement
+export default CardElement

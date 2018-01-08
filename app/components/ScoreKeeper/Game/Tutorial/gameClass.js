@@ -152,7 +152,7 @@ class Game {
     }
   }
 
-  deal() {
+  deal(bool = true) {
     this.resetHands(this.players)
     this.shuffle()
     this.shuffle(false)
@@ -165,6 +165,11 @@ class Game {
           this.players[playerNumber].hand = [...this.players[playerNumber].hand, cardId]
         }
       }
+    }
+    if (bool) {
+      const discardId = this.shuffledCards.pop()
+      this.deck[discardId].dealt = true
+      this.discardNode(discardId)
     }
   }
 

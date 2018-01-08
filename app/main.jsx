@@ -76,11 +76,16 @@ const AppRoutes = () =>
           </Router>
           )
 
+const MuiWrapper = () => {
+  return (
+    <MuiThemeProvider muiTheme={muiTheme}>
+      <AppRoutes />
+    </MuiThemeProvider>
+  )
+}
 render(
     <Provider store={store}>
-      <MuiThemeProvider muiTheme={muiTheme}>
-        <AppRoutes />
-      </MuiThemeProvider>
+        <MuiWrapper />
     </Provider>,
   document.getElementById('main')
 )

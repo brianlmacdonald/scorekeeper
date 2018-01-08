@@ -40,7 +40,7 @@ tr:nth-child(odd) td {
 .playingCard {
   transition: margin auto .5s ease;
   margin-right: .5em;
-  width: 9.5vw;
+  width: 7.5vw;
   height: 15vh;
   background-color: rgb(253, 251, 244);
   border-radius: .5em;
@@ -69,6 +69,43 @@ tr:nth-child(odd) td {
   font-size: 1.2em;
 }
 
+.tutorialScreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#tutorialNav {
+  z-index: 1;
+  width: 94vw;
+  height: 3vw;
+  display: flex;
+  flex-direction: row;
+  margin-left: 2vw;
+  background-color: rgb(211, 255, 255);
+  align-items: center;
+  box-shadow: .5em .5em .1em .05em rgba(136, 136, 248, 0.2);
+  animation-duration: .5s;
+  animation-name: slide;
+
+}
+@keyframes slide {
+  from {
+    margin-top: -50%;
+    z-index: 1
+  }
+
+  to {
+    margin-top: 0%;
+    z-index: 2;
+  }
+}
+
+.tutorialLink {
+  margin-left: 2em;
+
+}
+
 .cardMiddle {
   display: flex;
   font-size: 2em;
@@ -78,19 +115,59 @@ tr:nth-child(odd) td {
   flex-basis: 1;
 }
 
+.cards {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  border: 3em;
+}
+
 .cardSpacer {
   width: 4.2vw;
 }
 
 .felt {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: auto;
   margin-top: 2em;
   border: 3em;
-  height: 50vh;
+  height: 55vh;
   width: 70vw;
+}
+
+.discard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: auto;
+  margin-top: .5em;
+  width: 55vw;
+  height: auto;
+}
+.discard:hover {
+  transition: .25s ease-in-out;
+  background-color: aqua;
+}
+
+.playerHand {
+  width: 55vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: .5em;
+  border: 3em;
+}
+
+.playerHand:hover {
+  transition: .25s ease-in-out;
+  background-color: aquamarine;
 }
 
 .cardBottom {
@@ -142,6 +219,7 @@ tr:nth-child(odd) td {
 }
 
 .navBar {
+  z-index: 2;
   display: flex;
   flex-direction: row;
   background-color: #FFA000;

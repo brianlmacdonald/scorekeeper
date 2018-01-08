@@ -3,7 +3,7 @@ import React from 'react'
 const TutorialButton = ({props}) => {
   return (
     <button
-      className='homeButton'
+      className="homeButton"
       onClick={() => {
         props.handler()
       }}

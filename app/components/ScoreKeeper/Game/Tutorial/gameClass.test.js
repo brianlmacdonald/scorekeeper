@@ -80,7 +80,7 @@ describe('game logic', function () {
       game.deal()
     })
     it('should reduce the number of undealt cards in the deck', function () {
-      expect(game.undealtCards()).to.have.length(29)
+      expect(game.undealtCards()).to.have.length(28)
     })
     it('players hands should reflect card ids that are dealt in the deck', function () {
       expect(game.deck[game.players[0].hand[0]].dealt).to.equal(true)
