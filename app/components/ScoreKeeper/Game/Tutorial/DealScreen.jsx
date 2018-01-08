@@ -12,7 +12,7 @@ const Deal = ({game}) => {
       <div className="felt">
       <div className="discard">
         <h1>discard pile</h1>
-          <div className='containerRow'>
+          <div className="containerRow">
           {ready && <CardElement props={deck[game.discardPile.top.value]} />}
           <BackOfCard />
           </div>

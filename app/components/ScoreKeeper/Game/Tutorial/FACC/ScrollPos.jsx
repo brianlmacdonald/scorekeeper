@@ -9,7 +9,7 @@ export default class ScrollPos extends Component {
         position: null
       }
       this.handleScroll = this.handleScroll.bind(this)
-    
+
   }
 
   static PropTypes = {
