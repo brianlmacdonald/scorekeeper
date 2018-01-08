@@ -40,8 +40,8 @@ tr:nth-child(odd) td {
 .playingCard {
   transition: margin auto .5s ease;
   margin-right: .5em;
-  width: 7.5vw;
-  height: 15vh;
+  width: 100px;
+  height: 150px;
   background-color: rgb(253, 251, 244);
   border-radius: .5em;
   box-shadow: .2em .2em .15em .15em black;
@@ -76,8 +76,8 @@ tr:nth-child(odd) td {
 }
 
 #tutorialNav {
-  z-index: 1;
   width: 94vw;
+  opacity: 1;
   height: 3vw;
   display: flex;
   flex-direction: row;
@@ -85,20 +85,8 @@ tr:nth-child(odd) td {
   background-color: rgb(211, 255, 255);
   align-items: center;
   box-shadow: .5em .5em .1em .05em rgba(136, 136, 248, 0.2);
-  animation-duration: .5s;
-  animation-name: slide;
-
-}
-@keyframes slide {
-  from {
-    margin-top: -50%;
-    z-index: 1
-  }
-
-  to {
-    margin-top: 0%;
-    z-index: 2;
-  }
+  position: sticky;
+  top: 4.8em;
 }
 
 .tutorialLink {
@@ -151,6 +139,27 @@ tr:nth-child(odd) td {
 .discard:hover {
   transition: .25s ease-in-out;
   background-color: aqua;
+}
+
+.backOfCard {
+  margin: 2px;
+  width: 92px;
+  height: 142px;
+  background-color: rgb(255, 216, 148);
+  border: 2px solid rgb(131, 84, 2);
+  border-radius: 5px;
+}
+
+.testDiv {
+  height: 400vh;
+}
+
+.rectangle {
+  margin: 10px;
+  border: 1px solid #cfcfcf;
+  height: 120px;
+  width: 70px;
+  background-color: rgb(255, 237, 206)
 }
 
 .playerHand {
@@ -224,6 +233,8 @@ tr:nth-child(odd) td {
   flex-direction: row;
   background-color: #FFA000;
   width: 98vw;
+  position: sticky;
+  top: 1em;
 }
 
 .leftMargin {

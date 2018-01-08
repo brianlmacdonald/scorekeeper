@@ -1,5 +1,5 @@
 import React from 'react'
-import CardElement from './CardElement'
+import CardElement, {BackOfCard} from './CardElement'
 
 const Deal = ({game}) => {
   let ready = game && Object.keys(game).length !== 0 && game.players[0].hand !== 0
@@ -12,7 +12,10 @@ const Deal = ({game}) => {
       <div className="felt">
       <div className="discard">
         <h1>discard pile</h1>
+          <div className='containerRow'>
           {ready && <CardElement props={deck[game.discardPile.top.value]} />}
+          <BackOfCard />
+          </div>
       </div>
       <div className="playerHand">
         <div className="cards">

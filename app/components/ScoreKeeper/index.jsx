@@ -19,7 +19,7 @@ const Index = ({ children, players }) => {
           <h1 className="homeScreenHeader">yaniv!</h1>
         </div>
         <div className="buttonContainer">
-          <Link to="/tutorial">
+          <Link to="/tutorial/">
             <button
               className="homeButton">
               learn</button>
@@ -51,5 +51,5 @@ export default <Route path="/game" component={({ children }) => children}>
   <Route path="/players" component={PlayerScreen} />
   <Route path="/scores" component={AddScoreScreen} />
   <Route path="/edit/:playerId" component={EditPlayerScreen} />
-  <Route path="/tutorial" component={TutorialScreen} />
+  <Route path="/tutorial/*" component={TutorialScreen} />}
 </Route>

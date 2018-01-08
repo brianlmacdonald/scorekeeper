@@ -1,5 +1,5 @@
 import React from 'react'
-const CardElement = ({props}) => {
+export default function CardElement({props}) {
   return (
     <div
     onClick={() => {console.log('test')}}
@@ -18,4 +18,15 @@ const CardElement = ({props}) => {
   )
 }
 
-export default CardElement
+export function BackOfCard() {
+  return (
+        <div className='playingCard'>
+          <div className='backOfCard'>
+            <div className='rectangle'>
+              <div className='circle' />
+              <div className='circle' />
+            </div>
+          </div>
+        </div>
+      )
+}
