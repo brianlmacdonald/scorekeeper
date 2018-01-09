@@ -25,10 +25,14 @@ export default class Overview extends Component {
   }
 
   render(){
-    const playersReady = this.state.position > 150;
+    const playersReady = this.state.position > 150 && this.state.position < 550;
+    const scrollReady = this.state.position > -2 && this.state.position < 100;
+    const dealReady = this.state.position > 550 ** this.state.position < 950;
     return (
       <div className="testDiv">
+        {scrollReady && <h1 className='scrollReady'>scroll down for walkthrough</h1>}
         {playersReady && <Players />}
+        {dealReady}
       </div>
     )
   }
