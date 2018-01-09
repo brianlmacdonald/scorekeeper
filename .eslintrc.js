@@ -23,7 +23,9 @@ module.exports = {
           "y",
           "i",
           "j",
-          "R"
+          "R",
+          "m",
+          "t"
         ]
       }
     ]

@@ -10,8 +10,8 @@ const ScoreScreen = ({ players, handleReset, handleResetPlayers }) => {
     const winner = checkForWinner(players)
     if (winner) {
       return (
-        <div className='container'>
-          <div className='winnerHolder'>
+        <div className="container">
+          <div className="winnerHolder">
             <h1 className="homeScreenHeader">{winner.name}</h1>
             <p className="homeScreenHeader">wins!</p>
           </div>

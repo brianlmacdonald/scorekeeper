@@ -5,6 +5,10 @@ import {shallow} from 'enzyme'
 import {spy} from 'sinon'
 chai.use(require('sinon-chai'))
 
+// global.window = {}
+// import localStorage from 'mock-local-storage'
+// window.localStorage = global.localStorage
+
 import Login from './Login'
 
 /* global describe it beforeEach */
@@ -25,3 +29,5 @@ describe('<Login />', () => {
     expect(fakeAuth.signInWithPopup).to.have.been.calledWithMatch({providerId: 'google.com'})
   })
 })
+
+// global.window = undefined

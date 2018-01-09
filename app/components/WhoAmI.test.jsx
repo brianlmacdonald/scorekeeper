@@ -9,6 +9,10 @@ import {createStore} from 'redux'
 import WhoAmIContainer, {WhoAmI} from './WhoAmI'
 import Login from './Login'
 
+// global.window = {}
+// import localStorage from 'mock-local-storage'
+// window.localStorage = global.localStorage
+
 /* global describe it beforeEach */
 describe('<WhoAmI/>', () => {
   describe('when nobody is logged in', () => {
@@ -62,3 +66,5 @@ describe('<WhoAmI/>', () => {
     })
   })
 })
+
+// global.window = undefined
