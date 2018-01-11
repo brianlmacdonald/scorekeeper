@@ -1,10 +1,8 @@
-import React from 'react'
+import React, {Component} from 'react'
+import CardElement from './CardElement'
 
-const Discard = () => {
-  return (
-    <div><h1>test</h1><div><p>test text</p></div></div>
+class Discard extends Component {
 
-  )
 }
 
 export default Discard

@@ -2,12 +2,12 @@ import React from 'react'
 
 export default function({position}){
   return (
-    <div className='playersContainer'>
+    <div className="playersContainer">
     <div>
-    <h1 className='tutorialHeader'>players</h1>
+    <h1 className="tutorialHeader">find players</h1>
     </div>
     <div className="players">
-      
+
       <div className="playerOne">
         <Player />
       </div>
@@ -25,7 +25,7 @@ export default function({position}){
       </div>
     </div>
       <div>
-      <h2 className='tutorialHeader'>Minumum two. Maximum five.</h2>
+      <h2 className="tutorialHeader">Minumum two. Maximum five. Friends, family or strangers.</h2>
       </div>
     </div>
   )

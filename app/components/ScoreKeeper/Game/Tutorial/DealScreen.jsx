@@ -5,29 +5,24 @@ const Deal = ({game}) => {
   let ready = game && Object.keys(game).length !== 0 && game.players[0].hand !== 0
   let player = ready ? game.players[0] : {}
   let deck = ready ? game.deck : {}
-  console.log(game, player, deck)
   return (
-    <div>
-      <h1>deal</h1>
+    <div className='container'>
       <div className="felt">
+        <div className="playerHand">
+          <h1 className={'dealInstructions stepOne'}>deal each player five cards</h1>
+          <div className="cards">
+            {ready && player.hand.map(card => {
+              return <div key={card} className='cardAnimation'><CardElement key={card} props={deck[card]} /></div>
+            })}
+          </div>
+        </div>
       <div className="discard">
-        <h1>discard pile</h1>
-          <div className="containerRow">
+        <h1 className={'dealInstructions stepTwo'}>then flip the top card on the deck</h1>
+          <div className={"containerRow"}>
           {ready && <CardElement props={deck[game.discardPile.top.value]} />}
           <BackOfCard />
           </div>
       </div>
-      <div className="playerHand">
-        <div className="cards">
-          {ready && player.hand.map(card => {
-            return <CardElement key={deck[card].id} props={deck[card]} />
-          })}
-        </div>
-        <h1>player hand</h1>
-      </div>
-      </div>
-      <div>
-        <p>deal each player five cards</p>
       </div>
     </div>
   )
