@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
 
 #nameEntry {
   display: flex;
@@ -46,6 +47,10 @@ tr:nth-child(odd) td {
   box-shadow: .2em .2em .15em .15em black;
   display: flex;
   flex-direction: column;
+}
+
+.red {
+  color: red;
 }
 
 .cardAnimation {
@@ -155,6 +160,81 @@ tr:nth-child(odd) td {
   animation-delay: .5s;
 }
 
+.playerOneTurn {
+  margin: 1em;
+}
+
+.playerTwoTurn {
+  margin: 1em;
+  transform: scaleX(-1);
+}
+
+.speechBubble {
+  height: 3em;
+  width: 6em;
+  display: flex;
+  background-color: #cfcfcf;
+  border-radius: 1em;
+  font-size: 1em;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  animation-name: growNpop;
+  animation-duration: 1s;
+  animation-delay: 1s;
+}
+
+.leftAlignContainer {
+  display: flex;
+  flex-direction: column;
+  border-left: 3em;
+}
+
+.smallerHand {
+  display: flex;
+  flex-direction: row;
+  transform: scale(.5)
+}
+
+.speechText {
+  margin: 1em;
+}
+
+.smallBubble {
+  visibility: hidden;
+  height: 1em;
+  width: 1em;
+  background-color: #cfcfcf;
+  border-radius: 1em;
+  animation-name: growNpop;
+  animation-duration: 1s;
+  animation-delay: .5s;
+}
+
+.mediumBubble {
+  visibility: hidden;
+  height: 2em;
+  width: 2em;
+  background-color: #cfcfcf;
+  border-radius: 2em;
+  animation-name: growNpop;
+  animation-duration: 1s;
+  animation-delay: .75s;
+}
+
+@keyframes growNpop {
+  0% {
+    transform: scale(0);
+    visibility: visible;
+  }
+  50% {
+    transform: scale(.5)
+  }
+  100% {
+    transform: scale(1)
+  }
+}
+
 .playerTwo {
   margin: 1em;
   animation-name: grow;
@@ -262,6 +342,25 @@ tr:nth-child(odd) td {
   margin: 0;
 }
 
+.blink{
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-iteration-count: infinite
+}
+
+@keyframes blink {
+  0% {
+    opacity: .5
+  }
+  50% {
+    opacity: 1
+  }
+  100% {
+    opacity: .51
+  }
+}
+
+
 .pupil {
   position: relative;
   top: 5px;
@@ -321,6 +420,18 @@ tr:nth-child(odd) td {
   width: 70vw;
 }
 
+.yellBad {
+  visibility: visible;
+  color: red;
+}
+.arrow {
+  font-size: 3em;
+}
+
+.hideBad {
+  visibility: hidden;
+}
+
 .discard {
   display: flex;
   flex-direction: column;
@@ -328,8 +439,13 @@ tr:nth-child(odd) td {
   align-items: center;
   border: auto;
   margin-top: .5em;
+  margin-bottom: .5em;
   width: 55vw;
-  height: auto;
+}
+
+.discardPile {
+  display: flex;
+
 }
 
 .backOfCard {
@@ -350,6 +466,12 @@ tr:nth-child(odd) td {
 }
 
 .rectangle {
+  font-family: 'Special Elite',
+  cursive;
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 10px;
   border: 1px solid #cfcfcf;
   height: 120px;

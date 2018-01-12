@@ -1,9 +1,9 @@
 import React from 'react'
 export default function CardElement({props}) {
+  const red = props.suit === `\u2764` || props.suit === `\u2666`
   return (
     <div
-    onClick={() => {console.log('test')}}
-    className="playingCard"
+    className={red ? 'playingCard red' : 'playingCard'}
     >
       <div className="cardTop">
         <div>{props.name}</div>
@@ -23,6 +23,7 @@ export function BackOfCard() {
         <div className="playingCard">
           <div className="backOfCard">
             <div className="rectangle">
+              <h1>:</h1>
             </div>
           </div>
         </div>

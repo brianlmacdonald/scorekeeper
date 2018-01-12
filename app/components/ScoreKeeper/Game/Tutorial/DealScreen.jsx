@@ -5,6 +5,7 @@ const Deal = ({game}) => {
   let ready = game && Object.keys(game).length !== 0 && game.players[0].hand !== 0
   let player = ready ? game.players[0] : {}
   let deck = ready ? game.deck : {}
+  
   return (
     <div className='container'>
       <div className="felt">

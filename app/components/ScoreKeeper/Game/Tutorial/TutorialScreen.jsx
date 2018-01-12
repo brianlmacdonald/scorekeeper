@@ -25,7 +25,7 @@ class TutorialSceen extends Component {
         <Switch>
           {<Route exact path="/tutorial/" component={Overview} />}
           {<Route path="/tutorial/deal" render={() => <Deal game={tutorialGame} />} />}
-          {<Route path="/tutorial/discard" component={Discard} />}
+          {<Route path="/tutorial/discard" render={() => <Discard game={tutorialGame} />} />}
           {<Route path="/tutorial/turn" component={Turn} />}
           {<Route path="/tutorial/scoring" component={Scoring} />}
         </Switch>

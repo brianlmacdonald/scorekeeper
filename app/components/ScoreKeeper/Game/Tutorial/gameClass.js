@@ -207,7 +207,7 @@ class Game {
     this.shuffledCards = []
     this.players = []
     this.round = 'A'
-
+    
     this.discardPile = {
       top: null
     }
