@@ -10,7 +10,7 @@ const Deal = ({game}) => {
     <div className="container">
       <div className="felt">
         <div className="playerHand">
-          <h1 className={'dealInstructions stepOne'}>deal each player five cards</h1>
+          <h2 className={'dealInstructions stepOne'}>Deal each player five cards using a deck with jokers</h2>
           <div className="cards">
             {ready && player.hand.map(card => {
               return <div key={card} className="cardAnimation"><CardElement key={card} props={deck[card]} /></div>
@@ -18,11 +18,12 @@ const Deal = ({game}) => {
           </div>
         </div>
       <div className="discard">
-        <h1 className={'dealInstructions stepTwo'}>then flip the top card on the deck</h1>
+        <h2 className={'dealInstructions stepTwo'}>Then flip the top card on the deck</h2>
           <div className={'containerRow'}>
           {ready && <CardElement props={deck[game.discardPile.top.value]} />}
           <BackOfCard />
           </div>
+          <h2 className={'dealInstructions stepThree'}>This is where you discard and draw.</h2>
       </div>
       </div>
     </div>

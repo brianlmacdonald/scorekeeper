@@ -22,7 +22,6 @@ export default class Discard extends Component {
   const flush = game.getFlushes()
   const options = [singles, pairs, flush]
   const hand = options[this.state.step]
-  console.log(this.state.step)
   return (
     <div className='felt'>
       <h1>You can discard {this.state.step === 0 ? 'singles' : this.state.step === 1 ? '2 of a kind or more.' : 'straight flushes of 3 or more.'}</h1>

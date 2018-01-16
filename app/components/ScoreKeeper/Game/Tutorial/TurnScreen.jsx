@@ -20,13 +20,14 @@ const yanivHand = [{
 const Turn = ({game}) => {
   const singles = game.getSingles()
   const pairs = game.getPairs()
+  const discard = game.getSingles()
   const flush = game.getFlushes()
   const int = Math.floor(Math.random() * 3)
   const hand = int === 0 ? singles : int === 1 ? pairs : flush
 
   return (
       <div className='containerCol'>
-        <h1>on a turn, you can either...</h1>
+        <h1>On a turn, you can either...</h1>
       <div className="players">
         <div className="leftAlignContainer">
         <div className="playerOneTurn">
@@ -40,8 +41,10 @@ const Turn = ({game}) => {
           </div>
           <h2>and then draw one card</h2>
           <div className="smallerHand">
+          <CardElement props={discard[0]} />
           <BackOfCard />
           </div>
+          <h3>blindly from the deck, or from the top of the discard pile</h3>
           </div>
         </div>
         <div className="divider" />

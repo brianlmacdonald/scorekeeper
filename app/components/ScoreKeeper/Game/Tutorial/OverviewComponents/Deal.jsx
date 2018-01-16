@@ -6,8 +6,8 @@ const classes = {}
 const Dealing = () => {
   return (
     <div>
-      <h1>deal each player 5 cards</h1>
-      <h1>flip the top card of the deck over</h1>
+      <h1>Deal each player 5 cards</h1>
+      <h1>Flip the top card of the deck over</h1>
       <h1>that's now the discard pile</h1>
       <div className="felt">
         <div className="discard">

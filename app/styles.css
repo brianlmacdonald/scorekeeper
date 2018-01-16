@@ -57,6 +57,7 @@ tr:nth-child(odd) td {
   margin: 1em;
 }
 
+
 .containerCol {
   display: flex;
   flex-direction: column;
@@ -229,6 +230,19 @@ tr:nth-child(odd) td {
   bottom: 1.5em;
   left: 1.5em;
 
+}
+
+.scoringContainer {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1em;
+  flex-wrap: wrap;
+}
+
+.containerSide {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
 }
 
 .rightAlignContainer {
@@ -478,7 +492,7 @@ tr:nth-child(odd) td {
   margin: auto;
   margin-top: 2em;
   border: 3em;
-  height: 60vh;
+  height: 70vh;
   width: 70vw;
 }
 
@@ -695,6 +709,7 @@ tr:nth-child(odd) td {
 
 .containerRow {
   display: flex;
+  height: 170px;
 }
 
 .stepperContainer {
