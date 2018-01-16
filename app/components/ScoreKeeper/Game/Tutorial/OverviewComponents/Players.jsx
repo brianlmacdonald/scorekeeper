@@ -1,11 +1,12 @@
 import React from 'react'
 import Player from './player'
+import SpeechBubble from './SpeechBubble'
 
 export default function({position}){
   return (
     <div className="playersContainer">
     <div>
-    <h1 className="tutorialHeader">find players</h1>
+    <h1 className="tutorialHeader">start by finding players</h1>
     </div>
     <div className="players">
 
@@ -26,7 +27,7 @@ export default function({position}){
       </div>
     </div>
       <div>
-      <h2 className="tutorialHeader">Minumum two. Maximum five. Friends, family or complete strangers.</h2>
+      <h2 className={'tutorialHeader marginTop'}>Minumum two. Maximum five. Friends, family, enemies, or complete strangers.</h2>
       </div>
     </div>
   )

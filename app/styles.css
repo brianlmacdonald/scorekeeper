@@ -49,6 +49,21 @@ tr:nth-child(odd) td {
   flex-direction: column;
 }
 
+.divider {
+  width: 20vw;
+  border: #044389 1px solid;
+  background-color: #044389;
+  height: 50vh;
+  margin: 1em;
+}
+
+.containerCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .red {
   color: red;
 }
@@ -104,15 +119,37 @@ tr:nth-child(odd) td {
   }
 }
 
+.popAnimation {
+  animation-name: fade;
+  animation-duration: 3s;
+}
+
 .playersContainer {
   display: flex;
   flex-direction: column;
   margin: auto;
   margin-left: 3em;
-  height: 30vh;
-  width: 50vw;
+  height: 60vh;
+  width: 60vw;
   animation-name: fade;
   animation-duration: .5s;
+}
+
+.turnContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.alternate1 {
+  position: relative;
+  right: 1em;
+}
+
+.alternate2 {
+  position: relative;
+  right: 1em;
 }
 
 .scrollReady {
@@ -139,10 +176,19 @@ tr:nth-child(odd) td {
   animation-duration: .25s;
 }
 
+.marginTop {
+  margin-top: 1em;
+}
+
 .players {
-  height: 50vw;
-  width: 50vw;
+  margin-top: 1em;
   display: flex;
+  margin-left: 1em;
+  height: 20vh;
+  width: 60vw;
+  display: flex;
+  border-top: 1em;
+  align-items: flex-start;
 }
 
 .person {
@@ -162,6 +208,7 @@ tr:nth-child(odd) td {
 
 .playerOneTurn {
   margin: 1em;
+  width: 30vw;
 }
 
 .playerTwoTurn {
@@ -171,23 +218,29 @@ tr:nth-child(odd) td {
 
 .speechBubble {
   height: 3em;
-  width: 6em;
+  width: 7em;
   display: flex;
   background-color: #cfcfcf;
   border-radius: 1em;
   font-size: 1em;
   align-items: center;
   justify-content: center;
-  visibility: hidden;
-  animation-name: growNpop;
-  animation-duration: 1s;
-  animation-delay: 1s;
+  position: relative;
+  bottom: 1.5em;
+  left: 1.5em;
+
+}
+
+.rightAlignContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .leftAlignContainer {
   display: flex;
   flex-direction: column;
-  border-left: 3em;
+  justify-content: flex-start;
 }
 
 .smallerHand {
@@ -201,25 +254,23 @@ tr:nth-child(odd) td {
 }
 
 .smallBubble {
-  visibility: hidden;
   height: 1em;
   width: 1em;
   background-color: #cfcfcf;
   border-radius: 1em;
-  animation-name: growNpop;
-  animation-duration: 1s;
-  animation-delay: .5s;
+  position: relative;
+  bottom: .5em;
+  left: .5em;
 }
 
 .mediumBubble {
-  visibility: hidden;
-  height: 2em;
-  width: 2em;
+  height: 1.5em;
+  width: 1.5em;
   background-color: #cfcfcf;
   border-radius: 2em;
-  animation-name: growNpop;
-  animation-duration: 1s;
-  animation-delay: .75s;
+  position: relative;
+  bottom: 1em;
+  left: 1em;
 }
 
 @keyframes growNpop {
@@ -359,8 +410,6 @@ tr:nth-child(odd) td {
     opacity: .51
   }
 }
-
-
 .pupil {
   position: relative;
   top: 5px;
@@ -402,6 +451,19 @@ tr:nth-child(odd) td {
   align-items: center;
   margin: auto;
   border: 3em;
+}
+
+.smaller {
+  transform: scale(.5)
+}
+
+.leftMargin {
+  margin-left: 5vw;
+}
+
+.mediumArea {
+  height: 40vh;
+  width: auto;
 }
 
 .cardSpacer {
@@ -573,10 +635,6 @@ tr:nth-child(odd) td {
    display: flex;
 }
 
-.rulesHeader {
-
-}
-
 .rowSpacer {
   flex-grow: 3;
 }
@@ -590,6 +648,7 @@ tr:nth-child(odd) td {
   justify-content: center;
   border-radius: 1em;
   font-size: 1em;
+  outline: none;
 }
 
 .homeButton:hover {
