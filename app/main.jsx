@@ -54,7 +54,7 @@ const App = ({children}) =>
   (<div>
     <nav
     className="navBar">
-    <Link className="leftMargin" to="/game"><h1>yaniv</h1></Link>
+    <Link className="navLinkText" to="/home"><h1>home</h1></Link>
       {/* WhoAmI takes a firebase auth API and renders either a
           greeting and a logout button, or sign in buttons, depending
           on if anyone's logged in */}
@@ -69,7 +69,7 @@ const AppRoutes = () =>
           (
           <Router history={browserHistory}>
             <Route path="/" component={App}>
-              {<IndexRedirect to="game" />}
+              {<IndexRedirect to="home" />}
               {Game}
             </Route>
             <Route path="*" component={NotFound} />

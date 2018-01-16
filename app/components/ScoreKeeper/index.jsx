@@ -45,7 +45,7 @@ const mapState = (state) => ({
 
 const IndexContainer = connect(mapState)(Index)
 
-export default <Route path="/game" component={({ children }) => children}>
+export default <Route path="/home" component={({ children }) => children}>
   <IndexRoute component={IndexContainer} />
   <Route path="/new" component={Rules} />
   <Route path="/players" component={PlayerScreen} />

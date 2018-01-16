@@ -153,6 +153,7 @@ class Game {
   }
 
   deal(bool = true) {
+    this.round = Math.random() * 1000 + 'd' + Math.random() * 1000
     this.resetHands(this.players)
     this.shuffle()
     this.shuffle(false)
@@ -196,6 +197,77 @@ class Game {
     }
   }
 
+  getSingles(){
+    this.round = Math.random() * 1000 + 'e' + Math.random() * 1000
+    return [this.deck[Math.ceil(Math.random() * 52)]]
+  }
+
+  getPairs(){
+    this.round = Math.random() * 1000 + 'b' + Math.random() * 1000
+    let length = Math.ceil(Math.random() * 3) + 1
+    let joker = Math.ceil(Math.random() * 7)
+    let jokerId = 53
+    let cardId = Math.ceil(Math.random() * 52)
+    let hand = [this.deck[cardId]]
+
+    for (let i = 0; hand.length < length; i++){
+      cardId += 13
+      if (cardId > 53) {
+        cardId = cardId % 53 + 1
+      }
+      if (joker > 5) {
+        hand = [...hand, this.deck[jokerId]]
+        joker--
+        jokerId++
+      } else {
+        hand = [...hand, this.deck[cardId]]
+      }
+    }
+
+    return hand
+  }
+
+  getFlushes(){
+    this.round = Math.random() * 1000 + 'a' + Math.random() * 1000
+    const length = Math.ceil(Math.random() * 2) + 2
+    let joker = Math.ceil(Math.random() * 7)
+    let cardId = Math.ceil(Math.random() * 10)
+    let hand = [this.deck[cardId]]
+    let jokerId = 53
+
+    for (let i = 0; hand.length < length; i++) {
+      cardId += 1
+      if (joker > 5) {
+        hand = [...hand, this.deck[jokerId]]
+        joker--
+        jokerId++
+      } else {
+        hand = [...hand, this.deck[cardId]]
+      }
+    }
+    return hand
+  }
+
+  getNonsense(){
+    this.round = Math.random() * 1000 + 'c' + Math.random() * 1000
+    const length = Math.ceil(Math.random() * 4)
+    let joker = Math.ceil(Math.random() * 7)
+    let cardId = Math.ceil(Math.random() * 10)
+    let hand = [this.deck[cardId]]
+
+    for (let i = 0; hand.length < length; i++) {
+      cardId += (Math.random() * 11) + 1;
+      if (joker > 5) {
+        hand = [...hand, this.deck[53]]
+        joker--;
+      } else {
+        hand = [...hand, this.deck[cardId]]
+      }
+    }
+    return hand
+
+  }
+
   discardNode(cardId) {
     const discardNode = {}
     discardNode.value = cardId
@@ -204,6 +276,9 @@ class Game {
   }
 
   constructor() {
+    this.getFlushes = this.getFlushes.bind(this)
+    this.getNonsense = this.getNonsense.bind(this)
+    this.getPairs = this.getPairs.bind(this)
     this.shuffledCards = []
     this.players = []
     this.round = 'A'

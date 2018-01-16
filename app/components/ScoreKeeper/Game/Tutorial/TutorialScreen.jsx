@@ -10,6 +10,7 @@ import Deal from './DealScreen'
 import Discard from './DiscardScreen'
 import Turn from './TurnScreen'
 import Scoring from './ScoringScreen'
+import Sandbox from './Sandbox'
 
 import Game from './gameClass'
 const tutorialGame = new Game
@@ -25,9 +26,10 @@ class TutorialSceen extends Component {
         <Switch>
           {<Route exact path="/tutorial/" component={Overview} />}
           {<Route path="/tutorial/deal" render={() => <Deal game={tutorialGame} />} />}
-          {<Route path="/tutorial/discard" component={Discard} />}
-          {<Route path="/tutorial/turn" component={Turn} />}
+          {<Route path="/tutorial/discard" render={() => <Discard game={tutorialGame} />} />}
+          {<Route path="/tutorial/turn" render={() => <Turn game={tutorialGame} />} />}
           {<Route path="/tutorial/scoring" component={Scoring} />}
+          {<Route path="/tutorial/sandbox" component={Sandbox} />}
         </Switch>
       </div>
     )
