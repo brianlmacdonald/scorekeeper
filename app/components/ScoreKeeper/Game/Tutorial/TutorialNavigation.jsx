@@ -19,6 +19,9 @@ const Navigation = () => {
     to={'/tutorial/discard'}>discard</NavLink>
     <NavLink
     className="tutorialLink"
+    to={'/tutorial/yaniv'}>yaniv</NavLink>
+    <NavLink
+    className="tutorialLink"
     to={'/tutorial/scoring'}>scoring</NavLink>
   </nav>)
 }

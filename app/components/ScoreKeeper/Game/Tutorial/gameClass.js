@@ -77,8 +77,9 @@ class Game {
   }
 
   handTotal(hand) {
-    return hand.reduce(function (total, card) {
-      const val = card.number
+    const deck = this.deck
+    return hand.reduce(function (total, id) {
+      const val = deck[id].number
       return total + val;
     }, 0)
   }
@@ -199,7 +200,17 @@ class Game {
 
   getSingles(){
     this.round = Math.random() * 1000 + 'e' + Math.random() * 1000
-    return [this.deck[Math.ceil(Math.random() * 52)]]
+    return [Object.assign({}, this.deck[Math.ceil(Math.random() * 52)])]
+  }
+
+  getSmallHand(){
+    this.round = Math.random() * 1000 + 'h' + Math.random() * 1000
+    const cardIdOne = Math.ceil(Math.random() * 52)
+    let cardIdTwo = Math.ceil(Math.random() * 52)
+    while (cardIdOne === cardIdTwo) {
+      cardIdTwo = Math.ceil(Math.random() * 52)
+    }
+    return [cardIdOne, cardIdTwo]
   }
 
   getPairs(){
@@ -208,7 +219,7 @@ class Game {
     let joker = Math.ceil(Math.random() * 7)
     let jokerId = 53
     let cardId = Math.ceil(Math.random() * 52)
-    let hand = [this.deck[cardId]]
+    let hand = [Object.assign({}, this.deck[cardId])]
 
     for (let i = 0; hand.length < length; i++){
       cardId += 13
@@ -216,11 +227,11 @@ class Game {
         cardId = cardId % 53 + 1
       }
       if (joker > 5) {
-        hand = [...hand, this.deck[jokerId]]
+        hand = [...hand, Object.assign({}, this.deck[jokerId])]
         joker--
         jokerId++
       } else {
-        hand = [...hand, this.deck[cardId]]
+        hand = [...hand, Object.assign({}, this.deck[cardId])]
       }
     }
 
@@ -232,17 +243,17 @@ class Game {
     const length = Math.ceil(Math.random() * 2) + 2
     let joker = Math.ceil(Math.random() * 7)
     let cardId = Math.ceil(Math.random() * 10)
-    let hand = [this.deck[cardId]]
+    let hand = [Object.assign({}, this.deck[cardId])]
     let jokerId = 53
 
     for (let i = 0; hand.length < length; i++) {
       cardId += 1
       if (joker > 5) {
-        hand = [...hand, this.deck[jokerId]]
+        hand = [...hand, Object.assign({}, this.deck[jokerId])]
         joker--
         jokerId++
       } else {
-        hand = [...hand, this.deck[cardId]]
+        hand = [...hand, Object.assign({}, this.deck[cardId])]
       }
     }
     return hand
@@ -276,9 +287,11 @@ class Game {
   }
 
   constructor() {
+    this.handTotal = this.handTotal.bind(this)
     this.getFlushes = this.getFlushes.bind(this)
     this.getNonsense = this.getNonsense.bind(this)
     this.getPairs = this.getPairs.bind(this)
+    this.getSmallHand = this.getSmallHand.bind(this)
     this.shuffledCards = []
     this.players = []
     this.round = 'A'

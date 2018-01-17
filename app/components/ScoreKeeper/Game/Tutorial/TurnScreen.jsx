@@ -24,14 +24,15 @@ const Turn = ({game}) => {
   const flush = game.getFlushes()
   const int = Math.floor(Math.random() * 3)
   const hand = int === 0 ? singles : int === 1 ? pairs : flush
+  const values = [40, 50, 51, 52, 53]
 
   return (
       <div className='containerCol'>
         <h1>On a turn, you can either...</h1>
-      <div className="players">
+      <div className="turnScreen">
         <div className="leftAlignContainer">
         <div className="playerOneTurn">
-          <h1>discard first</h1>
+          <h1>discard first...</h1>
           <div className="smallerHand">
           <div className="cards">
           {hand.map(card => {
@@ -44,13 +45,13 @@ const Turn = ({game}) => {
           <CardElement props={discard[0]} />
           <BackOfCard />
           </div>
-          <h3>blindly from the deck, or from the top of the discard pile</h3>
+          <h4>from the deck, or top of the discard pile.</h4>
           </div>
         </div>
         <div className="divider" />
         <div className="rightAlignContainer">
         <div className="playerOneTurn">
-          <h1>or you can call yaniv</h1>
+          <h1>or call Yaniv...</h1>
           <div className="smallerHand">
             <div className="cards">
               {yanivHand.map(card => {
@@ -58,8 +59,14 @@ const Turn = ({game}) => {
               })}
             </div>
           </div>
-          <h2>if your hand total value is 7 or less</h2>
-          <h3>Aces are 1. Jokers 0. Picture cards are 10</h3>
+          <h2>if your hand's total is 7, or less.</h2>
+            <div className='smallerFelt'>
+              {values.map(id => {
+                return <div key={game.round + 'v' + id} className="cardAnimation">
+                <CardElement key={game.round + 'v' + id} props={game.deck[id]} />
+                </div>
+              })}
+            </div>
         </div>
         </div>
       </div>
