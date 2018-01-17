@@ -29,7 +29,6 @@ export default function({position}){
       <div>
       <h2 className={'tutorialHeader marginTop'}>Minumum two. Maximum five. Friends, family, enemies, or complete strangers.</h2>
       </div>
-      <p>*this is the set up I play with. For other variations consult my friend, Dan, or wikipedia.</p>
     </div>
   )
 }

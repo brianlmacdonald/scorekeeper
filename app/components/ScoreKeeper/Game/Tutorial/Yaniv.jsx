@@ -24,7 +24,7 @@ export default class Yaniv extends Component {
     } else if (number > 3) {
       this.setState({message: `${number}. Strategic. Your opponent could have a lower hand.`})
     } else {
-      this.setState({message: `${number} is pretty low. You could've called yaniv safely.`})
+      this.setState({message: `${number}. Strategic. You're trying to Assaf or not be Assaf'd.`})
     }
   }
 
