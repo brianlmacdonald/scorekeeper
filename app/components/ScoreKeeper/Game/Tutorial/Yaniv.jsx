@@ -11,7 +11,7 @@ export default class Yaniv extends Component {
 
   handLowEnough(number){
     if (number > 7) {
-      this.setState({message: `You have ${number} in your hand, you need 7 for yaniv`})
+      this.setState({message: `You have ${number} in your hand, you need 7 for yaniv.`})
     } else {
       return true;
     }
@@ -22,7 +22,7 @@ export default class Yaniv extends Component {
     if (number > 7) {
       this.setState({message: `Correct. ${number} isn't low enough to call yaniv.`})
     } else if (number > 3) {
-      this.setState({message: `${number}. Strategic. Your opponent could have a lower hand`})
+      this.setState({message: `${number}. Strategic. Your opponent could have a lower hand.`})
     } else {
       this.setState({message: `${number} is pretty low. You could've called yaniv safely.`})
     }

@@ -24,7 +24,7 @@ const Turn = ({game}) => {
   const flush = game.getFlushes()
   const int = Math.floor(Math.random() * 3)
   const hand = int === 0 ? singles : int === 1 ? pairs : flush
-  const values = [40, 50, 51, 52, 53]
+  const values = [1, 2, 3, 4, 5, 6, 7, 53]
 
   return (
       <div className='containerCol'>

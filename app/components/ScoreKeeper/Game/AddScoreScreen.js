@@ -14,6 +14,7 @@ class AddScore extends Component {
       jokers: 0,
       yaniv: false,
       assaf: false,
+      cards: []
     }
     this.reset = this.reset.bind(this)
     this.cardKey = this.cardKey.bind(this)
@@ -27,6 +28,7 @@ className="cardButton"
         evt.preventDefault()
         if (card.name === `\uD83C\uDCCF` && this.state.jokers < 2) this.setState({jokers: this.state.jokers + 1})
         this.setState({total: this.state.total + card.value})
+        this.setState({cards: [...this.state.cards, card.name + ' - ']})
       }}
       >{card.name}</button>
     )
@@ -61,6 +63,7 @@ className="cardButton"
     this.setState({ jokers: 0 })
     this.setState({ yaniv: false })
     this.setState({ assaf: false })
+    this.setState({cards: []})
   }
 
   render() {
@@ -70,10 +73,17 @@ className="cardButton"
       return (
         <div className="containerAddScore">
           <Paper className="paperName">
+          <div className='container'>
+          <div className='scoringContainer'>
             <h4 className="paperH4">{currentPlayer.name}</h4>
             <h4 className="paperH4">{this.state.total}</h4>
             <h4 className="paperH4">{`\uD83C\uDCCF`.repeat(this.state.jokers)}</h4>
             <h4 className="paperH4">{this.state.yaniv ? 'winner' : 'loser'}</h4>
+            </div>
+            <div className='scoreCardsContainer'>
+            <p>{this.state.cards}</p>
+            </div>
+            </div>
           </Paper>
           <div className="addContainer">
             {this.cardKey({name: 'K', value: 10})}

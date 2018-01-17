@@ -154,25 +154,6 @@ tr:nth-child(odd) td {
   right: 1em;
 }
 
-.scrollReady {
-  top: 220px;
-  left: 200px;
-  animation: slide-down;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes slide-down {
-  to {
-    margin-top: 50%;
-    opacity: 0;
-  }
-  from {
-    margin-top: 2%;
-    opacity: 1;
-  }
-}
-
 .tutorialHeader {
   animation-name: slide;
   animation-duration: .25s;
@@ -749,11 +730,19 @@ tr:nth-child(odd) td {
   width: 80vw;
 }
 
+.scoreCardsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1em;
+  width: 50vw;
+}
+
 .paperName {
   margin-top: 2vh;
   font-size: 3em;
   width: 60vw;
-  height: 3em;
+  height: 4em;
   display: flex;
   align-content: center;
   justify-content: center;
