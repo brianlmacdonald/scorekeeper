@@ -1,5 +1,5 @@
 import React from 'react'
-import Player from './OverviewComponents/Player'
+import Player from './OverviewComponents/player'
 import SpeechBubble from './OverviewComponents/SpeechBubble'
 import CardElement, {BackOfCard} from './CardElement'
 
@@ -58,7 +58,7 @@ const Turn = ({game}) => {
               })}
             </div>
           </div>
-          <h2>if your hand total value is less than 7</h2>
+          <h2>if your hand total value is 7 or less</h2>
           <h3>Aces are 1. Jokers 0. Picture cards are 10</h3>
         </div>
         </div>
