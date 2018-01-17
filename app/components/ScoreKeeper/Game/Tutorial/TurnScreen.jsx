@@ -40,7 +40,7 @@ const Turn = ({game}) => {
           })}
           </div>
           </div>
-          <h2>and then draw one card</h2>
+          <h2>and then draw one card...</h2>
           <div className="smallerHand">
           <CardElement props={discard[0]} />
           <BackOfCard />
@@ -67,6 +67,7 @@ const Turn = ({game}) => {
                 </div>
               })}
             </div>
+            <h4>Calling Yaniv ends the round. Lowest hand total wins.</h4>
         </div>
         </div>
       </div>

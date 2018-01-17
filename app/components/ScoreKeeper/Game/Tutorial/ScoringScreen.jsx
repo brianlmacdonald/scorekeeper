@@ -8,10 +8,10 @@ const Scoring = () => {
         <h1>Winning</h1>
           <p>A round ends when someone calls 'Yaniv'. If the 'Yaniv</p>
           <p>Caller' has the lowest hand total at the end of a round</p>
-          <p>they have won. No points are added to they Yaniv Callers'</p>
+          <p>they have won. No points are added to the Yaniv Callers'</p>
           <p>total score. All other players have their hand's total value</p>
-          <p>added to their score. If a player wins 4 or 6 rounds in a</p>
-          <p>row, they've wonthe game. If a player accrues 200 points</p>
+          <p>added to their score. If a player wins 4 (or 6) rounds in a</p>
+          <p>row, they've won the game. If a player accrues 200 points</p>
           <p>or more they're out of the game.</p>
       </div>
       <div>

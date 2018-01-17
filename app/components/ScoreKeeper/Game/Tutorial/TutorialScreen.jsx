@@ -4,7 +4,6 @@ import {connect} from 'react-redux'
 
 import Navigation from './TutorialNavigation'
 import CardElement from './CardElement'
-import TutorialButton from './TutorialButton'
 import Overview from './OverviewScreen'
 import Deal from './DealScreen'
 import Discard from './DiscardScreen'

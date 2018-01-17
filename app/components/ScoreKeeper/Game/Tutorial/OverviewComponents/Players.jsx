@@ -6,7 +6,7 @@ export default function({position}){
   return (
     <div className="playersContainer">
     <div>
-    <h1 className="tutorialHeader">Start by finding players</h1>
+    <h1 className="tutorialHeader">Start by finding players.</h1>
     </div>
     <div className="players">
 

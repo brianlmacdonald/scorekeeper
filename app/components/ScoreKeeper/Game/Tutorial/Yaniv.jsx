@@ -5,13 +5,13 @@ export default class Yaniv extends Component {
   constructor(props){
     super(props)
     this.state = {
-      message: 'Call yaniv, or hold off?'
+      message: 'Call Yaniv, or hold off?'
     }
   }
 
   handLowEnough(number){
     if (number > 7) {
-      this.setState({message: `You have ${number} in your hand, you need 7 for yaniv.`})
+      this.setState({message: `You have ${number} in your hand, you need 7 or less for Yaniv.`})
     } else {
       return true;
     }
@@ -20,7 +20,7 @@ export default class Yaniv extends Component {
 
   handleHoldOff(number){
     if (number > 7) {
-      this.setState({message: `Correct. ${number} isn't low enough to call yaniv.`})
+      this.setState({message: `Correct. ${number} isn't low enough to call Yaniv.`})
     } else if (number > 3) {
       this.setState({message: `${number}. Strategic. Your opponent could have a lower hand.`})
     } else {
