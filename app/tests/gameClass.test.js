@@ -1,5 +1,5 @@
 const expect = require('chai').expect
-const Game = require('./gameClass')
+const Game = require('APP/app/components/ScoreKeeper/Game/Tutorial/gameClass.js')
 const R = require('ramda')
 const game = new Game()
 
@@ -19,6 +19,16 @@ const threeOfAKind = [1, 14, 27]
 const nonThreeOfAKind = [1, 14, 28]
 const fourOfAKind = [1, 14, 27, 40]
 const nonFourOfAKind = [1, 13, 27, 40]
+
+const orAJoker = (target) => (maybeJoker) => {
+  if (maybeJoker.name === 'Joker') return target
+  else return maybeJoker
+}
+
+const flushJoker = (target) => (maybeJoker) => {
+  if (maybeJoker.name === 'Joker') return game.deck[target.id + 1]
+  else return maybeJoker
+}
 
 
 beforeEach(function () {
@@ -131,6 +141,54 @@ describe('game logic', function () {
 
     it('should not validate unfillable number gaps with a joker', function () {
       expect(game.validateDiscard(nonStraightBigJokerGap)).to.equal(false)
+    })
+  })
+
+  describe('hand total function', function(){
+    it('should correctly sum up a players hand', function(){
+      expect(game.handTotal([1, 2, 3])).to.equal(6)
+    })
+
+    it('should correctly sum up a players hand with a joker', function () {
+      expect(game.handTotal([1, 2, 3, 53])).to.equal(6)
+    })
+  })
+
+  describe('get singles function', function(){
+    it('should return a single card', function(){
+      expect(game.getSingles()).to.have.length(1)
+    })
+  })
+
+  describe('get pairs function', function(){
+    let pairs;
+    beforeEach(function(){
+      pairs = game.getPairs()
+    })
+    it('should return at least two cards', function(){
+      expect(pairs.length).to.be.at.least(2)
+    })
+    it('should return at most four cards', function () {
+      expect(pairs.length).to.be.at.most(4)
+    })
+    it('should return the same card name for each card', function(){
+      expect(pairs[0].name).to.equal(orAJoker(pairs[0])(pairs[1]).name)
+    })
+  })
+
+  describe('get flushes function', function(){
+    let flush;
+    beforeEach(function () {
+      flush = game.getFlushes()
+    })
+    it('should return at least 3 cards', function(){
+      expect(flush.length).to.be.at.least(3)
+    })
+    it('should return at most 5 cards', function () {
+      expect(flush.length).to.be.at.most(5)
+    })
+    it('should return cards in sequential order', function(){
+      expect(flush[0].id).to.equal(flushJoker(flush[0])(flush[1]).id - 1)
     })
   })
 

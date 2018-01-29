@@ -7,7 +7,7 @@ const Deal = ({game}) => {
   let deck = ready ? game.deck : {}
 
   return (
-    <div className="container">
+    <div className={"container makeColumn"}>
       <div className="felt">
         <div className="playerHand">
           <h2 className={'dealInstructions'}>Deal each player five cards using a deck with jokers.</h2>
@@ -19,7 +19,7 @@ const Deal = ({game}) => {
         </div>
       <div className="discard">
         <h2 className={'dealInstructions'}>Then flip the top card on the deck.</h2>
-          <div className={'containerRow'}>
+          <div className={'container'}>
           {ready && <CardElement props={deck[game.discardPile.top.value]} />}
           <BackOfCard />
           </div>

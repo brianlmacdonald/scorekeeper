@@ -71,7 +71,7 @@ className="cardButton"
     const currentPlayer = players.find(player => !player.checked)
     if (currentPlayer) {
       return (
-        <div className="containerAddScore">
+        <div className={'container makeColumn'}>
           <Paper className="paperName">
           <div className='container'>
           <div className='scoringContainer'>

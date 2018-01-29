@@ -44,7 +44,7 @@ export default class Yaniv extends Component {
     const deck = game.deck
     return (
       <div className='yanivScreen'>
-      <div className='container'>
+      <div className={'container makeColumn'}>
       <h1>{this.state.message}</h1>
         <div className='userHand'>
           {userHand.map(cardId => {
@@ -72,7 +72,7 @@ export default class Yaniv extends Component {
             className='homeButton'>hold off</button>
           </div>
         </div>
-        <div className='container'>
+        <div className={'container makeColumn'}>
             <h1>Opponent's Hand</h1>
             <div className='userHand'>
           {opponentHand.map(cardId => {

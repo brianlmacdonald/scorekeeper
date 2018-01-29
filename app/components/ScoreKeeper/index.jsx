@@ -12,9 +12,9 @@ import TutorialScreen from './Game/Tutorial/TutorialScreen'
 const Index = ({ children, players }) => {
   let ready = players.length !== 0
   return (
-    <div className="screen">
+    <div id="screen">
       <div className="spacer" />
-      <div className="container">
+      <div className={'container makeColumn'}>
         <div className="imageHolder">
           <h1 className="homeScreenHeader">yaniv!</h1>
         </div>

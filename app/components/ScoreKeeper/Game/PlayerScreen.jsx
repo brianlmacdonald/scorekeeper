@@ -49,7 +49,7 @@ class PlayerScreen extends Component {
   }
 
   numberSelect(){
-    return (<div className="container">
+    return (<div className={"container makeColumn"}>
       <h1 className="numberOfPlayers">number of players:</h1>
       <select
         className="playerSelect"
@@ -68,10 +68,10 @@ class PlayerScreen extends Component {
   }
 
   names(handleNameChange){
-    return (<div className="container">
+    return (<div className={"container makeColumn"}>
       {this.props.players.length && this.props.players.map(player => {
         return (<div
-          className="container"
+          className={"container makeColumn"}
           key={player.id}>
           <input
             className="playerNameField"
@@ -99,7 +99,7 @@ class PlayerScreen extends Component {
             </Step>
           </Stepper>
           </div>
-          <div className="container">
+          <div className={"container makeColumn"}>
                 <div>
                   <div>{this.getStepContent(stepIndex)(handleNameChange)}</div>
                   <div className="stepperButtonContainer">

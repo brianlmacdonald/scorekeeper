@@ -116,10 +116,6 @@ class Game {
     return updatedPlayers
   }
 
-  newGame() {
-    //players with hands, shuffled deck, and a discard pile
-  }
-
   deckEmpty() {
     let discard = this.discardPile.top.next
     this.discardPile.top.next = null
@@ -259,26 +255,6 @@ class Game {
     return hand
   }
 
-  getNonsense(){
-    this.round = Math.random() * 1000 + 'c' + Math.random() * 1000
-    const length = Math.ceil(Math.random() * 4)
-    let joker = Math.ceil(Math.random() * 7)
-    let cardId = Math.ceil(Math.random() * 10)
-    let hand = [this.deck[cardId]]
-
-    for (let i = 0; hand.length < length; i++) {
-      cardId += (Math.random() * 11) + 1;
-      if (joker > 5) {
-        hand = [...hand, this.deck[53]]
-        joker--;
-      } else {
-        hand = [...hand, this.deck[cardId]]
-      }
-    }
-    return hand
-
-  }
-
   discardNode(cardId) {
     const discardNode = {}
     discardNode.value = cardId
@@ -289,7 +265,6 @@ class Game {
   constructor() {
     this.handTotal = this.handTotal.bind(this)
     this.getFlushes = this.getFlushes.bind(this)
-    this.getNonsense = this.getNonsense.bind(this)
     this.getPairs = this.getPairs.bind(this)
     this.getSmallHand = this.getSmallHand.bind(this)
     this.shuffledCards = []

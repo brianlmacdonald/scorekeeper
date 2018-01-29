@@ -27,7 +27,7 @@ const Turn = ({game}) => {
   const values = [1, 2, 3, 4, 5, 6, 7, 53]
 
   return (
-      <div className='containerCol'>
+      <div className={'container makeColumn'}>
         <h1>On a turn, you can either...</h1>
       <div className="turnScreen">
         <div className="leftAlignContainer">
