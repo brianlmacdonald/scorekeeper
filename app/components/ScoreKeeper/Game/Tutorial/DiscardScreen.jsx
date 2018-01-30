@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import CardElement from './CardElement'
+import CardElement, {BackOfCard} from './CardElement'
 
 export default class Discard extends Component {
   constructor(props){
@@ -8,6 +8,9 @@ export default class Discard extends Component {
       step: 0
     }
     this.handleStep = this.handleStep.bind(this)
+    this.discardHeader = this.discardHeader.bind(this)
+    this.drawHeader = this.drawHeader.bind(this)
+    this.handleDrawStep = this.handleDrawStep.bind(this)
   }
 
   handleStep(){
@@ -15,8 +18,42 @@ export default class Discard extends Component {
     this.setState({step: next})
   }
 
+  handleDrawStep(){
+    if (this.state.step === 0) {
+      return "a single"
+    } else if (this.state.step === 1) {
+      return "pairs or more"
+    } else {
+      return "a straight flush"
+    }
+  }
+
+  drawHeader(hand){
+    return (
+        <div className={'container makeColumn'}>
+        <h1>If {this.handleDrawStep()} is the last discard, 
+        you can draw {this.state.step === 0 ?
+          'just one card' :
+          this.state.step === 1 ?
+            'any one of them' :
+            `the ${hand[0].name} or ${hand[hand.length - 1].name}, not the middle cards`}
+        </h1>
+        </div>
+    )
+  }
+
+  discardHeader(){
+    return (
+      <h1>You can discard {this.state.step === 0 ?
+        'singles.' :
+        this.state.step === 1 ?
+        '2 of a kind or more.' :
+        'straight flushes of 3 or more.'}
+      </h1>)
+  }
+
   render() {
-  const {game} =  this.props
+  const {game, screen} =  this.props
   const singles = game.getSingles()
   const pairs = game.getPairs()
   const flush = game.getFlushes()
@@ -24,15 +61,25 @@ export default class Discard extends Component {
   const hand = options[this.state.step]
   return (
     <div className='felt'>
-      <h1>You can discard {this.state.step === 0 ? 'singles.' : this.state.step === 1 ? '2 of a kind or more.' : 'straight flushes of 3 or more.'}</h1>
+      {this.props.screen === 'discard' ?
+      this.discardHeader() :
+      this.drawHeader(hand)
+    }
       <div className="cards">
         {hand.map(card => {
           return <div key={game.round + card.id} className="cardAnimation"><CardElement key={game.round + card.id} props={card} /></div>
         })}
       </div>
+      {this.props.screen === 'draw' ?
+      <div className={'container makeColumn'}>
+      <h2>off the top of the discard pile or one off the top of the deck.</h2>
+      <BackOfCard />
+      </div> :
+      <div />
+    }
         <button
         onClick={this.handleStep}
-        className="homeButton">{this.state.step === 0 ? 'Singles. Got it.' : this.state.step === 1 ? 'Pairs. Ok!' : 'Straight flushes!'}</button>
+        className="homeButton">{this.state.step === 0 ? 'Got it.' : this.state.step === 1 ? 'Cool.' : 'Yup.'}</button>
     </div>
   )
 }

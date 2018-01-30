@@ -463,7 +463,7 @@ tr:nth-child(odd) td {
 }
 
 .tutorialLink {
-  margin: 1em;
+  margin: .8em;
   font-size: 2em;
   color: white;
 }
@@ -799,15 +799,6 @@ tr:nth-child(odd) td {
   border-color: #FFA000;
   border-radius: .5em;
   margin: .5em;
-}
-
-.yanivScreen {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80vw;
-  height: auto;
 }
 
 @media only screen 

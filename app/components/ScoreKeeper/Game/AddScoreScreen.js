@@ -73,7 +73,7 @@ className="cardButton"
       return (
         <div className={'container makeColumn'}>
           <Paper className="paperName">
-          <div className='container'>
+          <div className='container makeColumn'>
           <div className='scoringContainer'>
             <h4 className="paperH4">{currentPlayer.name}</h4>
             <h4 className="paperH4">{this.state.total}</h4>

@@ -18,6 +18,9 @@ const Navigation = () => {
     className="tutorialLink"
     to={'/tutorial/discard'}>discard</NavLink>
     <NavLink
+      className="tutorialLink"
+      to={'/tutorial/draw'}>draw</NavLink>
+    <NavLink
     className="tutorialLink"
     to={'/tutorial/yaniv'}>yaniv</NavLink>
     <NavLink

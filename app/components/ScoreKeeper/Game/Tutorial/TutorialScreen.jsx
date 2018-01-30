@@ -24,8 +24,9 @@ const TutorialSceen = () => {
         <Switch>
           {<Route exact path="/tutorial/" component={Overview} />}
           {<Route path="/tutorial/deal" render={() => <Deal game={tutorialGame} />} />}
-          {<Route path="/tutorial/discard" render={() => <Discard game={tutorialGame} />} />}
+          {<Route path="/tutorial/discard" render={() => <Discard screen={'discard'}game={tutorialGame} />} />}
           {<Route path="/tutorial/turn" render={() => <Turn game={tutorialGame} />} />}
+          {<Route path="/tutorial/draw" render={() => <Discard screen={'draw'} game={tutorialGame} />} />}
           {<Route path="/tutorial/scoring" component={Scoring} />}
           {<Route path="/tutorial/yaniv" render={() => <Yaniv game={tutorialGame} />} />}
           {<Route path="/tutorial/sandbox" component={Sandbox} />}
