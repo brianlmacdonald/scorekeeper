@@ -54,6 +54,7 @@ tr:nth-child(odd) td {
   display: flex;
   width: 40vw;
   justify-content: center;
+  margin-top: 0em;
 }
 
 
@@ -70,6 +71,15 @@ tr:nth-child(odd) td {
 
 .makeColumn {
   flex-direction: column;
+}
+
+.giveMargin {
+  margin: 1em;
+}
+
+.halfFelt {
+  height: 30vh;
+  width: 30vw;
 }
 
 .felt {
