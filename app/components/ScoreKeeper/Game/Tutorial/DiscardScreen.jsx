@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import CardElement, {BackOfCard} from './CardElement'
 
+
+//The discard Component is recycled as the Drawing Component,
+//since picking up discards is a major part of drawing.
 export default class Discard extends Component {
   constructor(props){
     super(props)
@@ -31,12 +34,12 @@ export default class Discard extends Component {
   drawHeader(hand){
     return (
         <div className={'container makeColumn'}>
-        <h1>If {this.handleDrawStep()} is the last discard, 
-        you can draw {this.state.step === 0 ?
-          'just one card' :
+        <h1 className={'feltHeaders'}>If the last person discarded {this.handleDrawStep()}, 
+        you can take {this.state.step === 0 ?
+          'just the one discard.' :
           this.state.step === 1 ?
-            'any one of them' :
-            `the ${hand[0].name} or ${hand[hand.length - 1].name}, not the middle cards`}
+            'any one of their discards.' :
+            `the ${hand[0].name} or ${hand[hand.length - 1].name}, not the middle discards.`}
         </h1>
         </div>
     )
@@ -44,7 +47,7 @@ export default class Discard extends Component {
 
   discardHeader(){
     return (
-      <h1>You can discard {this.state.step === 0 ?
+      <h1 className={'feltHeaders'}>You can discard {this.state.step === 0 ?
         'singles.' :
         this.state.step === 1 ?
         '2 of a kind or more.' :
@@ -60,7 +63,7 @@ export default class Discard extends Component {
   const options = [singles, pairs, flush]
   const hand = options[this.state.step]
   return (
-    <div className='felt'>
+    <div className={'container makeColumn felt'}>
       {this.props.screen === 'discard' ?
       this.discardHeader() :
       this.drawHeader(hand)
@@ -72,7 +75,7 @@ export default class Discard extends Component {
       </div>
       {this.props.screen === 'draw' ?
       <div className={'container makeColumn'}>
-      <h2>off the top of the discard pile or one off the top of the deck.</h2>
+      <h2 className={'feltHeaders'}>Or draw one off the top of the deck.</h2>
       <BackOfCard />
       </div> :
       <div />

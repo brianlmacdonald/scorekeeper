@@ -7,6 +7,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import {Provider} from 'react-redux'
 import store from './store/'
 
+import 'normalize.css'
 import style from './styles.css'
 
 import WhoAmI from './components/WhoAmI'

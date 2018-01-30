@@ -8,10 +8,6 @@
 
 /*General Style*/
 
-p {
-  margin: 0;
-}
-
 a {
   text-decoration: none;
 }
@@ -44,12 +40,42 @@ tr:nth-child(odd) td {
   justify-content: center;
 }
 
+.spaceAroundContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/*button styles*/
+
+/*headers*/
+
+.feltHeaders {
+  display: flex;
+  width: 40vw;
+  justify-content: center;
+}
+
+
+/*tweaks*/
+
+.center {
+  align-items: center;
+}
+
+#turn {
+  margin-top: 2em;
+  align-items: flex-start;
+}
+
 .makeColumn {
   flex-direction: column;
 }
 
-
-/*button styles*/
+.felt {
+  height: 70vh;
+  width: 70vw;
+}
 
 .imageHolder {
   margin-top: 1em;
@@ -238,13 +264,6 @@ tr:nth-child(odd) td {
   bottom: 1.5em;
   left: 1.5em;
 
-}
-
-.scoringContainer {
-  display: flex;
-  flex-direction: row;
-  margin-left: 1em;
-  flex-wrap: wrap;
 }
 
 .containerSide {
@@ -499,18 +518,6 @@ tr:nth-child(odd) td {
 
 .cardSpacer {
   width: 4.2vw;
-}
-
-.felt {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  margin-top: 2em;
-  border: 3em;
-  height: 70vh;
-  width: 70vw;
 }
 
 .yellBad {

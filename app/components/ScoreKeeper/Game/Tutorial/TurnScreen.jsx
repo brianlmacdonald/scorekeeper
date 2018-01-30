@@ -80,7 +80,7 @@ class Turn extends Component {
     const cards = int === 0 ? singles : int === 1 ? pairs : flush
   
     return (
-      <div className='felt'>
+      <div id={'turn'} className={'container felt'}>
         <div className={'container makeColumn'}>
           <h1>On a turn, you can either...</h1>
         <div className={'container'}>

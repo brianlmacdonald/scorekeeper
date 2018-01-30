@@ -74,14 +74,14 @@ className="cardButton"
         <div className={'container makeColumn'}>
           <Paper className="paperName">
           <div className='container makeColumn'>
-          <div className='scoringContainer'>
-            <h4 className="paperH4">{currentPlayer.name}</h4>
-            <h4 className="paperH4">{this.state.total}</h4>
-            <h4 className="paperH4">{`\uD83C\uDCCF`.repeat(this.state.jokers)}</h4>
-            <h4 className="paperH4">{this.state.yaniv ? 'winner' : 'loser'}</h4>
+            <div className='spaceAroundContainer'>
+              <p>{currentPlayer.name}</p>
+              <p>{this.state.total}</p>
+              <p>{`\uD83C\uDCCF`.repeat(this.state.jokers)}</p>
+              <p>{this.state.yaniv ? 'winner' : 'loser'}</p>
             </div>
-            <div className='scoreCardsContainer'>
-            <p>{this.state.cards}</p>
+            <div className='container'>
+              <p>{this.state.cards}</p>
             </div>
             </div>
           </Paper>

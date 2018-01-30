@@ -8,7 +8,7 @@ const Deal = ({game}) => {
 
   return (
     <div className={"container makeColumn"}>
-      <div className="felt">
+      <div className={"container makeColumn felt"}>
         <div className="playerHand">
           <h2 className={'dealInstructions'}>Deal each player five cards using a deck with jokers.</h2>
           <div className="cards">

@@ -43,7 +43,7 @@ export default class Yaniv extends Component {
     const opponentHand = [dealtCards[1]]
     const deck = game.deck
     return (
-      <div className='felt'>
+      <div className='container makeColumn felt'>
       <div className={'container makeColumn'}>
       <h1>{this.state.message}</h1>
         <div className='userHand'>
