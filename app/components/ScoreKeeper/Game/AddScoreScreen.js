@@ -14,7 +14,7 @@ class AddScore extends Component {
       jokers: 0,
       yaniv: false,
       assaf: false,
-      cards: []
+      cards: [],
     }
     this.reset = this.reset.bind(this)
     this.cardKey = this.cardKey.bind(this)
@@ -23,7 +23,8 @@ class AddScore extends Component {
   cardKey(card){
     return (
       <button
-className="cardButton"
+      disabled={this.state.cards.length > 4}
+      className="cardButton"
       onClick={(evt) => {
         evt.preventDefault()
         if (card.name === `\uD83C\uDCCF` && this.state.jokers < 2) this.setState({jokers: this.state.jokers + 1})
@@ -64,24 +65,26 @@ className="cardButton"
     this.setState({ yaniv: false })
     this.setState({ assaf: false })
     this.setState({cards: []})
+    this.setState({disabled: false})
   }
 
   render() {
     const {handleDone, handleBackToScores, players, router} = this.props
     const currentPlayer = players.find(player => !player.checked)
+    const disabled = this.state.cards.length > 4
     if (currentPlayer) {
       return (
         <div className={'container makeColumn'}>
           <Paper className="paperName">
-          <div className='container makeColumn'>
-            <div className='spaceAroundContainer'>
-              <p>{currentPlayer.name}</p>
-              <p>{this.state.total}</p>
-              <p>{`\uD83C\uDCCF`.repeat(this.state.jokers)}</p>
-              <p>{this.state.yaniv ? 'winner' : 'loser'}</p>
+          <div className='spaceAroundContainer makeColumn fiftyWidth'>
+            <div className='spaceAroundContainer fiftyWidth'>
+              <div>{currentPlayer.name}</div>
+              <div>{this.state.total}</div>
+              <div>{`\uD83C\uDCCF`.repeat(this.state.jokers)}</div>
+              <div>{this.state.yaniv ? 'winner' : 'loser'}</div>
             </div>
-            <div className='container'>
-              <p>{this.state.cards}</p>
+            <div className='container spaceAroundContainer fiftyWidth'>
+              <div>{this.state.cards}</div>
             </div>
             </div>
           </Paper>

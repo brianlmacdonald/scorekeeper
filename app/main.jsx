@@ -55,7 +55,7 @@ const App = ({children}) =>
   (<div>
     <nav
     className="navBar">
-    <Link className="navLinkText" to="/home"><h1>home</h1></Link>
+    <Link className="navLinkText" to="/home">home</Link>
       {/* WhoAmI takes a firebase auth API and renders either a
           greeting and a logout button, or sign in buttons, depending
           on if anyone's logged in */}

@@ -12,8 +12,7 @@ const ScoreScreen = ({ players, handleReset, handleResetPlayers }) => {
       return (
         <div className={"container makeColumn"}>
           <div className="winnerHolder">
-            <h1 className="homeScreenHeader">{winner.name}</h1>
-            <p className="homeScreenHeader">wins!</p>
+            <h1>{winner.name} wins!</h1>
           </div>
           <button
             className="homeButton"

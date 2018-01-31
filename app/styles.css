@@ -42,8 +42,17 @@ tr:nth-child(odd) td {
 
 .spaceAroundContainer {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.paperName {
+  width: 60vw;
+  height: 26vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 2vh;
+  font-size: 2.5em;
 }
 
 /*button styles*/
@@ -59,6 +68,10 @@ tr:nth-child(odd) td {
 
 
 /*tweaks*/
+
+.fiftyWidth {
+  width: 50vw;
+}
 
 .center {
   align-items: center;
@@ -625,10 +638,6 @@ tr:nth-child(odd) td {
   align-items: center;
 }
 
-.homeScreenHeader {
-  font-size: 10em;
-}
-
 .screen {
   display: flex;
   align-items: center;
@@ -666,7 +675,8 @@ tr:nth-child(odd) td {
 }
 
 .navLinkText {
-  margin: auto;
+  display: flex;
+  align-self: flex-end;
   margin-left: 1em;
   font-size: 2em;
   color: #044389
@@ -760,15 +770,6 @@ tr:nth-child(odd) td {
   width: 50vw;
 }
 
-.paperName {
-  margin-top: 2vh;
-  font-size: 3em;
-  width: 60vw;
-  height: 4em;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-}
 
 .scoreTable {
   margin: auto;
