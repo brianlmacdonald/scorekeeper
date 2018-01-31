@@ -29,9 +29,9 @@ class EditPlayer extends Component {
     })
     if (player) {
       return (
-        <div className={"container makeColumn"}>
+        <div className={'container makeColumn'}>
           <h1 className="editLabel">{player.name}</h1>
-          <form className={"container makeColumn"}>
+          <form className={'container makeColumn'}>
             <label className="editLabel">score</label>
             <input
             placeholder={this.state.score}

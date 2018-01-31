@@ -76,14 +76,14 @@ class AddScore extends Component {
       return (
         <div className={'container makeColumn'}>
           <Paper className="paperName">
-          <div className='spaceAroundContainer makeColumn fiftyWidth'>
-            <div className='spaceAroundContainer fiftyWidth'>
+          <div className="spaceAroundContainer makeColumn fiftyWidth">
+            <div className="spaceAroundContainer fiftyWidth">
               <div>{currentPlayer.name}</div>
               <div>{this.state.total}</div>
               <div>{`\uD83C\uDCCF`.repeat(this.state.jokers)}</div>
               <div>{this.state.yaniv ? 'winner' : 'loser'}</div>
             </div>
-            <div className='container spaceAroundContainer fiftyWidth'>
+            <div className="container spaceAroundContainer fiftyWidth">
               <div>{this.state.cards}</div>
             </div>
             </div>

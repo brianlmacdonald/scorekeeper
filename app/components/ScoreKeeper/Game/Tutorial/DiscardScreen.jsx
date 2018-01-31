@@ -23,18 +23,18 @@ export default class Discard extends Component {
 
   handleDrawStep(){
     if (this.state.step === 0) {
-      return "a single"
+      return 'a single'
     } else if (this.state.step === 1) {
-      return "pairs or more"
+      return 'pairs or more'
     } else {
-      return "a straight flush"
+      return 'a straight flush'
     }
   }
 
   drawHeader(hand){
     return (
         <div className={'container makeColumn'}>
-        <h1 className={'feltHeaders'}>If the last person discarded {this.handleDrawStep()}, 
+        <h1 className={'feltHeaders'}>If the last person discarded {this.handleDrawStep()},
         you can take {this.state.step === 0 ?
           'just the one discard.' :
           this.state.step === 1 ?
@@ -63,7 +63,8 @@ export default class Discard extends Component {
   const options = [singles, pairs, flush]
   const hand = options[this.state.step]
   return (
-    <div className={'container makeColumn felt'}>
+    <div id={'start'} className={'container makeColumn'}>
+      <div className={'container makeColumn felt'}>
       {this.props.screen === 'discard' ?
       this.discardHeader() :
       this.drawHeader(hand)
@@ -83,6 +84,7 @@ export default class Discard extends Component {
         <button
         onClick={this.handleStep}
         className="homeButton">{this.state.step === 0 ? 'Got it.' : this.state.step === 1 ? 'Cool.' : 'Yup.'}</button>
+    </div>
     </div>
   )
 }

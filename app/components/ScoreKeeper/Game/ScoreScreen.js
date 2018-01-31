@@ -10,7 +10,7 @@ const ScoreScreen = ({ players, handleReset, handleResetPlayers }) => {
     const winner = checkForWinner(players)
     if (winner) {
       return (
-        <div className={"container makeColumn"}>
+        <div className={'container makeColumn'}>
           <div className="winnerHolder">
             <h1>{winner.name} wins!</h1>
           </div>
@@ -28,7 +28,7 @@ const ScoreScreen = ({ players, handleReset, handleResetPlayers }) => {
 
     } else {
       return (
-        <div className={"container makeColumn"}>
+        <div className={'container makeColumn'}>
         <table className="scoreTable">
           <tbody>
             <tr>

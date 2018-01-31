@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 
 import Navigation from './TutorialNavigation'
 import CardElement from './CardElement'
-import Overview from './OverviewScreen'
+import StartScreen from './StartScreen'
 import Deal from './DealScreen'
 import Discard from './DiscardScreen'
 import Turn from './TurnScreen'
@@ -22,7 +22,7 @@ const TutorialSceen = () => {
       <div id="tutorialScreen">
         <Navigation />
         <Switch>
-          {<Route exact path="/tutorial/" component={Overview} />}
+          {<Route exact path="/tutorial/start" component={StartScreen} />}
           {<Route path="/tutorial/deal" render={() => <Deal game={tutorialGame} />} />}
           {<Route path="/tutorial/discard" render={() => <Discard screen={'discard'}game={tutorialGame} />} />}
           {<Route path="/tutorial/turn" render={() => <Turn game={tutorialGame} />} />}

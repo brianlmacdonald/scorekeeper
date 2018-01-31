@@ -43,16 +43,17 @@ export default class Yaniv extends Component {
     const opponentHand = [dealtCards[1]]
     const deck = game.deck
     return (
-      <div className='container makeColumn felt'>
+      <div id={'start'} className={'container makeColumn'}>
+      <div className={'container makeColumn felt'}>
       <div className={'container makeColumn'}>
       <h1>{this.state.message}</h1>
-        <div className='userHand'>
+        <div className="container">
           {userHand.map(cardId => {
             return <CardElement key={game.round + 'u' + cardId} props={deck[cardId]} />
           })}
 
           </div>
-          <div className='buttonGroup'>
+          <div className="buttonGroup">
           <button
           onClick={ () => {
             if (this.handLowEnough(game.handTotal(userHand))) {
@@ -64,23 +65,24 @@ export default class Yaniv extends Component {
             }
 
           }}
-          className='homeButton'>call yaniv</button>
+          className="homeButton">call yaniv</button>
           <button
             onClick={() => {
               this.handleHoldOff(game.handTotal(userHand))
             }}
-            className='homeButton'>hold off</button>
+            className="homeButton">hold off</button>
           </div>
         </div>
         <div className={'container makeColumn'}>
             <h1>Opponent's Hand</h1>
-            <div className='userHand'>
+            <div className="userHand">
           {opponentHand.map(cardId => {
             return <CardElement key={game.round + 'o' + cardId} props={deck[cardId]} />
           })}
             </div>
         </div>
       </div>
+     </div>
     )
   }
 }

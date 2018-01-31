@@ -97,7 +97,7 @@ class Rules extends Component {
   render() {
     const handleNewGameSubmit = this.props.handleNewGameSubmit
     return (
-      <div className={"container makeColumn"}>
+      <div className={'container makeColumn'}>
         <div className="spacer" />
         <h1 className="rulesHeader">rules</h1>
         <div className="spacer" />

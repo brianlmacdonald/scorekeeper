@@ -7,7 +7,7 @@ const Navigation = () => {
     >
     <NavLink
     className="tutorialLink"
-    to={'/tutorial/'}>start</NavLink>
+    to={'/tutorial/start'}>start</NavLink>
     <NavLink
     className="tutorialLink"
     to={'/tutorial/deal'}>deal</NavLink>

@@ -78,9 +78,9 @@ class Turn extends Component {
     const flush = game.getFlushes()
     const int = Math.floor(Math.random() * 3)
     const cards = int === 0 ? singles : int === 1 ? pairs : flush
-  
+
     return (
-      <div id={'turn'} className={'container felt'}>
+      <div id={'start'} className={'container felt'}>
         <div className={'container makeColumn'}>
           <h1>On a turn, you can either...</h1>
         <div className={'container'}>

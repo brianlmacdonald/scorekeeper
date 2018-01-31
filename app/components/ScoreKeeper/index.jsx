@@ -8,15 +8,37 @@ import ScoreScreen from './Game/ScoreScreen'
 import AddScoreScreen from './Game/AddScoreScreen'
 import EditPlayerScreen from './Game/EditPlayerScreen'
 import TutorialScreen from './Game/Tutorial/TutorialScreen'
+import CardElement from './Game/Tutorial/CardElement'
+const title = [
+  {name: 'Y',
+    suit: `\u2764`,
+  }, {
+    name: 'A',
+    suit: `\u2660`,
+  }, {
+    name: 'N',
+    suit: `\u2666`,
+  }, {
+    name: 'I',
+    suit: `\u2663`
+  }, {
+    name: 'V',
+    suit: `\uD83C\uDCCF`
+  }
+]
 
 const Index = ({ children, players }) => {
   let ready = players.length !== 0
+  let i = 55;
   return (
     <div id="screen">
       <div className="spacer" />
       <div className={'container makeColumn'}>
-        <div className="imageHolder">
-          <h1 className="homeScreenHeader">yaniv!</h1>
+        <div className="cards">
+          {title.map(letter => {
+            i++
+            return <div key={i} className="cardAnimation"><CardElement key={i} props={letter} /></div>
+          })}
         </div>
         <div className="buttonContainer">
           <Link to="/tutorial/">
