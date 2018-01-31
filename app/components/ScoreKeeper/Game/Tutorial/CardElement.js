@@ -23,7 +23,6 @@ export function BackOfCard() {
         <div className="playingCard">
           <div className="backOfCard">
             <div className="rectangle">
-              <h1>:</h1>
             </div>
           </div>
         </div>

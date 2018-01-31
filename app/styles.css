@@ -207,7 +207,7 @@ tr:nth-child(odd) td {
   justify-items: left;
   align-items: left;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 .cardMiddle {
@@ -519,7 +519,7 @@ tr:nth-child(odd) td {
   border: 1px solid #cfcfcf;
   height: 120px;
   width: 70px;
-  background-color: rgb(255, 237, 206)
+  background-color: rgb(109, 75, 16)
 }
 
 .playerHand {
@@ -547,7 +547,7 @@ tr:nth-child(odd) td {
   justify-items: right;
   flex-basis: 1;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 .winnerHolder {
