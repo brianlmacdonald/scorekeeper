@@ -7,7 +7,7 @@ const Deal = ({game}) => {
   let deck = ready ? game.deck : {}
 
   return (
-    <div className={'container makeColumn'}>
+    <div id={'start'} className={'container makeColumn'}>
     <div className={'container makeColumn felt'}>
     <h1 className={'dealInstructions'}>Deal each player five cards using a deck with jokers.</h1>
         <div className="playerHand">

@@ -15,6 +15,7 @@ module.exports = {
     "guard-for-in": 0,
     "no-unused-expressions": 0,
     "react/display-name": 0,
+    "no-nested-ternary": 0,
     "id-length": [
       1,
       {

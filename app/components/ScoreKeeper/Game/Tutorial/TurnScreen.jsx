@@ -26,7 +26,7 @@ class Turn extends Component {
   discard(round, hand){
     return (<div className={'container makeColumn'}>
       <h2>I dispose of my cards first!</h2>
-      <div className={'container'}>
+      <div className={'cards'}>
       {hand.map(card => {
         return <div key={round + card.id} className="cardAnimation"><CardElement key={round + card.id} props={card} /></div>
       })}
@@ -40,7 +40,7 @@ class Turn extends Component {
     return (
       <div className={'container makeColumn'}>
         <h1>Yaniv!</h1>
-      <div className={'container'}>
+      <div className={'cards'}>
         {yanivHand.map(card => {
             return <div key={card.id} className="cardAnimation"><CardElement key={card.id} props={card} /></div>
           })
@@ -101,7 +101,7 @@ class Turn extends Component {
             }}
           >call yaniv</button>
         </div>
-          <div className={'container'}>
+          <div className={'cards'}>
             {this.visibleHand(game.round, cards)}
           </div>
         </div>
