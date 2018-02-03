@@ -3,9 +3,8 @@ import Player from './OverviewComponents/player'
 
 export default function Start() {
     return (
-      <div id={'start'} className="container makeColumn">
-      <div className={'container makeColumn felt fiftyWidth'}>
-          <h1 className={'feltHeader'}>Start by finding players.</h1>
+      <div className="container makeColumn addTop newScreen">
+          <h1 className={'feltHeaders'}>Start by finding players.</h1>
           <div className="container">
 
             <div className="playerOne">
@@ -24,11 +23,10 @@ export default function Start() {
               <Player />
             </div>
           </div>
-          <h2 className={'feltHeader marginTop'}>
+          <h2 className={'feltHeaders marginTop'}>
             Minumum two. Maximum five. Friends, family,
         enemies, or complete strangers.
         </h2>
         </div>
-      </div>
     )
 }

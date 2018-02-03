@@ -32,8 +32,7 @@ const Index = ({ children, players }) => {
   let i = 55;
   return (
     <div id="screen">
-      <div className="spacer" />
-      <div className={'container makeColumn'}>
+      <div id={'homeScreenDiv'} className={'container makeColumn'}>
         <div className="cards">
           {title.map(letter => {
             i++

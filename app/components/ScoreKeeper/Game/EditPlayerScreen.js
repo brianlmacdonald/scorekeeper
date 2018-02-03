@@ -48,6 +48,7 @@ class EditPlayer extends Component {
               onChange={(evt) => {
               this.handleWins(evt.target.value)
             }} />
+            <div className='container'>
             <Link
             to="/scores">
               <button
@@ -63,6 +64,7 @@ class EditPlayer extends Component {
               className="homeButton"
               >cancel</button>
             </Link>
+            </div>
           </form>
         </div>
       )

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Scoring = () => {
   return (
-    <div className="container">
+    <div className="container newScreen">
       <div className="container makeColumn giveMargin">
           <div className={'container makeColumn halfFelt'}>
             <h1 className={'feltHeaders'}>Winning</h1>

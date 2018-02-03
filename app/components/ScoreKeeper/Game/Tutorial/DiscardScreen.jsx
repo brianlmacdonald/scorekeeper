@@ -63,8 +63,7 @@ export default class Discard extends Component {
   const options = [singles, pairs, flush]
   const hand = options[this.state.step]
   return (
-    <div id={'start'} className={'container makeColumn'}>
-      <div className={'container makeColumn felt'}>
+    <div className={'container makeColumn addTop newScreen'}>
       {this.props.screen === 'discard' ?
       this.discardHeader() :
       this.drawHeader(hand)
@@ -75,7 +74,7 @@ export default class Discard extends Component {
         })}
       </div>
       {this.props.screen === 'draw' ?
-      <div className={'container makeColumn'}>
+      <div className={'container makeColumn addTop'}>
       <h2 className={'feltHeaders'}>Or draw one off the top of the deck.</h2>
       <BackOfCard />
       </div> :
@@ -84,7 +83,6 @@ export default class Discard extends Component {
         <button
         onClick={this.handleStep}
         className="homeButton">{this.state.step === 0 ? 'Got it.' : this.state.step === 1 ? 'Cool.' : 'Yup.'}</button>
-    </div>
     </div>
   )
 }

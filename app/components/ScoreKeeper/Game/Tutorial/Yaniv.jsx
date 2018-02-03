@@ -43,10 +43,9 @@ export default class Yaniv extends Component {
     const opponentHand = [dealtCards[1]]
     const deck = game.deck
     return (
-      <div id={'start'} className={'container makeColumn'}>
-      <div className={'container makeColumn felt'}>
+      <div className={'container makeColumn addTop newScreen'}>
       <div className={'container makeColumn'}>
-      <h1>{this.state.message}</h1>
+      <h1 className={'feltHeaders'}>{this.state.message}</h1>
         <div className="container">
           {userHand.map(cardId => {
             return <CardElement key={game.round + 'u' + cardId} props={deck[cardId]} />
@@ -82,7 +81,6 @@ export default class Yaniv extends Component {
             </div>
         </div>
       </div>
-     </div>
     )
   }
 }

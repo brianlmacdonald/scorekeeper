@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 @import url('https://fonts.googleapis.com/css?family=Special+Elite');
 
+
+:root{
+  --background: #eeeeee;
+  --text: rgb(51, 51, 51);
+}
 #nameEntry {
   display: flex;
   flex-direction: column;
@@ -14,6 +19,8 @@ a {
 body {
   font-family: 'Quicksand', sans-serif;
   background-color: #eeeeee;
+  min-width: 1000px;
+  width: auto !important;
 }
 
 td {
@@ -34,11 +41,14 @@ tr:nth-child(odd) td {
 
 /*container div styles*/
 
+#homeScreenDiv {
+  margin-top: 10em;
+}
+
 .cards {
   display: flex;
   align-items: center;
   margin: auto;
-  border: 3em;
 }
 
 .container {
@@ -65,22 +75,20 @@ tr:nth-child(odd) td {
 
 #navAligner {
   display: flex;
-  height: 20vh;
-  width: 20vw;
+  height: 7vh;
+  width: 12vw;
   justify-content: center;
   align-content: flex-end;
 }
 
 #tutorialNav {
-  width: 20vw;
-  height: 80vh;
+  margin-top: 3em;
+  width: 12vw;
+  height: 90vh;
   display: flex;
   flex-direction: column;
-  margin-left: 0;
-  background-color: #5995ED;
+  margin-left: .8em;
   align-items: center;
-  border: #044389 solid 2px;
-  border-top: 0px;
   animation-name: slideRight;
   animation-duration: .5s;
 }
@@ -91,20 +99,25 @@ tr:nth-child(odd) td {
 
 .feltHeaders {
   display: flex;
-  width: 40vw;
+  width: 20em;
   justify-content: center;
+  text-align: center;
   margin-top: 0em;
 }
 
 
 /*tweaks*/
 
+.addTop {
+  margin-top: 5em;
+}
+
 .fiftyWidth {
-  width: 50vw;
+  width: 18em;
 }
 
 .eightyWidth {
-  width: 80vw;
+  width: 60em;
 }
 
 .center {
@@ -112,7 +125,6 @@ tr:nth-child(odd) td {
 }
 
 #start {
-  margin-top: 2em;
   align-items: flex-start;
 }
 
@@ -125,17 +137,20 @@ tr:nth-child(odd) td {
 }
 
 .halfFelt {
-  height: 30vh;
-  width: 30vw;
+  height: 25em;
+  width: 25em;
 }
 
 .felt {
-  height: 70vh;
-  width: 70vw;
+  height: 45em;
+  width: 70em;
   animation-name: fade;
   animation-duration: 2s;
 }
-
+.newScreen {
+  animation-name: fade;
+  animation-duration: 2s;
+}
 /*animations*/
 
 @keyframes fade {
@@ -183,8 +198,8 @@ tr:nth-child(odd) td {
 /*** cards ***/
 .playingCard {
   margin-right: .5em;
-  width: 100px;
-  height: 150px;
+  width: 6em;
+  height: 8em;
   background-color: rgb(253, 251, 244);
   border-radius: .5em;
   box-shadow: .2em .2em .15em .15em black;
@@ -212,11 +227,32 @@ tr:nth-child(odd) td {
 
 .cardMiddle {
   display: flex;
-  font-size: 2em;
+  font-size: 4vh;
   align-items: center;
   justify-items: center;
   flex-grow: 3;
   flex-basis: 1;
+}
+
+.backOfCard {
+  margin: .13em;
+  width: 5.6em;
+  height: 7.6em;
+  background-color: rgb(255, 216, 148);
+  border: .1em solid rgb(131, 84, 2);
+  border-radius: .5em;
+}
+
+.rectangle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: .2em;
+  border: .1em solid #cfcfcf;
+  border-radius: .5em;
+  height: 7em;
+  width: 5em;
+  background-color: rgb(109, 75, 16)
 }
 
 /*** players ***/
@@ -443,7 +479,7 @@ tr:nth-child(odd) td {
 .tutorialLink {
   margin: .8em;
   font-size: 2em;
-  color: white;
+  color: var(--text);
 }
 
 .smaller {
@@ -491,14 +527,7 @@ tr:nth-child(odd) td {
 
 }
 
-.backOfCard {
-  margin: 2px;
-  width: 92px;
-  height: 142px;
-  background-color: rgb(255, 216, 148);
-  border: 2px solid rgb(131, 84, 2);
-  border-radius: 5px;
-}
+
 
 .cover {
   position: sticky;
@@ -508,30 +537,15 @@ tr:nth-child(odd) td {
   height: 50vh;
 }
 
-.rectangle {
-  font-family: 'Special Elite',
-  cursive;
-  font-size: 3em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
-  border: 1px solid #cfcfcf;
-  height: 120px;
-  width: 70px;
-  background-color: rgb(109, 75, 16)
-}
-
 .playerHand {
-  width: 55vw;
-  height: auto;
+  width: 33em;
+  height: 9em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: auto;
   margin-top: 1em;
-  border: 3em;
 }
 
 .discardAnimation {
@@ -587,19 +601,17 @@ tr:nth-child(odd) td {
 .navBar {
   z-index: 2;
   display: flex;
-  border: #044389 solid 2px;
   flex-direction: row;
-  background-color: #FFA000;
   width: 100vw;
-  height: 20vh;
+  height: 7vh;
 }
 
 .navLinkText {
   display: flex;
   align-self: flex-end;
-  margin: .8em;
+  margin-left: .8em;
   font-size: 2em;
-  color: #044389
+  color: var(--text)
 }
 
 .whoiam > span {
@@ -737,6 +749,7 @@ tr:nth-child(odd) td {
   border-color: #FFA000;
   border-radius: .5em;
   margin: .5em;
+  outline: none;
 }
 
 @media only screen 

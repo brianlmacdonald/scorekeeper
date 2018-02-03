@@ -21,6 +21,7 @@ const TutorialSceen = () => {
     return (
       <div id="tutorialScreen">
         <Navigation />
+        <div id={'start'} className={'container felt'}>
         <Switch>
           {<Route exact path="/tutorial/start" component={StartScreen} />}
           {<Route path="/tutorial/deal" render={() => <Deal game={tutorialGame} />} />}
@@ -31,6 +32,7 @@ const TutorialSceen = () => {
           {<Route path="/tutorial/yaniv" render={() => <Yaniv game={tutorialGame} />} />}
           {<Route path="/tutorial/sandbox" component={Sandbox} />}
         </Switch>
+        </div>
       </div>
     )
 }

@@ -80,8 +80,7 @@ class Turn extends Component {
     const cards = int === 0 ? singles : int === 1 ? pairs : flush
 
     return (
-      <div id={'start'} className={'container felt'}>
-        <div className={'container makeColumn'}>
+      <div className={'container makeColumn addTop newScreen'}>
           <h1>On a turn, you can either...</h1>
         <div className={'container'}>
           <button
@@ -104,7 +103,6 @@ class Turn extends Component {
           <div className={'cards'}>
             {this.visibleHand(game.round, cards)}
           </div>
-        </div>
         </div>
     )
 
