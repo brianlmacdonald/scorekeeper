@@ -4,7 +4,7 @@ A scorekeeper app for the Israeli card game, Yaniv.
 
 ## Getting Started
 
-See the game in action, here: scorekeeper-4cdf0.firebaseapp.com/
+See the game in action, [here](https://scorekeeper-4cdf0.firebaseapp.com/)
 
 ## Built With
 
