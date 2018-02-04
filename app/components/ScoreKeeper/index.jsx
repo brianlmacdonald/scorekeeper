@@ -31,7 +31,7 @@ const Index = ({ children, players }) => {
   let ready = players.length !== 0
   let i = 55;
   return (
-    <div>
+    <div id={'screen'}>
       <div id={'homeScreenDiv'} className={'container makeColumn'}>
         <div className="cards">
           {title.map(letter => {
