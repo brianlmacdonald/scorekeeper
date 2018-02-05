@@ -656,12 +656,20 @@ tr:nth-child(odd) td {
   font-size: 1em;
 }
 
+.addContainer {
+  display: flex;
+  flex-direction: row;
+}
+
 .cardButton {
   height: 1.75em;
   width: 4em;
   font-size: 2em;
   border-color: #FFA000;
   border-radius: .5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: .25em;
   outline: none;
 }
