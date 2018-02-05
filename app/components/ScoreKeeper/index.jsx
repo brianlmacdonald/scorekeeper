@@ -42,6 +42,7 @@ const Index = ({ children, players }) => {
         <div className="buttonContainer phoneTop">
           <Link to="/tutorial/">
             <button
+              id={'learn'}
               className="homeButton">
               learn</button>
           </Link>

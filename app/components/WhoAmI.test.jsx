@@ -21,8 +21,8 @@ describe('<WhoAmI/>', () => {
       root = shallow(<WhoAmI />)
     )
 
-    it('says hello to Nobody', () => {
-      expect(root.text()).to.contain('Nobody')
+    it('asks the user to sign in', () => {
+      expect(root.text()).to.contain('Sign in.')
     })
   })
 

@@ -675,14 +675,58 @@ and (max-device-width: 667px)
     justify-content: center;
   }
 
+  .paperName {
+    margin-top: 4em;
+  }
+
+  #navRight {
+    height: 10vh;
+    width: 70vw;
+    font-size: 3em;
+    margin-right: 1em;
+    justify-content: flex-end;
+  }
+
+  .googleLogin {
+    height: 2.2em;
+    width: 3.2em;
+    font-size: 1em;
+    background-color: var(--background);
+    border: none;
+  }
+
+  #navAligner {
+    height: 10vh;
+    width: 10vw;
+    font-size: 4em;
+    margin-left: 1em;
+  }
+
+
   #screen {
     width: 100vw;
     height: 100vh;
   }
+
+  .navBar {
+    width: 100vw;
+    height: 10vh;
+  }
+
+  #tutorialNav {
+    margin-top: 2em;
+    width: 7em;
+    height: 100vh;
+  }
+
+  .tutorialLink {
+   font-size: 4em;
+   margin-top: 1.5em;
+   transform: rotate(.75turn)
+  }
   
   .stepperButtonContainer {
     margin-top: 1em;
-    flex-direction: column;
   }
 
   .stepperButton {
@@ -695,9 +739,33 @@ and (max-device-width: 667px)
     background-color: var(--background)
   }
 
-  .googleLogin {
-    font-size: 2em;
+  #learn {
+    display: none;
   }
+
+  /*** cards ***/
+
+  .playingCard {
+    transform: scale(2)
+  }
+
+
+  .cardTop {
+    transform: scale(1)
+  }
+
+  .cardMiddle {
+    transform: scale(1.5)
+  }
+
+  .backOfCard {
+   transform: scale(1.5)
+  }
+
+  .rectangle {
+    transform: scale(1.5)
+  }
+
 
   .logout {
     font-size: .5em;
@@ -766,9 +834,16 @@ and (max-device-width: 667px)
     background-color: var(--background)
   }
 
+  .playerNameField {
+    margin-top: 2.5em;
+    height: 2.5em;
+    font-size: 3em;
+  }
+
   .addContainer {
     justify-content: center;
     align-items: center;
+    font-size: 1.7em;
   }
 
   .addScore {
