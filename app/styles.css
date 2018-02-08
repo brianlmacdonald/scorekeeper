@@ -656,6 +656,10 @@ tr:nth-child(odd) td {
   font-size: 1em;
 }
 
+.hidden {
+  display: none;
+}
+
 .addContainer {
   display: flex;
   flex-direction: row;

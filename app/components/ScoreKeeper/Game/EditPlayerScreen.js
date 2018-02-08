@@ -1,28 +1,66 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import { updateScoreAction } from '../../../store'
+import { updateScoreAction } from 'APP/app/store'
 import { Link } from 'react-router'
 
+
+const noDecimal = (number) => {
+  return number.split('.').length === 1
+}
+
+const notTooBig = (number, bool) => {
+  if (bool) {
+    return Math.abs(Number(number)) < 202
+  } else {
+    return Number(number) > -1 && Number(number) < 7
+  }
+}
+
+const validateNumber = (number, bool = true) => {
+    return noDecimal(number) && notTooBig(number, bool)
+
+}
 class EditPlayer extends Component {
   constructor(props){
     super(props)
     this.state = {
       score: this.props.players[this.props.params.playerId - 1].score,
-      wins: this.props.players[this.props.params.playerId - 1].wins
+      wins: this.props.players[this.props.params.playerId - 1].wins,
+      warning: null,
+      numberWarning: null
     }
     this.handleScore = this.handleScore.bind(this)
     this.handleWins = this.handleWins.bind(this)
   }
 
+  handleWarning(entry){
+    this.setState({warning: entry})
+  }
+
+  handleNumberWarning(number) {
+    this.setState({numberWarning: number})
+  }
+
   handleScore(value){
-    this.setState({score: Number(value)})
+    if (validateNumber(value)) {
+      this.handleNumberWarning(null)
+      this.setState({score: Number(value)})
+    } else {
+      this.handleNumberWarning(value)
+    }
   }
 
   handleWins(value){
-    this.setState({wins: Number(value)})
+    if (validateNumber(value, false)) {
+      this.handleNumberWarning(null)
+      this.setState({wins: Number(value)})
+    } else {
+      this.handleNumberWarning(value)
+    }
   }
 
   render(){
+    console.log(this.state)
     const {handleSave, players} = this.props
     const player = players.find(person => {
       return person.id === Number(this.props.params.playerId)
@@ -37,7 +75,12 @@ class EditPlayer extends Component {
             placeholder={this.state.score}
             className="editInput"
             onChange={(evt) => {
-              this.handleScore(evt.target.value)
+              if (Number(evt.target.value)) {
+                this.handleWarning(null)
+                this.handleScore(evt.target.value)
+              } else {
+                this.handleWarning(evt.target.value)
+              }
             }} />
             <label
               className="editLabel"
@@ -46,12 +89,18 @@ class EditPlayer extends Component {
               placeholder={this.state.wins}
               className="editInput"
               onChange={(evt) => {
-              this.handleWins(evt.target.value)
+                if (Number(evt.target.value)) {
+                  this.handleWarning(null)
+                  this.handleWins(evt.target.value)
+                } else {
+                  this.handleWarning(evt.target.value)
+                }
             }} />
             <div className='container'>
             <Link
             to="/scores">
               <button
+                disabled={this.state.warning !== null}
                 className="homeButton"
                 onClick={() => {
                 player.score = this.state.score
@@ -66,6 +115,20 @@ class EditPlayer extends Component {
             </Link>
             </div>
           </form>
+          <div className={'container makeColumn'}>
+          <div className={this.state.warning === null ?
+                          'hidden' :
+                          'container makeColumn red'}>
+                          Hey, things like 'cheese', 
+                           '{this.state.warning}', 
+                          and 'cookies' are not numbers.</div>
+        <div className={this.state.numberWarning === null ?
+                        'hidden' :
+                        'container makeColumn red'}>
+                        Hey, {this.state.numberWarning} is either too big, 
+                        too small, too decimally, or too negative. Fix it.
+        </div>
+        </div>
         </div>
       )
     } else {
