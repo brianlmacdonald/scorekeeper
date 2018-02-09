@@ -54,7 +54,7 @@ export const checkForLosers = (playersArray) => {
 
 const matchWinner = (playersArray) => {
   const storeState = store.getState()
-  const winner = playersArray.find(maybeWinner => maybeWinner.wins === storeState.rules.matchWins)
+  const winner = playersArray.find(maybeWinner => maybeWinner.wins >= storeState.rules.matchWins)
   return winner ? winner : false
 }
 

@@ -26,42 +26,42 @@ class EditPlayer extends Component {
     this.state = {
       score: this.props.players[this.props.params.playerId - 1].score,
       wins: this.props.players[this.props.params.playerId - 1].wins,
-      warning: null,
-      numberWarning: null
+      warningScore: false,
+      warningWins: false
     }
     this.handleScore = this.handleScore.bind(this)
     this.handleWins = this.handleWins.bind(this)
   }
 
-  handleWarning(entry){
-    this.setState({warning: entry})
+  handleWarningWins(bool){
+    this.setState({warningWins: bool})
   }
 
-  handleNumberWarning(number) {
-    this.setState({numberWarning: number})
+  handleWarningScore(bool){
+    this.setState({warningScore: bool})
   }
 
   handleScore(value){
     if (validateNumber(value)) {
-      this.handleNumberWarning(null)
+      this.handleWarningScore(false)
       this.setState({score: Number(value)})
     } else {
-      this.handleNumberWarning(value)
+      this.handleWarningScore(true)
     }
   }
 
   handleWins(value){
     if (validateNumber(value, false)) {
-      this.handleNumberWarning(null)
+      this.handleWarningWins(false)
       this.setState({wins: Number(value)})
     } else {
-      this.handleNumberWarning(value)
+      this.handleWarningWins(true)
     }
   }
 
   render(){
-    console.log(this.state)
     const {handleSave, players} = this.props
+    const activeWarning = this.state.warningScore || this.state.warningWins
     const player = players.find(person => {
       return person.id === Number(this.props.params.playerId)
     })
@@ -75,11 +75,11 @@ class EditPlayer extends Component {
             placeholder={this.state.score}
             className="editInput"
             onChange={(evt) => {
-              if (typeof Number(evt.target.value) === 'number') {
-                this.handleWarning(null)
+              if (!isNaN(Number(evt.target.value))) {
+                this.handleWarningScore(false)
                 this.handleScore(evt.target.value)
               } else {
-                this.handleWarning(evt.target.value)
+                this.handleWarningScore(true)
               }
             }} />
             <label
@@ -89,18 +89,18 @@ class EditPlayer extends Component {
               placeholder={this.state.wins}
               className="editInput"
               onChange={(evt) => {
-                if (typeof Number(evt.target.value) === 'number') {
-                  this.handleWarning(null)
+                if (!isNaN(Number(evt.target.value))) {
+                  this.handleWarningWins(false)
                   this.handleWins(evt.target.value)
                 } else {
-                  this.handleWarning(evt.target.value)
+                  this.handleWarningWins(true)
                 }
             }} />
             <div className="container">
             <Link
             to="/scores">
               <button
-                disabled={this.state.warning !== null}
+                disabled={activeWarning}
                 className="homeButton"
                 onClick={() => {
                 player.score = this.state.score
@@ -116,18 +116,10 @@ class EditPlayer extends Component {
             </div>
           </form>
           <div className={'container makeColumn'}>
-          <div className={this.state.warning === null ?
+          <div className={!activeWarning ?
                           'hidden' :
                           'container makeColumn red'}>
-                          Hey, things like 'cheese',
-                           '{this.state.warning}',
-                          and 'cookies' are not numbers.</div>
-        <div className={this.state.numberWarning === null ?
-                        'hidden' :
-                        'container makeColumn red'}>
-                        Hey, {this.state.numberWarning} is either too big,
-                        too small, too decimally, or too negative. Fix it.
-        </div>
+                          Invalid input.</div>
         </div>
         </div>
       )
