@@ -22,8 +22,7 @@ export function BackOfCard() {
   return (
         <div className="playingCard">
           <div className="backOfCard">
-            <div className="rectangle">
-            </div>
+            <div className="rectangle" />
           </div>
         </div>
       )

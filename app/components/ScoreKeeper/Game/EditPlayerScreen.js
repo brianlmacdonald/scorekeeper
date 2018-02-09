@@ -75,7 +75,7 @@ class EditPlayer extends Component {
             placeholder={this.state.score}
             className="editInput"
             onChange={(evt) => {
-              if (Number(evt.target.value)) {
+              if (typeof Number(evt.target.value) === 'number') {
                 this.handleWarning(null)
                 this.handleScore(evt.target.value)
               } else {
@@ -89,14 +89,14 @@ class EditPlayer extends Component {
               placeholder={this.state.wins}
               className="editInput"
               onChange={(evt) => {
-                if (Number(evt.target.value)) {
+                if (typeof Number(evt.target.value) === 'number') {
                   this.handleWarning(null)
                   this.handleWins(evt.target.value)
                 } else {
                   this.handleWarning(evt.target.value)
                 }
             }} />
-            <div className='container'>
+            <div className="container">
             <Link
             to="/scores">
               <button
@@ -119,13 +119,13 @@ class EditPlayer extends Component {
           <div className={this.state.warning === null ?
                           'hidden' :
                           'container makeColumn red'}>
-                          Hey, things like 'cheese', 
-                           '{this.state.warning}', 
+                          Hey, things like 'cheese',
+                           '{this.state.warning}',
                           and 'cookies' are not numbers.</div>
         <div className={this.state.numberWarning === null ?
                         'hidden' :
                         'container makeColumn red'}>
-                        Hey, {this.state.numberWarning} is either too big, 
+                        Hey, {this.state.numberWarning} is either too big,
                         too small, too decimally, or too negative. Fix it.
         </div>
         </div>
